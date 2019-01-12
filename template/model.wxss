@@ -1,4 +1,4 @@
-model-login-box {
+.model-login-box {
 	position: fixed;
 	width: 580rpx;
 	height: 680rpx;
