@@ -1,213 +1,134 @@
-// pages/find/search/search.js
-Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    resultlist:[],
-    resultnum: '',
-    status:0,
-    SearchContent: '',
-    SearchFlag: false,
-    InputFlag: true,
-    focus: false
-  },
-
-  ShowSearch: function () {
-    this.setData({
-      SearchFlag: true,
-      focus: true
-    })
-  },
-  ShowSearchBtn: function () {
-    console.log('聚焦输入框')
-    if (!this.data.SearchContent) {
-      this.setData({
-        InputFlag: false
-      })
-    } else {
-      this.setData({
-        InputFlag: true
-      })
+function t(t) {
+    var e = void 0 === t ? "undefined" : a(t);
+    if ("string" == e) return t.length;
+    if ("object" == e) {
+        var n = 0;
+        for (var s in t) n++;
+        return n;
     }
-  },
-  HideSearchBtn: function () {
-    this.setData({
-      InputFlag: false
-    })
-  },
-  GetSearchContent: function (e) {
-    if (!e.detail.value) {
-      this.setData({
-        InputFlag: false
-      })
-    } else {
-      this.setData({
-        InputFlag: true
-      })
-    }
-    this.setData({
-      SearchContent: e.detail.value
-    })
-  },
-  CancelSearch: function () {
-    this.setData({
-      SearchFlag: false,
-      focus: false
-    })
-  },
-  Search: function (e) {
-    var that = this
-    wx.setNavigationBarTitle({
-      title: that.data.SearchContent + ' - 搜索结果',
-    })
-    this.setData({
-      SearchFlag: false,
-      focus: false
-    })
-    wx.request({
-      url: 'https://volleywang.cn/index.php/api/search',
-      header: {
-        "content-type": "application/json;charset=utf8"
-      },
-      method: "GET",
-      data: {
-        name: that.data.SearchContent
-      },
-      success: function (res) {
-        console.log(res.data);
-        var num = count(res.data.data)
-        that.setData({
-          resultlist: res.data.data,
-          resultnum: num
-        })
-        if (res.data.message == '功获成取搜索结果-2') {
-          that.setData({
-            status: 2
-          })
-        }
-        if (res.data.message == '功获成取搜索结果-1') {
-          that.setData({
-            status: 1
-          })
-        }
-        if (res.data.message == '功获成取搜索结果-0') {
-          that.setData({
-            status: 0
-          })
-        }
-      }
-    })
-  },
-  searchresult:function(e){
-    wx.navigateTo({ 
-      url: 'searchresult/searchresult?teamA=' + e.currentTarget.dataset.teama + '&teamB=' + e.currentTarget.dataset.teamb + '&status=' + e.currentTarget.dataset.status,
-    })
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    var that = this
-    wx.setNavigationBarTitle({
-      title: options.value + ' - 搜索结果',
-    })
-    wx.request({
-      url: 'https://volleywang.cn/index.php/api/search',
-      header: {
-        "content-type": "application/json;charset=utf8"
-      },
-      method: "GET",
-      data: {
-        name:options.value
-      },
-      success: function (res) {
-        console.log(res.data);
-        var num = count(res.data.data)
-        that.setData({
-          resultlist:res.data.data,
-          resultnum:num
-        })
-        if (res.data.message == '功获成取搜索结果-2') {
-          that.setData({
-            status:2
-          })
-        }
-        if (res.data.message == '功获成取搜索结果-1') {
-          that.setData({
-            status: 1
-          })
-        }
-        if (res.data.message == '功获成取搜索结果-0') {
-          that.setData({
-            status: 0
-          })
-        }
-      }
-    })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
-})
-
-function count(obj) {
-  var objType = typeof obj;
-  if (objType == "string") {
-    return obj.length;
-  } else if (objType == "object") {
-    var objLen = 0;
-    for (var i in obj) {
-      objLen++;
-    }
-    return objLen;
-  }
-  return false;
+    return !1;
 }
+
+var a = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
+    return typeof t;
+} : function(t) {
+    return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
+};
+
+Page({
+    data: {
+        resultlist: [],
+        resultnum: "",
+        status: 0,
+        SearchContent: "",
+        SearchFlag: !1,
+        InputFlag: !0,
+        focus: !1
+    },
+    ShowSearch: function() {
+        this.setData({
+            SearchFlag: !0,
+            focus: !0
+        });
+    },
+    ShowSearchBtn: function() {
+        console.log("聚焦输入框"), this.data.SearchContent ? this.setData({
+            InputFlag: !0
+        }) : this.setData({
+            InputFlag: !1
+        });
+    },
+    HideSearchBtn: function() {
+        this.setData({
+            InputFlag: !1
+        });
+    },
+    GetSearchContent: function(t) {
+        t.detail.value ? this.setData({
+            InputFlag: !0
+        }) : this.setData({
+            InputFlag: !1
+        }), this.setData({
+            SearchContent: t.detail.value
+        });
+    },
+    CancelSearch: function() {
+        this.setData({
+            SearchFlag: !1,
+            focus: !1
+        });
+    },
+    Search: function(a) {
+        var e = this;
+        wx.setNavigationBarTitle({
+            title: e.data.SearchContent + " - 搜索结果"
+        }), this.setData({
+            SearchFlag: !1,
+            focus: !1
+        }), wx.request({
+            url: "https://volleywang.cn/index.php/api/search",
+            header: {
+                "content-type": "application/json;charset=utf8"
+            },
+            method: "GET",
+            data: {
+                name: e.data.SearchContent
+            },
+            success: function(a) {
+                console.log(a.data);
+                var n = t(a.data.data);
+                e.setData({
+                    resultlist: a.data.data,
+                    resultnum: n
+                }), "功获成取搜索结果-2" == a.data.message && e.setData({
+                    status: 2
+                }), "功获成取搜索结果-1" == a.data.message && e.setData({
+                    status: 1
+                }), "功获成取搜索结果-0" == a.data.message && e.setData({
+                    status: 0
+                });
+            }
+        });
+    },
+    searchresult: function(t) {
+        wx.navigateTo({
+            url: "searchresult/searchresult?teamA=" + t.currentTarget.dataset.teama + "&teamB=" + t.currentTarget.dataset.teamb + "&status=" + t.currentTarget.dataset.status
+        });
+    },
+    onLoad: function(a) {
+        var e = this;
+        wx.setNavigationBarTitle({
+            title: a.value + " - 搜索结果"
+        }), wx.request({
+            url: "https://volleywang.cn/index.php/api/search",
+            header: {
+                "content-type": "application/json;charset=utf8"
+            },
+            method: "GET",
+            data: {
+                name: a.value
+            },
+            success: function(a) {
+                console.log(a.data);
+                var n = t(a.data.data);
+                e.setData({
+                    resultlist: a.data.data,
+                    resultnum: n
+                }), "功获成取搜索结果-2" == a.data.message && e.setData({
+                    status: 2
+                }), "功获成取搜索结果-1" == a.data.message && e.setData({
+                    status: 1
+                }), "功获成取搜索结果-0" == a.data.message && e.setData({
+                    status: 0
+                });
+            }
+        });
+    },
+    onReady: function() {},
+    onShow: function() {},
+    onHide: function() {},
+    onUnload: function() {},
+    onPullDownRefresh: function() {},
+    onReachBottom: function() {},
+    onShareAppMessage: function() {}
+});

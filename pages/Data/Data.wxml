@@ -1,78 +1,39 @@
-<view class="search" hidden='{{SearchFlag}}'>
-  <image class="search-icon" src='../../images/search.png'/>
-  <view class="search-title" bindtap='ShowSearch'>搜索球队、交手记录…</view>
-</view>
-
-<view class="find">
-  <view class="find-item">
-    <image class="find-item-image" src='../../images/sign.png' bindtap='sign'></image>
-    <view class="find-item-text">签到</view>
-  </view>
-  <view class="find-item" bindtap='BindCourt'>
-    <image class="find-item-image" src='../../images/site.png'></image>
-    <view class="find-item-text">附近的球场</view>
-  </view>
-  <view class="find-item">
-    <image class="find-item-image" src='../../images/ball.png' bindtap='BindRank'></image>
-    <view class="find-item-text">胜率排行</view>
-  </view>
-</view>
-
 <view class="resultlist">
-  <block wx:for="{{matchinfo}}" wx:key="index">
-    <view class="match-result">
-      <view class="match-detail">
-        <view class="match-detail-no">{{item.matchdetail.matchid}}</view>
-        <view class="match-detail-info">
-          <view class="maatch-detail-name">{{item.matchdetail.matchname}}</view>
-          <view class="maatch-detail-date"></view>
+    <view class="text-title">全部比赛</view>
+    <view class="match-result" wx:for="{{matchinfo}}" wx:key="index">
+        <view class="match-detail">
+            <view class="match-detail-no">{{item.matchdetail[0].matchid}}</view>
+            <view class="match-detail-info">
+                <view class="maatch-detail-name">{{item.matchdetail[0].matchname}}</view>
+            </view>
         </view>
-      </view>
-      <view class="match-set">
-        <view class='match-set-teama'>
-          <view class="teama-name">{{item.matchdetail.teamAname}}</view>
-          <view class="teama-set">{{item.matchdetail.Amatch}}</view>
+        <view class="match-set">
+            <view class="match-set-teama">
+                <view class="teama-name">{{item.matchdetail[0].teamAname}}</view>
+                <view class="teama-set">{{item.matchdetail[0].Amatch}}</view>
+            </view>
+            <view class="match-set-teamb">
+                <view class="teamb-set">{{item.matchdetail[0].Bmatch}}</view>
+                <view class="teamb-name">{{item.matchdetail[0].teamBname}}</view>
+            </view>
         </view>
-        <view class='match-set-teamb'>
-          <view class="teamb-set">{{item.matchdetail.Bmatch}}</view>
-          <view class="teamb-name">{{item.matchdetail.teamBname}}</view>
-        </view>
-      </view>
-      <view bindtap='BindMatchInfo' class="match-statistic" data-matchid='{{item.matchdetail.matchid}}'>
+        <view bindtap="BindMatchInfo" class="match-statistic" data-matchid="{{item.matchdetail[0].matchid}}" data-type="{{item.type}}">
         点击查看详细技术统计
       </view>
-      <view class="match-score">
+        <view class="match-score">
         详细比分:
-        <text wx:if="{{item.matchdetail.Aset1!=null}}">{{item.matchdetail.Aset1}}:{{item.matchdetail.Bset1}}</text>
-        <text wx:if="{{item.matchdetail.Aset2!=null}}"> {{item.matchdetail.Aset2}}:{{item.matchdetail.Bset2}}</text>
-        <text wx:if="{{item.matchdetail.Aset3!=null}}"> {{item.matchdetail.Aset3}}:{{item.matchdetail.Bset3}}</text>
-        <text wx:if="{{item.matchdetail.Aset4!=null}}"> {{item.matchdetail.Aset4}}:{{item.matchdetail.Bset4}}</text>
-        <text wx:if="{{item.matchdetail.Aset5!=null}}"> {{item.matchdetail.Aset5}}:{{item.matchdetail.Bset5}}</text>
+        <text wx:if="{{item.matchdetail[0].Aset1!=null}}">{{item.matchdetail[0].Aset1}}:{{item.matchdetail[0].Bset1}}</text>
+            <text wx:if="{{item.matchdetail[0].Aset2!=null}}"> {{item.matchdetail[0].Aset2}}:{{item.matchdetail[0].Bset2}}</text>
+            <text wx:if="{{item.matchdetail[0].Aset3!=null}}"> {{item.matchdetail[0].Aset3}}:{{item.matchdetail[0].Bset3}}</text>
+            <text wx:if="{{item.matchdetail[0].Aset4!=null}}"> {{item.matchdetail[0].Aset4}}:{{item.matchdetail[0].Bset4}}</text>
+            <text wx:if="{{item.matchdetail[0].Aset5!=null}}"> {{item.matchdetail[0].Aset5}}:{{item.matchdetail[0].Bset5}}</text>
+        </view>
+        <view class="match-ref" wx:if="{{item.matchdetail[0].ref1!=''}}">
+        裁判：{{item.matchdetail[0].ref1}} {{item.matchdetail[0].ref2}} {{item.matchdetail[0].ref3}} {{item.matchdetail[0].ref4}}
       </view>
-      <view class="match-ref" wx:if="{{item.matchdetail.ref1!=''}}">
-        裁判：{{item.matchdetail.ref1}} {{item.matchdetail.ref2}} {{item.matchdetail.ref3}} {{item.matchdetail.ref4}}
-      </view>
-      <view class="match-location">
-        <image class="match-location-images" src='../../../../images/time.png'></image>
-        <view class="match-location-detail">{{item.matchdetail.starttime}}</view>
-      </view>
+        <view class="match-location">
+            <image class="match-location-images" src="../../images/time.png"></image>
+            <view class="match-location-detail">{{item.matchdetail[0].starttime}}</view>
+        </view>
     </view>
-  </block>
-</view>
-
-<view class="cover" hidden='{{!SearchFlag}}'></view>
-<view class="search search-border" hidden='{{!SearchFlag}}'>
-  <image class="search-icon" src='../../images/search.png'/>
-  <view class="search-title">
-    <input bindfocus='ShowSearchBtn' bindblur='HideSearchBtn' bindinput='GetSearchContent' placeholder-style="color:gray" focus='{{focus}}' placeholder="搜索球队、交手记录…" maxlength="20" name="name" style="height: 80rpx;line-height: 80rpx"/>
-  </view>
-  <view class="search-btn" hidden='{{!InputFlag}}' bindtap='Search'>搜索</view>
-  <view class="search-btn" hidden='{{InputFlag}}' bindtap='CancelSearch'>取消</view>
-</view>
-<view class="search-tip" hidden='{{!SearchFlag}}'>
-  <text>可输入学院名称
-  例如'电子'、'机械'…
-  也可输入‘计算机vs会计’
-  查询双方交手记录
-  </text>
 </view>

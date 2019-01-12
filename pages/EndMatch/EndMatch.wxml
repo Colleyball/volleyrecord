@@ -1,28 +1,27 @@
 <view class="container">
-  <view class="tablename">比赛结果</view>
-  <view class="Setinfo">
-    <view class="Setinfo-teamA">
-      <view class="Setinfo-teamA-name">{{Matchinfo[1]}}</view>
-      <view class="Setinfo-teamA-set">{{Scoreinfo[0]}}</view>
+    <view class="tablename">本场比赛结果</view>
+    <view class="Setinfo">
+        <view class="Setinfo-teamA">
+            <view class="Setinfo-teamA-name">{{Matchinfo[1]}}</view>
+            <view class="Setinfo-teamA-set">{{TotalScore[0]}}</view>
+        </view>
+        <view class="Setinfo-teamB">
+            <view class="Setinfo-teamB-set">{{TotalScore[1]}}</view>
+            <view class="Setinfo-teamB-name">{{Matchinfo[2]}}</view>
+        </view>
     </view>
-    <view class="Setinfo-teamB">
-      <view class="Setinfo-teamB-set">{{Scoreinfo[1]}}</view>
-      <view class="Setinfo-teamB-name">{{Matchinfo[2]}}</view>
+    <view class="tablename">局分信息</view>
+    <view class="Scoreinfo">
+        <view class="Scoreinfo-score">{{TotalScore[2]}}:{{TotalScore[3]}}</view>
+        <view class="Scoreinfo-score" wx:if="{{win>1}}">{{TotalScore[4]}}:{{TotalScore[5]}}</view>
+        <view class="Scoreinfo-score" wx:if="{{win>1}}">{{TotalScore[6]}}:{{TotalScore[7]}}</view>
+        <view class="Scoreinfo-score" wx:if="{{win>2}}">{{TotalScore[8]}}:{{TotalScore[9]}}</view>
+        <view class="Scoreinfo-score" wx:if="{{win>2}}">{{TotalScore[10]}}:{{TotalScore[11]}}</view>
     </view>
-  </view>
-  <view class="tablename">局分信息</view>
-  <view class="Scoreinfo">
-    <view class="Scoreinfo-score">{{Scoreinfo[2]}}:{{Scoreinfo[3]}}</view>
-    <view class="Scoreinfo-score">{{Scoreinfo[4]}}:{{Scoreinfo[5]}}</view>
-    <view class="Scoreinfo-score">{{Scoreinfo[6]}}:{{Scoreinfo[7]}}</view>
-  </view>
-
 </view>
-
-<view  class="confirm-btn" bindtap="upload">
-  <image src='../../images/cloud.png' mode='aspectFit' style='width:100rpx; height:100rpx;margin-top:25rpx;'></image>
+<view bindtap="upload" class="confirm-btn">
+    <image mode="aspectFit" src="../../images/cloud.png" style="width:100rpx; height:100rpx;margin-top:25rpx;"></image>
 </view>
-
-<view  class="back-btn" bindtap="back">
-  <image src='../../images/back.png' mode='aspectFit' style='width:100rpx; height:100rpx;margin-top:25rpx;'></image>
+<view bindtap="back" class="back-btn">
+    <image mode="aspectFit" src="../../images/back.png" style="width:100rpx; height:100rpx;margin-top:25rpx;"></image>
 </view>

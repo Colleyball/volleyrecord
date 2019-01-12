@@ -1,31 +1,29 @@
 <view class="container">
-  <view class="video-tip">
-    <view class="video-tip-item">
-      <image class="video-tip-item-pic" src='../../../images/play.png'></image>
-      <view class="video-tip-item-text">直接播放(免广告)</view>
+    <view class="video-tip">
+        <view class="video-tip-item">
+            <image class="video-tip-item-pic" src="../../../images/play.png"></image>
+            <view class="video-tip-item-text">小程序内直接播放</view>
+        </view>
+        <view class="video-tip-item">
+            <image class="video-tip-item-pic" src="../../../images/play-no.png"></image>
+            <view class="video-tip-item-text">提供视频链接</view>
+        </view>
     </view>
-    <view class="video-tip-item">
-      <image class="video-tip-item-pic" src='../../../images/play-no.png'></image>
-      <view class="video-tip-item-text">提供视频链接</view>
+    <view class="resultlist">
+        <view bindtap="player" class="result" data-group="{{item.group}} {{item.length}}" data-link="{{item.link}}" data-qqvideo="{{item.qqvideo}}" data-teama="{{item.teama}}" data-teamb="{{item.teamb}}" wx:for="{{videolist}}" wx:key="no">
+            <view class="video-image">
+                <image class="video-pic" mode="aspectFill" src="{{item.pic}}" wx:if="{{item.pic}}"></image>
+                <image class="video-pic" mode="aspectFill" src="../../../images/video.jpg" wx:else></image>
+                <image class="video-type" src="../../../images/play.png" wx:if="{{item.qqvideo==1}}"></image>
+                <image class="video-type" src="../../../images/play-no.png" wx:else></image>
+            </view>
+            <view class="video-info">
+                <view class="teamA">{{item.teama}}</view>
+                <view class="teamB">{{item.teamb}}</view>
+                <view class="vs" wx:if="{{item.group}}">{{item.group}} {{item.length}}</view>
+                <view class="vs" wx:if="{{!item.group}}">点击观看</view>
+            </view>
+        </view>
+        <view class="resultnum">不要再拉了，我是有底线的！</view>
     </view>
-  </view>
-  <view class="resultlist">
-  <block wx:for="{{videolist}}" wx:key="no">
-    <view class="result" bindtap='player' data-link='{{item.link}}' data-teama='{{item.teama}}' data-teamb='{{item.teamb}}' data-qqvideo="{{item.qqvideo}}" data-group="{{item.group}} {{item.length}}">
-      <view class="video-image">
-        <image wx:if="{{item.pic}}" class="video-pic" src='{{item.pic}}' mode='aspectFill'></image>
-        <image wx:else class="video-pic" src='../../../images/video.jpg' mode='aspectFill'></image>
-        <image wx:if="{{item.qqvideo==1}}" class="video-type" src='../../../images/play.png'></image>
-        <image wx:else class="video-type" src='../../../images/play-no.png'></image>
-      </view>
-      <view class="video-info">
-        <view class="teamA">{{item.teama}}</view>
-        <view class="teamB">{{item.teamb}}</view>
-        <view class="vs" wx:if="{{item.group}}">{{item.group}} {{item.length}}</view>
-        <view class="vs" wx:if="{{!item.group}}">点击观看</view>
-      </view>
-    </view>
-  </block>
-  <view class="resultnum">不要再拉了，我是有底线的！</view>
-</view>
 </view>

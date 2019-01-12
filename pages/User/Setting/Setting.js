@@ -1,81 +1,17 @@
-// pages/User/Setting/Setting.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    if (wx.getStorageSync('userInfo').nickName) {
-      var that = this
-      return {
-        title: '@所有人，' + wx.getStorageSync('userInfo').nickName + '向你推荐了“赛事窗·比赛数据记录”，快来瞅瞅吧',
-        desc: '点击进入赛事窗',
-        path: '/pages/User/Setting/Setting',
-      }
-    } else {
-      var that = this
-      return {
-        title: '@所有人，向你推荐了“赛事窗·比赛数据记录”，快来瞅瞅吧',
-        desc: '点击进入赛事窗',
-        path: '/pages/User/Setting/Setting',
-      }
+    data: {},
+    onLoad: function(n) {},
+    onReady: function() {},
+    onShow: function() {},
+    onHide: function() {},
+    onUnload: function() {},
+    onPullDownRefresh: function() {},
+    onReachBottom: function() {},
+    onShareAppMessage: function() {
+        return {
+            title: "赛事窗·杭电排球|比赛数据记录软件",
+            desc: "点击进入赛事窗",
+            path: "/pages/User/Setting/Setting"
+        };
     }
-    
-  }
-})
+});

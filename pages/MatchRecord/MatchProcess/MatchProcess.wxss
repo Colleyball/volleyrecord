@@ -1,0 +1,685 @@
+page,.page {
+	font-family: "PingFang SC", "Helvetica Neue" ,Helvetica, "Droid Sans Fallback", "Microsoft Yahei", sans-serif;
+}
+
+.top-matchname {
+	position: fixed;
+	height: 40rpx;
+	line-height: 40rpx;
+	width: 100%;
+	top: 0;
+	text-align: center;
+	font-size: 25rpx;
+	background: linear-gradient(180deg,rgba(255,255,255,1),rgba(255,255,255,0));
+}
+
+.container {
+	padding-top: 45rpx;
+	margin: 0;
+	background: linear-gradient(45deg,rgba(31, 174, 221,0.1),rgba(255,83,77,0.1));
+}
+
+.cover {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	background: rgba(255,255,255,0.95);
+	overflow: hidden;
+}
+
+.topbar {
+	width: 750rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	text-align: center;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	height: 80rpx;
+	margin-top: 5rpx;
+}
+
+.TeamAName {
+	height: 80rpx;
+	line-height: 80rpx;
+	width: 310rpx;
+	border-radius: 0rpx;
+	margin-left: 0rpx;
+	color: black;
+	font-size: 30rpx;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.TeamBName {
+	height: 80rpx;
+	line-height: 80rpx;
+	width: 310rpx;
+	border-radius: 0rpx;
+	color: black;
+	font-size: 30rpx;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.Score {
+	width: 680rpx;
+	height: 200rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	text-align: center
+}
+
+.TeamAScore {
+	width: 240rpx;
+	height: 200rpx;
+	background: #fff;
+	border-radius: 0rpx;
+	line-height: 200rpx;
+	font-size: 80rpx;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
+}
+
+.Setinfo {
+	width: 200rpx;
+	height: 200rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column
+}
+
+.TeamBScore {
+	width: 240rpx;
+	height: 200rpx;
+	background: #fff;
+	border-radius: 0rpx;
+	line-height: 200rpx;
+	font-size: 80rpx;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0)
+}
+
+.Set {
+	width: 200rpx;
+	height: 100rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row
+}
+
+.TeamASet {
+	width: 100rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+}
+
+.TeamBSet {
+	width: 100rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+}
+
+.ball {
+	margin-left: 10rpx;
+	width: 180rpx;
+	height: 100rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row
+}
+
+.winball {
+	width: 90rpx;
+	height: 90rpx;
+	border-radius: 50%;
+	background-color: #fff;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: space-around;
+	justify-content: space-around
+}
+
+.ball-pic {
+	width: 60rpx;
+	height: 60rpx;
+}
+
+.tool {
+	width: 680rpx;
+	height: 120rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: space-around;
+	justify-content: space-around
+}
+
+.tool-item {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 50%;
+	background-color: #fff;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: space-around;
+	justify-content: space-around
+}
+
+.tool-pic {
+	width: 40rpx;
+	height: 40rpx;
+	margin: 0;
+}
+
+.swiper-tab {
+	width: 100%;
+	text-align: center;
+	line-height: 40px;
+	background-color: #fff;
+	box-shadow: 0rpx 10rpx 20rpx rgba(0, 0, 0, 0);
+	margin-bottom: 15rpx;
+	border-bottom: 1rpx solid rgba(0, 0, 0, 0.1)
+}
+
+.title {
+	height: 50rpx;
+	line-height: 50rpx;
+	text-align: center;
+	font-size: 30rpx;
+}
+
+.swiper-tab-list {
+	font-size: 28rpx;
+	display: inline-block;
+	width: 25%;
+	color: #777;
+	margin-bottom: 10rpx;
+}
+
+.on {
+	color: #000;
+	font-size: 30rpx;
+	border-bottom: 5rpx solid rgba(0, 0, 0, 0.5);
+}
+
+.swiper-box {
+	display: block;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	padding-top: 0rpx;
+}
+
+.swiper-box wx-view {
+}
+
+.volleyball-court {
+	width: 100%;
+	height: 522rpx;
+}
+
+.volleyball-court-position {
+	margin-top: 0rpx;
+	width: 750rpx;
+	height: 522rpx;
+	margin-left: 0rpx;
+	background: rgba(255, 255, 255, 1);
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	background: url("https://volleywang.cn/liansaiquan/images/wechat/rr/indoor_court.png") no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.line {
+	width: 650rpx;
+	margin-left: 50rpx;
+	height: 80rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	margin-top: 70rpx
+}
+
+.player {
+	width: 130rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	margin-left: 0rpx;
+	background: #fff;
+	border-radius: 0rpx;
+	box-shadow: 0rpx 10rpx 20rpx rgba(0, 0, 0, 0);
+	text-align: center
+}
+
+.volleyball-court-position-tip {
+	width: 100%;
+	font-size: 30rpx;
+	height: 30rpx;
+	line-height: 30rpx;
+	color: rgba(0, 0, 0, 0.4);
+	margin: 20rpx 0;
+	text-align: center
+}
+
+.Statistic {
+	position: fixed;
+	top: 30rpx;
+	width: 100%;
+	height: 1150rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	text-align: center;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+.Statistic-item {
+	width: 680rpx;
+	height: 200rpx;
+	line-height: 200rpx;
+	color: white;
+	font-size: 50rpx;
+	border-radius: 10rpx;
+	box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+	background: rgba(0, 145, 235, 0.8)
+}
+
+.Statistic-fault {
+	width: 680rpx;
+	height: 412.5rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.Statistic-fault-line {
+	width: 100%;
+	height: 200rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.Statistic-fault-item {
+	width: 333.75rpx;
+	height: 200rpx;
+	line-height: 200rpx;
+	color: white;
+	font-size: 50rpx;
+	border-radius: 10rpx;
+	background: rgba(255, 92, 86, 0.8);
+	box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.Statistic-fault-forget {
+	background: rgba(26, 45, 39, 0.8);
+}
+
+.Statistic-back {
+	width: 680rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	color: white;
+	font-size: 40rpx;
+	border-radius: 10rpx;
+	background: rgba(153, 102, 204, 0.8);
+	box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.Statistic-Court {
+	position: fixed;
+	top: 50rpx;
+	width: 680rpx;
+	margin-left: 35rpx;
+	height: 750rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	text-align: center;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+.Statistic-Court-title {
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 35rpx;
+	border-radius: 0rpx;
+	background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));
+	-webkit-align-items: center;
+	align-items: center;
+	border: 1rpx solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+	width: 100%;
+	color: rgba(0, 0, 0, 0.9)
+}
+
+.Statistic-Court-line {
+	height: 250rpx;
+	width: 100%;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.Statistic-Court-item {
+	width: 200rpx;
+	height: 250rpx;
+	line-height: 250rpx;
+	font-size: 100rpx;
+	border-radius: 0rpx;
+	color: white;
+	background: rgba(241, 170, 166, 0.8);
+	box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.Statistic-Court-item-none {
+	background: rgba(96, 105, 104, 0.5);
+	font-size: 50rpx;
+}
+
+.TimeOut {
+	position: fixed;
+	top: 300rpx;
+	margin-left: 75rpx;
+	width: 600rpx;
+	height: 200rpx;
+	line-height: 200rpx;
+	border-radius: 10rpx;
+	text-align: center;
+	font-size: 80rpx;
+	color: black;
+	background: white;
+	box-shadow: 0rpx 10rpx 20rpx rgba(0, 0, 0, 0.1);
+}
+
+.TimeOutInfo {
+	width: 100%;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column
+}
+
+.TimeOutInfo-line {
+	width: 680rpx;
+	margin-left: 35rpx;
+	margin-bottom: 0rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	font-size: 30rpx;
+	color: black;
+	background: white;
+	border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: space-between;
+	justify-content: space-between
+}
+
+.SubInfo {
+	width: 100%;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column
+}
+
+.SubInfo-line {
+	width: 100%;
+	margin: 0rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	font-size: 30rpx;
+	color: black;
+	background: white;
+	border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: space-around;
+	justify-content: space-around
+}
+
+.SubInfo-line-left-name {
+	width: 360rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: left;
+	background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));
+	padding-left: 20rpx;
+}
+
+.SubInfo-line-left-count {
+	width: 120rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));
+}
+
+.SubInfo-line-name {
+	width: 310rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: center
+}
+
+.SubInfo-line-item {
+	width: 110rpx;
+	text-align: center
+}
+
+.SubInfo-line-num {
+	height: 50rpx;
+	width: 50rpx;
+	line-height: 50rpx;
+	border-radius: 50%;
+	background: linear-gradient(45deg,rgba(37,198,252,0.5),rgba(246, 214, 255, 0));
+	color: rgba(0, 0, 0, 0.8);
+	text-align: center
+}
+
+.SubInfo-line-num-down {
+	background: linear-gradient(45deg,rgba(255,83,77,0.5),rgba(246, 214, 255, 0));
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.SubInfo-line-icon {
+	width: 40rpx;
+	text-align: left
+}
+
+.confirm-btn {
+	position: fixed;
+	width: 150rpx;
+	height: 150rpx;
+	border-radius: 50%;
+	bottom: 20rpx;
+	left: 300rpx;
+	line-height: 150rpx;
+	text-align: center;
+	font-size: 80rpx;
+	background: #1A2D27;
+	color: rgba(255, 255, 255, 1);
+}
+
+.matchduration {
+	width: 750rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	text-align: center
+}
+
+.matchduration-line {
+	width: 100%;
+	height: 110rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: space-around;
+	justify-content: space-around
+}
+
+.matchduration-item {
+	width: 280rpx;
+	height: 90rpx;
+	line-height: 40rpx;
+	font-size: 30rpx;
+	color: rgba(0, 0, 0, 0.9);
+}
+
+.matchduration-item-name {
+	height: 40rpx;
+	line-height: 40rpx;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 28rpx;
+}
+
+.matchduration-item-detail {
+	height: 50rpx;
+	line-height: 50rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: space-around;
+	justify-content: space-around
+}
+
+.matchduration-item-detail-num {
+	width: 80rpx;
+	height: 45rpx;
+	line-height: 45rpx;
+	background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));
+	font-size: 26rpx;
+}
+
+.matchduration-item-detail-type {
+	width: 160rpx;
+	height: 45rpx;
+	line-height: 45rpx;
+	background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));
+	font-size: 26rpx;
+}
+
+.matchduration-Score {
+	width: 80rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	border-radius: 50%;
+	font-size: 30rpx;
+	color: rgba(0, 0, 0, 0.9);
+}
+
+.matchduration-win {
+	background: linear-gradient(0,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));
+	font-size: 30rpx;
+	color: rgba(0, 0, 0, 1)
+}
+
+.editScore {
+	position: fixed;
+	width: 500rpx;
+	left: 125rpx;
+	height: 400rpx;
+	top: 200rpx;
+}
+
+.edit-box {
+	font-size: 80rpx;
+	display: -webkit-flex;
+	display: flex;
+	width: 500rpx;
+	height: 300rpx;
+	margin-left: 0rpx;
+	line-height: 300rpx;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	background-color: whitesmoke;
+	border-radius: 20rpx;
+	margin-top: 10rpx;
+	margin-bottom: 30rpx;
+	text-align: center;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1)
+}
+
+.edit-confirm {
+	width: 500rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	border-radius: 20rpx;
+	margin-top: 10rpx;
+	margin-bottom: 30rpx;
+	text-align: center;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+	background-color: whitesmoke;
+	border: 2rpx solid rgba(0, 0, 0, 0.5)
+}
+
+.TeamAColor {
+	background: rgba(157, 211, 250,1);
+	color: rgba(255,255,255,1)
+}

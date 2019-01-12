@@ -1,27 +1,19 @@
 <view class="container">
-    <!--画布区域-->
     <view class="canvas_area" style="background:url('{{courtimage}}') no-repeat center;background-size: contain;">
-        <!--注意：同一页面中的 canvas-id 不可重复，如果使用一个已经出现过的 canvas-id，该 canvas 标签对应的画布将被隐藏并不再正常工作-->
-        <canvas canvas-id="myCanvas" class="myCanvas"
-            disable-scroll="false"
-            bindtouchstart="touchStart"
-            bindtouchmove="touchMove"
-            bindtouchend="touchEnd">
-        </canvas>
+        <canvas bindtouchend="touchEnd" bindtouchmove="touchMove" bindtouchstart="touchStart" canvasId="myCanvas" class="myCanvas" disableScroll="false"></canvas>
     </view>
-    <!--画布工具区域-->
     <view class="court_choose">
-      <view class="court volleyball" bindtap="volleycourt"></view>
-      <view class="court basketball" bindtap="basketballcourt"></view>
-      <view class="court football" bindtap="footballcourt"></view>
-      <view class="court blank" bindtap="blank"></view>
-      <view class="court refresh" bindtap="refresh"></view>
+        <view bindtap="volleycourt" class="court volleyball"></view>
+        <view bindtap="basketballcourt" class="court basketball"></view>
+        <view bindtap="footballcourt" class="court football"></view>
+        <view bindtap="blank" class="court blank"></view>
+        <view bindtap="refresh" class="court refresh"></view>
     </view>
     <view class="canvas_tools">
-        <view class="box box1" bindtap="penSelect" data-param="5"></view>
-        <view class="box box2" bindtap="penSelect" data-param="15"></view>
-        <view class="box box3" bindtap="colorSelect" data-param="#cc0033"></view>
-        <view class="box box4" bindtap="colorSelect" data-param="#ff9900"></view>
-        <view class="box box5" bindtap="clearCanvas"></view>
+        <view bindtap="penSelect" class="box box1" data-param="5"></view>
+        <view bindtap="penSelect" class="box box2" data-param="15"></view>
+        <view bindtap="colorSelect" class="box box3" data-param="#cc0033"></view>
+        <view bindtap="colorSelect" class="box box4" data-param="#ff9900"></view>
+        <view bindtap="clearCanvas" class="box box5"></view>
     </view>
 </view>

@@ -1,16 +1,23 @@
 {
-	"description": "项目配置文件。",
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
+	"libVersion": "2.5.0",
 	"appid": "wxe5579059094161f4",
-	"projectname": "volleyRecord",
+	"projectname": "%E8%B5%9B%E4%BA%8B%E7%AA%97%20%E6%8E%92%E7%90%83%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -21,168 +28,13 @@
 			"current": -1,
 			"list": []
 		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": 24,
-			"list": [
-				{
-					"id": -1,
-					"name": "比赛信息",
-					"pathName": "pages/VolleyballRecord/VolleyballRecord",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "比赛过程",
-					"pathName": "pages/DurationMatch/DurationMatch",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "结束比赛",
-					"pathName": "pages/EndMatch/EndMatch",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "记录",
-					"pathName": "pages/User/History/History",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "赛事中心",
-					"pathName": "pages/Statistic/Statistic",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "详细数据",
-					"pathName": "pages/Statistic/Result/Result",
-					"query": "matchid=44"
-				},
-				{
-					"id": -1,
-					"name": "比赛过程-一局",
-					"pathName": "pages/DurationMatchOne/DurationMatchOne",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "53",
-					"pathName": "pages/DurationMatchThree/DurationMatchwinThree",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "end53",
-					"pathName": "pages/EndMatch/EndMatchFive",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "篮球基本信息",
-					"pathName": "pages/BasketballRecord/BasketballRecord",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "篮球比赛过程",
-					"pathName": "pages/BasketballDurationMatch/BasketballDurationMatch",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "选择球队",
-					"pathName": "pages/VolleyballRecord/ChooseTeam/ChooseTeam",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "云数据",
-					"pathName": "pages/Data/Data",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "搜索结果",
-					"pathName": "pages/Data/search/searchresult/searchresult",
-					"query": "teamA=通信工程学院&teamB=机械工程学院&status=2"
-				},
-				{
-					"id": -1,
-					"name": "选择球队",
-					"pathName": "pages/TeamRecord/ChooseTeam/ChooseTeam",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "球队记录",
-					"pathName": "pages/TeamRecord/MatchProcess/MatchProcess",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "video",
-					"pathName": "pages/video/video",
-					"query": ""
-				},
-				{
-					"id": 17,
-					"name": "player",
-					"pathName": "pages/video/player/player",
-					"query": "title=浙江师范大学(男排)-浙江工业大学&link=d0776hicz36&qqvideo=1"
-				},
-				{
-					"id": 18,
-					"name": "videolist",
-					"pathName": "pages/video/videolist/videolist",
-					"query": "type=jj"
-				},
-				{
-					"id": -1,
-					"name": "搜索页",
-					"pathName": "pages/Data/search/search",
-					"query": "value=机械"
-				},
-				{
-					"id": -1,
-					"name": "云之教签到",
-					"pathName": "pages/User/Sign/Sign",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "签到查询",
-					"pathName": "pages/User/Sign/check/check",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "球场",
-					"pathName": "pages/Data/Court/Court",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "排行",
-					"pathName": "pages/Data/Rank/Rank",
-					"query": ""
-				},
-				{
-					"id": 24,
-					"name": "填写赛事信息",
-					"pathName": "pages/MatchRecord/MatchRecord",
-					"query": ""
-				}
-			]
+			"current": -1,
+			"list": []
 		}
 	}
 }

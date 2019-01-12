@@ -9,4 +9,12 @@
   padding: 0 0;
   box-sizing: border-box;
   font-family: "微软雅黑"
-} 
+}
+
+.text-title {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 55rpx;
+  margin: 75rpx 0 20rpx 0;
+  color: black;
+}

@@ -1,41 +1,34 @@
 <view class="container">
-  <image wx:if="{{qqvideo == 0}}" class="player" src='../../../images/video.jpg' mode='aspectFill' bindtap='BindVideo'></image>
-  <video wx:if="{{qqvideo == 1}}" class="player-true" id="myVideo" objectFit="cover" autoplay="" bindended="playEnd" src="{{videUrl}}">	</video>
-  <view class="title">{{title}} <text style='font-size:35rpx;color:rgba(0,0,0,0.85)'>
-  {{group}}</text></view>
+    <image bindtap="BindVideo" class="player" mode="aspectFill" src="../../../images/video.jpg" wx:if="{{qqvideo==0}}"></image>
+    <video autoplay="" bindended="playEnd" class="player-true" id="myVideo" objectFit="cover" src="{{videUrl}}" wx:if="{{qqvideo==1}}"></video>
+    <view class="video-bar">
+        <view bindtap="back" class="video-bar-back">
+            <image class="video-bar-back-icon" src="../../../images/video/exit.png"></image>
+        </view>
+        <view class="player-title">
+      {{title}} 
+      <text style="font-size:35rpx;color:rgba(0,0,0,0.85)">{{group}}</text>
+        </view>
+    </view>
 </view>
-
-  <view wx:if="{{qqvideo == 1}}" class="copy-like" bindtap='BindCopyLink'>
-    <image class="copy-link-icon" src='../../../images/Internet.png'></image>
-    <view class="copy-link-text">在浏览器中播放</view>
-  </view>
-<!--view class="comment-title">
-    <image class="title-icon" src='../../../images/list.png'></image>
-    <view class="title-name">用户评论</view>
+<view bindtap="BindCopyLink" class="video-card" wx:if="{{qqvideo==1}}">
+    <image class="video-card-icon" src="../../../images/video/Internet.png"></image>
+    <view class="video-card-text">在浏览器中播放</view>
 </view>
-<view class="comment-list">暂无评论</view-->
-
-<view class="bottom-bar">
-  <image class="bottom-bar-item" src="../../../images/exit.png" bindtap='back'></image>
-  <!--view class="input-box">快来和小伙伴讨论吧~</view-->
-  <image class="bottom-bar-item" src="../../../images/star.png"></image>
-  <image class="bottom-bar-item" src="../../../images/Share.png"></image>
-  <view class="bottom-bar-share">
-      <button open-type='share' plain='true' class="share" style='border:none'></button>
-  </view>
-  <image class="bottom-bar-item" src="../../../images/gift.png" bindtap='BindFav'></image>
+<view bindtap="BindGift" class="video-card">
+    <image class="video-card-icon" src="../../../images/video/gift.png"></image>
+    <view class="video-card-text">打赏作者</view>
 </view>
-
-<!--view class="bottom-comment-box" hidden='{{input}}'>
-  <view class="bottom-input-area">
-    <textarea style='width:95%;height:170rpx;'></textarea>
-  </view>
-  <view class="bottom-input-bar">
-    <view class="input-cancel" bindtap='BindCancel'>取消</view>
-    <view class="input-submit">发表</view>
-  </view>
-</view-->
-
-<view class="cover" hidden='{{player_tip}}'></view>
-<image class="tip" hidden='{{player_tip}}' src='http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/video/player/link.png'></image>
-<image src='../../../images/close.png' class="close" hidden='{{player_tip}}' bindtap='close'/>
+<view bindtap="BindFavor" class="video-card" wx:if="{{!favorFlag}}">
+    <image class="video-card-icon" src="../../../images/video/star.png"></image>
+    <view class="video-card-text">收藏视频</view>
+</view>
+<view bindtap="BindFavor_cancle" class="video-card" wx:if="{{favorFlag}}">
+    <image class="video-card-icon" src="../../../images/video/star-on.png"></image>
+    <view class="video-card-text" style="color:rgba(0,0,0,0.5)">取消收藏</view>
+</view>
+<view bindtap="" class="video-card">
+    <image class="video-card-icon" src="../../../images/video/share.png"></image>
+    <view class="video-card-text">分享视频</view>
+</view>
+<button class="share" openType="share" plain="true" style="border:none"></button>

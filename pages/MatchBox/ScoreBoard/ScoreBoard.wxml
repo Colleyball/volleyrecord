@@ -1,42 +1,39 @@
 <view class="contain">
-  <view class="score">
-    <view class="teamname">
-      <view class="teamA"> 
-        <input placeholder-style="color:gray" bindinput="getA" placeholder="请输入队伍名称" value="{{Aname}}" maxlength="10" name="nameA" style="height: 70rpx;line-height: 70rpx"/>
-      </view>
-      <view class="vs">Vs</view>
-      <view class="teamB">
-        <input placeholder-style="color:gray" bindinput="getB" placeholder="请输入队伍名称" value="{{Bname}}" maxlength="10" name="nameB" style="height: 70rpx;line-height: 70rpx" />
-      </view>
+    <view class="score">
+        <view class="teamname">
+            <view class="teamA">
+                <input bindinput="getA" maxlength="10" name="nameA" placeholder="请输入队伍名称" placeholderStyle="color:gray" style="height: 70rpx;line-height: 70rpx" value="{{Aname}}"></input>
+            </view>
+            <view class="vs">Vs</view>
+            <view class="teamB">
+                <input bindinput="getB" maxlength="10" name="nameB" placeholder="请输入队伍名称" placeholderStyle="color:gray" style="height: 70rpx;line-height: 70rpx" value="{{Bname}}"></input>
+            </view>
+        </view>
+        <view class="teamscore">
+            <view class="scoreA">{{Ascore}}
+        <view animation="{{animationA}}" class="tips">{{tip_score}}</view>
+            </view>
+            <view class="scoreB">{{Bscore}}
+        <view animation="{{animationB}}" class="tips">{{tip_score}}</view>
+            </view>
+        </view>
     </view>
-    <view class='teamscore'>
-      <view class="scoreA">{{Ascore}}
-        <view class="tips" animation="{{animationA}}">{{tip_score}}</view>
-      </view>
-      <view class="scoreB">{{Bscore}}
-        <view class="tips" animation="{{animationB}}">{{tip_score}}</view>
-      </view>
+    <view class="control">
+        <view class="addscore">
+            <view bindtap="addscoreA" class="add" data-score="1">+1</view>
+            <view bindtap="addscoreB" class="add" data-score="1">+1</view>
+        </view>
+        <view class="addscore">
+            <view bindtap="addscoreA" class="add" data-score="2">+2</view>
+            <view bindtap="addscoreB" class="add" data-score="2">+2</view>
+        </view>
+        <view class="addscore">
+            <view bindtap="addscoreA" class="add" data-score="3">+3</view>
+            <view bindtap="addscoreB" class="add" data-score="3">+3</view>
+        </view>
+        <view class="reducescore">
+            <view bindtap="reducescoreA" class="reduce">—</view>
+            <view bindtap="reducescoreB" class="reduce">—</view>
+        </view>
     </view>
-  </view>
-  <view class="control">
-    <view class="addscore">
-      <view class="add" bindtap='addscoreA' data-score='1'>+1</view>
-      <view class="add" bindtap='addscoreB' data-score='1'>+1</view>
-    </view>
-    <view class="addscore">
-      <view class="add" bindtap='addscoreA' data-score='2'>+2</view>
-      <view class="add" bindtap='addscoreB' data-score='2'>+2</view>
-    </view>
-    <view class="addscore">
-      <view class="add" bindtap='addscoreA' data-score='3'>+3</view>
-      <view class="add" bindtap='addscoreB' data-score='3'>+3</view>
-    </view>
-    <view class="reducescore">
-      <view class="reduce" bindtap='reducescoreA'>—</view>
-      <view class="reduce" bindtap='reducescoreB'>—</view>
-    </view>
-  </view>
-  <!--view class="history">
-    记录
-  </view-->
 </view>

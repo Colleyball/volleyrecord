@@ -1,38 +1,33 @@
 <view class="container">
-<block wx:for="{{matchinfo}}" wx:key="{{index}}">
-  <view bindtap='BindMatchInfo' data-matchid='{{item.matchdetail.matchid}}'>
-  <view class="tablename">{{item.matchdetail.matchname}}</view>
-  <view class="Setinfo">
-    <view class="Setinfo-teamA">
-      <view class="Setinfo-teamA-name">{{item.matchdetail.teamAname}}</view>
-      <view class="Setinfo-teamA-set">{{item.matchdetail.Amatch}}</view>
-    </view>
-    <view class="score">
+    <view bindtap="BindMatchInfo" data-matchid="{{item.matchdetail.matchid}}" data-type="{{item.type}}" wx:for="{{matchinfo}}" wx:key="{{index}}">
+        <view class="tablename">{{item.matchdetail.matchname}}</view>
+        <view class="Setinfo">
+            <view class="Setinfo-teamA">
+                <view class="Setinfo-teamA-name">{{item.matchdetail.teamAname}}</view>
+                <view class="Setinfo-teamA-set">{{item.matchdetail.Amatch}}</view>
+            </view>
+            <view class="score">
       {{item.matchdetail.Aset1}}:{{item.matchdetail.Bset1}}
-      <block wx:if="{{item.matchdetail.Aset2 != 0}}">
+      <block wx:if="{{item.matchdetail.Aset2!=0}}">
         {{item.matchdetail.Aset2}}:{{item.matchdetail.Bset2}}
       </block>
-      <block wx:if="{{item.matchdetail.Aset3 != 0}}">
+                <block wx:if="{{item.matchdetail.Aset3!=0}}">
         {{item.matchdetail.Aset3}}:{{item.matchdetail.Bset3}}
       </block>
-      <block wx:if="{{item.matchdetail.Aset4}}">
+                <block wx:if="{{item.matchdetail.Aset4}}">
       {{item.matchdetail.Aset4}}:{{item.matchdetail.Bset4}}
       </block>
-      <block wx:if="{{item.matchdetail.Aset5}}">
+                <block wx:if="{{item.matchdetail.Aset5}}">
       {{item.matchdetail.Aset5}}:{{item.matchdetail.Bset5}}
       </block>
+            </view>
+            <view class="Setinfo-teamB">
+                <view class="Setinfo-teamB-set">{{item.matchdetail.Bmatch}}</view>
+                <view class="Setinfo-teamB-name">{{item.matchdetail.teamBname}}</view>
+            </view>
+        </view>
     </view>
-    <view class="Setinfo-teamB">
-      <view class="Setinfo-teamB-set">{{item.matchdetail.Bmatch}}</view>
-      <view class="Setinfo-teamB-name">{{item.matchdetail.teamBname}}</view>
-    </view>
-  </view>
-  </view>
-</block>
 </view>
-
-<block wx:if="{{!matchinfo[0]}}">
-  <view class="no-data">
+<view class="no-data" wx:if="{{!matchinfo[0]}}">
     暂无数据
   </view>
-</block>

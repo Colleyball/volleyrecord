@@ -1,85 +1,33 @@
-// pages/find/winrank/winrank.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    resultlist: []
-  },
-  BindTeam: function(e) {
-    wx.navigateTo({
-      url: '../search/searchresult/searchresult?teamA=' + e.currentTarget.dataset.team + '&teamB=undefined&status=1',
-    })
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    var that = this
-    wx.request({
-      url: 'https://volleywang.cn/index.php/api/search/winrank',
-      header: {
-        "content-type": "application/json;charset=utf8"
-      },
-      method: "GET",
-      data: {},
-      success: function (res) {
-        console.log(res.data)
-        that.setData({
-          resultlist: res.data.data,
-        })
-      }
-    })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+    data: {
+        resultlist: []
+    },
+    BindTeam: function(t) {
+        wx.navigateTo({
+            url: "../search/searchresult/searchresult?teamA=" + t.currentTarget.dataset.team + "&teamB=undefined&status=1"
+        });
+    },
+    onLoad: function(t) {
+        var n = this;
+        wx.request({
+            url: "https://volleywang.cn/index.php/api/search/winrank",
+            header: {
+                "content-type": "application/json;charset=utf8"
+            },
+            method: "GET",
+            data: {},
+            success: function(t) {
+                console.log(t.data), n.setData({
+                    resultlist: t.data.data
+                });
+            }
+        });
+    },
+    onReady: function() {},
+    onShow: function() {},
+    onHide: function() {},
+    onUnload: function() {},
+    onPullDownRefresh: function() {},
+    onReachBottom: function() {},
+    onShareAppMessage: function() {}
+});

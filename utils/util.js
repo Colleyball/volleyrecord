@@ -1,57 +1,33 @@
-function formatTime(date) {
-  var year = date.getFullYear()
-  var month = date.getMonth() + 1
-  var day = date.getDate()
-
-  var hour = date.getHours()
-  var minute = date.getMinutes()
-  var second = date.getSeconds()
-
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
-
-function formatNumber(n) {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
-
-function isEmptyObject(e) {
-  var t;
-  for (t in e)
-    return !1;
-  return !0
-}
-
-function gettime(){
-  var myDate = new Date();
-  return myDate.toLocaleString();
-}
-
-function setpublicinfo(uid,userInfo){
-  wx.request({
-    url: 'https://volleywang.cn/index.php/toto/setpublicinfo',
-    header: {
-      "content-type": "application/json;charset=utf8"
-    },
-    method: "GET",
-    data: {
-      uid: uid,
-      nickname: userInfo.nickName,
-      province: userInfo.province,
-      city: userInfo.city,
-      gender: userInfo.gender,
-      pic: userInfo.avatarUrl
-    },
-    success: function (res) {
-      console.log(res.data);
-    }
-  })
+function t(t) {
+    return (t = t.toString())[1] ? t : "0" + t;
 }
 
 module.exports = {
-  gettime: gettime,
-  formatTime: formatTime,
-  setpublicinfo: setpublicinfo
-}
-
+    gettime: function() {
+        return new Date().toLocaleString();
+    },
+    formatTime: function(e) {
+        var n = e.getFullYear(), o = e.getMonth() + 1, i = e.getDate(), c = e.getHours(), r = e.getMinutes(), a = e.getSeconds();
+        return [ n, o, i ].map(t).join("/") + " " + [ c, r, a ].map(t).join(":");
+    },
+    setpublicinfo: function(t, e) {
+        wx.request({
+            url: "https://volleywang.cn/index.php/toto/setpublicinfo",
+            header: {
+                "content-type": "application/json;charset=utf8"
+            },
+            method: "GET",
+            data: {
+                uid: t,
+                nickname: e.nickName,
+                province: e.province,
+                city: e.city,
+                gender: e.gender,
+                pic: e.avatarUrl
+            },
+            success: function(t) {
+                console.log(t.data);
+            }
+        });
+    }
+};

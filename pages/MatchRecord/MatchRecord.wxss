@@ -1,313 +1,370 @@
 .swiper-tab {
-  width: 100%;
-  text-align: center;
-  line-height: 40px;
-  background-color: #fff;
-  box-shadow: 0rpx 10rpx 20rpx rgba(0, 0, 0, 0.1);
-  margin-bottom: 15rpx;
+	width: 100%;
+	height: 120rpx;
+	text-align: left;
+	line-height: 50rpx;
+	position: fixed;
+	top: 0;
+	z-index: 20;
+	background: linear-gradient(0,rgba(255,255,255,0.1),rgba(31, 174, 221,0.2));
+	border-bottom: 0rpx solid rgba(0, 0, 0, 0.1)
 }
 
 .swiper-tab-list {
-  font-size: 30rpx;
-  display: inline-block;
-  width: 25%;
-  color: #777;
-  margin-bottom: 10rpx;
+	line-height: 120rpx;
+	font-size: 40rpx;
+	display: inline-block;
+	width: auto;
+	color: rgba(0, 0, 0, 0.4);
+	padding-left: 35rpx;
 }
 
 .on {
-  color: #000;
-  font-size: 30rpx;
-  border-bottom:5rpx solid #000;
+	color: rgba(0, 0, 0, 0.95);
+	font-size: 70rpx;
+	font-weight: bold;
 }
 
 .swiper-box {
-  display: block;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  padding-top: 20rpx;
+	display: block;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	padding-top: 0rpx;
 }
 
-.swiper-box view {
-  text-align: center;
+.swiper-box wx-view {
 }
 
-.ChooseTeam{
-  width:680rpx;
-  height:170rpx;
-  margin-left: 35rpx;
-  line-height: 170rpx;
-  background: linear-gradient(45deg,rgba(37,198,252,1),rgba(246, 214, 255, 0));
-  border-radius: 20rpx;
-  margin-top: 10rpx;
-  margin-bottom: 30rpx;
-  text-align: center;
-  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
-  font-size: 45rpx;
-  font-weight: bolder;
-  color: rgba(255, 255, 255, 0.9)
+.list {
+	width: 680rpx;
+	margin: 150rpx 0 0 35rpx;
 }
 
-.tablename{
-  border-bottom: 2px solid whitesmoke;
-  width:680rpx;
-  height: 50rpx;
-  line-height: 50rpx;
-  margin:0 auto 15rpx auto;
-  text-align: center;
-  font-size: 30rpx;
+.ChooseTeam {
+	width: 680rpx;
+	height: 120rpx;
+	line-height: 120rpx;
+	background: linear-gradient(45deg,rgba(37,198,252,1),rgba(246, 214, 255, 0));
+	border-radius: 0rpx;
+	margin: 10rpx 0 0 0;
+	text-align: center;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
+	font-size: 45rpx;
+	font-weight: bolder;
+	color: rgba(255, 255, 255, 0.9)
 }
 
-.inputView{
-  font-size: 40rpx;
-  display: flex;
-  width:680rpx;
-  height:80rpx;
-  margin-left: 35rpx;
-  line-height: 80rpx;
-  flex-direction: row;
-  background-color: whitesmoke;
-  border-radius: 20rpx;
-  margin-top: 10rpx;
-  margin-bottom: 30rpx;
-  text-align: center;
-  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1)
+.inputView {
+	font-size: 40rpx;
+	display: -webkit-flex;
+	display: flex;
+	width: 680rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	background-color: whitesmoke;
+	border-radius: 0rpx;
+	margin: 0 0 30rpx 0;
+	text-align: center;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0)
 }
 
-.playerlist{
-  margin-left: 35rpx;
-  width: 680rpx;
-  height: 600rpx;
-  display: flex;
-  flex-direction: column;
+.player-box {
+	width: 680rpx;
+	height: auto;
+	display: inline-block;
+	margin: 0;
+}
+
+.player-box-item {
+	width: 90rpx;
+	height: 90rpx;
+	line-height: 90rpx;
+	color: rgba(0, 0, 0, 0.9);
+	border-radius: 50%;
+	margin: 10rpx 11.6rpx 0 11.6rpx;
+	background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));
+	float: left;
+	font-size: 35rpx;
+	text-align: center
+}
+
+.player-box-del {
+	width: 680rpx;
+	text-align: center;
+	height: 30rpx;
+	line-height: 30rpx;
+	font-size: 30rpx;
+	color: rgba(0, 0, 0, 0.4)
+}
+
+.playerlist {
+	margin-left: 0;
+	width: 680rpx;
+	height: 600rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
 }
 
 .playerlist-line {
-  margin-top: 30rpx;
-  height: 70rpx;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+	margin-top: 30rpx;
+	height: 70rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
 }
 
 .playerlist-player {
-  width: 90rpx;
-  height: 70rpx;
-  line-height: 70rpx;
-  background: whitesmoke;
-  text-align: center;
-  border-radius: 5rpx;
-  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1)
+	width: 90rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	background: whitesmoke;
+	text-align: center;
+	border-radius: 0rpx;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
+	font-size: 35rpx;
+	color: rgba(0, 0, 0, 0.9);
 }
 
 .playerchoose {
-  background: #25C6FC;
-  color: white
+	background: #25C6FC;
+	color: white
 }
 
-.lasttwo-line {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.last-two-line {
+	width: 100%;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
 }
 
-.lasttwo-line-left {
-
+.last-two-line-left {
 }
 
-.lasttwo-line-left-playerlist {
-  width: 444rpx;
-  margin-top: 30rpx;
-  height: 70rpx;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.last-two-line-left-playerlist {
+	width: 444rpx;
+	margin-top: 30rpx;
+	height: 70rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
 }
 
-.lasttwo-line-right {
-  width: 208rpx;
-  height: 170rpx;
-  line-height: 170rpx;
-  margin-top: 30rpx;
-  background: linear-gradient(45deg,rgba(255,83,77,0.8),rgba(246, 214, 255, 0));
-  border-radius: 20rpx;
-  text-align: center;
-  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
-  font-size: 85rpx;
-  font-weight: bolder;
-  color: rgba(255, 255, 255, 0.9)
+.last-two-line-right {
+	width: 208rpx;
+	height: 170rpx;
+	line-height: 170rpx;
+	margin-top: 30rpx;
+	background: linear-gradient(45deg,rgba(255,83,77,0.8),rgba(246, 214, 255, 0));
+	border-radius: 0%;
+	text-align: center;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
+	font-size: 85rpx;
+	font-weight: bolder;
+	color: rgba(255, 255, 255, 0.9)
 }
 
 .coin {
-  height: 100rpx;
-  line-height: 100rpx;
-  width:680rpx;
-  margin-left: 35rpx;
-  border-radius: 5rpx;
-  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
-  background: #323341;
-  margin-bottom: 30rpx;
-  color: white;
-  font-size: 35rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	width: 680rpx;
+	border-radius: 5rpx;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
+	background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));
+	margin: 0;
+	color: rgba(0, 0, 0, 0.9);
+	font-size: 35rpx;
+	text-align: center
 }
 
 .ChooseServe {
-  height: 200rpx;
-  width:680rpx;
-  margin-left: 35rpx;
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  justify-content: space-between;
-  font-size: 40rpx;
-  color: white;
-  margin-bottom: 30rpx;
+	height: 120rpx;
+	width: 680rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	text-align: center;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	font-size: 40rpx;
+	color: white;
+	margin: 0
 }
 
 .ChooseServe-TeamA {
-  height: 200rpx;
-  line-height: 200rpx;
-  width: 320rpx;
-  border-radius: 5rpx;
-  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
-  background: #FF534D;
-  white-space:nowrap; 
-  text-overflow:ellipsis; 
-  -o-text-overflow:ellipsis; 
-  overflow:hidden;
+	height: 120rpx;
+	line-height: 120rpx;
+	width: 320rpx;
+	border-radius: 0rpx;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
+	background: linear-gradient(45deg,rgba(255,83,77,0.8),rgba(246, 214, 255, 0));
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .ChooseServe-TeamB {
-  height: 200rpx;
-  line-height: 200rpx;
-  width: 320rpx;
-  border-radius: 5rpx;
-  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
-  background: #25C6FC;
-  white-space:nowrap; 
-  text-overflow:ellipsis; 
-  -o-text-overflow:ellipsis; 
-  overflow:hidden;
+	height: 120rpx;
+	line-height: 120rpx;
+	width: 320rpx;
+	border-radius: 0rpx;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
+	background: linear-gradient(45deg,rgba(37,198,252,1),rgba(246, 214, 255, 0));
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .volleyball-court {
-  width:680rpx;
-  margin-left: 35rpx;
-  height: 473rpx;
-  border-radius: 5rpx;
+	width: 680rpx;
+	height: 473rpx;
+	border: 0rpx;
+	margin: 0
 }
 
 .volleyball-court-left {
-  width: 320rpx;
-  margin-left: 55rpx;
-  height: 440rpx;
-  margin-top: -473rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-size: 40rpx;
-  color: white
+	width: 340rpx;
+	height: 473rpx;
+	margin-top: -473rpx;
+	border: 0;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: space-around;
+	justify-content: space-around;
+	-webkit-align-items: center;
+	align-items: center;
+	font-size: 40rpx;
+	color: white;
+	text-align: center
 }
 
 .volleyball-court-left-TeamA {
-  width: 90%;
-  height: 200rpx;
-  line-height: 200rpx;
-  border-radius: 5rpx;
-  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
-  background: #FF534D;
-  white-space:nowrap; 
-  text-overflow:ellipsis; 
-  -o-text-overflow:ellipsis; 
-  overflow:hidden;
+	width: 90%;
+	height: 120rpx;
+	line-height: 120rpx;
+	border-radius: 0rpx;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
+	background: linear-gradient(45deg,rgba(255,83,77,0.8),rgba(246, 214, 255, 0));
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .volleyball-court-left-TeamB {
-  width: 90%;
-  height: 200rpx;
-  line-height: 200rpx;
-  border-radius: 5rpx;
-  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
-  background: #25C6FC;
-  white-space:nowrap; 
-  text-overflow:ellipsis; 
-  -o-text-overflow:ellipsis; 
-  overflow:hidden;
+	width: 90%;
+	height: 120rpx;
+	line-height: 120rpx;
+	border-radius: 0rpx;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
+	background: linear-gradient(45deg,rgba(37,198,252,1),rgba(246, 214, 255, 0));
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .ServeChoosed {
-  background: #323341;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.confirm-btn-background {
+	position: fixed;
+	left: 35rpx;
+	bottom: 0;
+	width: 680rpx;
+	height: 100rpx;
+	background: rgba(255, 255, 255, 0.9);
+	z-index: 10;
 }
 
 .confirm-btn {
-  position: fixed;
-  width: 150rpx;
-  height: 150rpx;
-  border-radius: 50%;
-  bottom: 20rpx;
-  left: 300rpx;
-  background: whitesmoke;
-  line-height: 150rpx;
-  text-align: center;
-  font-size: 80rpx;
-  color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1)
+	position: fixed;
+	width: 100%;
+	height: 100rpx;
+	left: 0;
+	bottom: 0;
+	background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));
+	line-height: 100rpx;
+	text-align: center;
+	font-size: 50rpx;
+	color: rgba(0, 0, 0, 0.2);
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
+	z-index: 11;
 }
 
 .confirm-btn-yes {
-  background: #25C6FC;
-  color: rgba(0, 0, 0, 0.8 );
+	background: #25C6FC;
+	color: rgba(0, 0, 0, 0.8 );
 }
 
-.cover{
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0px;
-  background:rgba(255,255,255,0.8);
-  overflow: hidden;
+.cover {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	background: rgba(255,255,255,0.9);
+	overflow: hidden;
 }
 
-.editScore {
-  position: fixed;
-  width: 500rpx;
-  left: 125rpx;
-  height: 400rpx;
-  top:200rpx;
+.add-player {
+	position: fixed;
+	width: 500rpx;
+	left: 125rpx;
+	height: 400rpx;
+	top: 200rpx;
 }
 
 .edit-box {
-  font-size: 80rpx;
-  display: flex;
-  width:500rpx;
-  height:300rpx;
-  margin-left: 0rpx;
-  line-height: 300rpx;
-  flex-direction: row;
-  background-color: whitesmoke;
-  border-radius: 20rpx;
-  margin-top: 10rpx;
-  margin-bottom: 30rpx;
-  text-align: center;
-  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1)
+	font-size: 80rpx;
+	display: -webkit-flex;
+	display: flex;
+	width: 500rpx;
+	height: 300rpx;
+	margin-left: 0rpx;
+	line-height: 300rpx;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	background-color: whitesmoke;
+	border-radius: 20rpx;
+	margin-top: 10rpx;
+	margin-bottom: 30rpx;
+	text-align: center;
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1)
 }
 
 .edit-confirm {
-  width: 500rpx;
-  height: 100rpx;
-  line-height: 100rpx;
-  border-radius: 20rpx;
-  margin-top: 10rpx;
-  margin-bottom: 30rpx;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
-  background: linear-gradient(45deg,rgba(255,83,77,0.8),rgba(246, 214, 255, 0));
-  border:0rpx solid rgba(240, 128, 128, 0.2)
+	width: 500rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	border-radius: 20rpx;
+	margin-top: 10rpx;
+	margin-bottom: 30rpx;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.9);
+	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+	background: linear-gradient(45deg,rgba(255,83,77,0.8),rgba(246, 214, 255, 0));
+	border: 0rpx solid rgba(240, 128, 128, 0.2)
 }
 
 .edit-close {
-  background: linear-gradient(45deg,rgba(37,198,252,1),rgba(246, 214, 255, 0));
+	background: linear-gradient(45deg,rgba(37,198,252,1),rgba(246, 214, 255, 0));
 }

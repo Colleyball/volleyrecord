@@ -1,0 +1,450 @@
+<view class="container" wx:if="{{Side==0}}">
+    <view class="topbar">
+        <view class="TeamAName">{{MatchInfo[1]}}</view>
+        <view class="TeamBName">{{MatchInfo[2]}}</view>
+    </view>
+    <view class="Score">
+        <view bindlongpress="EditAScore" bindtap="AddTeamAScore" class="TeamAScore TeamAColor">{{CurrentScore[0]}}</view>
+        <view class="Setinfo">
+            <view class="Set">
+                <view class="TeamASet">{{TotalScore[0]}}</view>
+                <view class="TeamBSet">{{TotalScore[1]}}</view>
+            </view>
+            <view class="ball">
+                <view bindtap="ChangeServe" class="winball" wx:if="{{LastScore==0}}">
+                    <image class="ball-pic" mode="aspectFit" src="../../../../images/ic_volley_ball_dark.png"></image>
+                </view>
+                <view bindtap="ChangeServe" class="winball" style="margin-left:90rpx" wx:if="{{LastScore==1}}">
+                    <image class="ball-pic" mode="aspectFit" src="../../../../images/ic_volley_ball_dark.png"></image>
+                </view>
+            </view>
+        </view>
+        <view bindlongpress="EditBScore" bindtap="AddTeamBScore" class="TeamBScore">{{CurrentScore[1]}}</view>
+    </view>
+    <view class="tool">
+        <view bindtap="TimeOut" class="tool-item TeamAColor" data-team="0">
+            <image class="tool-pic" mode="aspectFit" src="../../../../images/ic_timeout_tab.png"></image>
+        </view>
+        <view bindtap="ChangeTeamAPosition" class="tool-item TeamAColor">
+            <image class="tool-pic" mode="aspectFit" src="../../../../images/refresh-light.png"></image>
+        </view>
+        <view class="tool-item">
+            <image bindtap="ChangeSide" class="tool-pic" mode="aspectFit" src="../../../../images/ic_swap.png"></image>
+        </view>
+        <view bindtap="ChangeTeamBPosition" class="tool-item">
+            <image class="tool-pic" mode="aspectFit" src="../../../../images/refresh.png"></image>
+        </view>
+        <view bindtap="TimeOut" class="tool-item" data-team="1">
+            <image class="tool-pic" mode="aspectFit" src="../../../../images/ic_timeout_tab_dark.png"></image>
+        </view>
+    </view>
+</view>
+<view class="title" wx:if="{{Side==0}}">比赛信息
+</view>
+<view class="swiper-tab" wx:if="{{Side==0}}">
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==0?'on':''}}" data-current="0">站位</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==1?'on':''}}" data-current="1">进程</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==2?'on':''}}" data-current="2">换人</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==3?'on':''}}" data-current="3">暂停</view>
+</view>
+<view class="swiper-tab-temp" wx:if="{{Side==0}}"></view>
+<view wx:if="{{Side==0}}">
+    <swiper bindchange="bindChange" class="swiper-box" current="{{currentTab}}" style="height:{{SwiperHeight}}rpx">
+        <swiper-item>
+            <view class="volleyball-court-position">
+                <view class="line">
+                    <view bindtap="ChooseTeamAPlayer" class="player TeamAColor" data-position="5">{{TeamACourtPlayer[5]}}
+            </view>
+                    <view bindtap="ChooseTeamAPlayer" class="player TeamAColor" data-position="4">{{TeamACourtPlayer[4]}}
+            </view>
+                    <view bindtap="ChooseTeamBPlayer" class="player" data-position="2">{{TeamBCourtPlayer[2]}}
+            </view>
+                    <view bindtap="ChooseTeamBPlayer" class="player" data-position="1">{{TeamBCourtPlayer[1]}}
+            </view>
+                </view>
+                <view class="line">
+                    <view bindtap="ChooseTeamAPlayer" class="player TeamAColor" data-position="6">{{TeamACourtPlayer[6]}}
+            </view>
+                    <view bindtap="ChooseTeamAPlayer" class="player TeamAColor" data-position="3">{{TeamACourtPlayer[3]}}
+            </view>
+                    <view bindtap="ChooseTeamBPlayer" class="player" data-position="3">{{TeamBCourtPlayer[3]}}
+            </view>
+                    <view bindtap="ChooseTeamBPlayer" class="player" data-position="6">{{TeamBCourtPlayer[6]}}
+            </view>
+                </view>
+                <view class="line">
+                    <view bindtap="ChooseTeamAPlayer" class="player TeamAColor" data-position="1">{{TeamACourtPlayer[1]}}
+            </view>
+                    <view bindtap="ChooseTeamAPlayer" class="player TeamAColor" data-position="2">{{TeamACourtPlayer[2]}}
+            </view>
+                    <view bindtap="ChooseTeamBPlayer" class="player" data-position="4">{{TeamBCourtPlayer[4]}}
+            </view>
+                    <view bindtap="ChooseTeamBPlayer" class="player" data-position="5">{{TeamBCourtPlayer[5]}}
+            </view>
+                </view>
+            </view>
+            <view class="volleyball-court-position-tip">点击上方的第2/4个图标可以调整轮转双方站位</view>
+        </swiper-item>
+        <swiper-item>
+            <view class="matchduration">
+                <view class="matchduration-line" wx:for="{{MatchDuration}}" wx:key="{{index}}">
+                    <view class="matchduration-item" wx:if="{{item[3]==0}}">
+                        <view class="matchduration-item-name">
+                            <block wx:if="{{item[6]==0}}">{{MatchInfo[1]}}</block>
+                            <block wx:if="{{item[6]==1}}">{{MatchInfo[2]}}</block>
+                        </view>
+                        <view class="matchduration-item-detail">
+                            <view class="matchduration-item-detail-num">{{item[5]}}号</view>
+                            <view class="matchduration-item-detail-type"> {{item[4]}}</view>
+                        </view>
+                    </view>
+                    <view class="matchduration-item" wx:if="{{item[3]!=0}}"></view>
+                    <view class="matchduration-Score {{item[3]==0?'matchduration-win':''}}">{{item[1]}}</view>
+                    <view class="matchduration-Score {{item[3]==1?'matchduration-win':''}}">{{item[2]}}</view>
+                    <view class="matchduration-item" wx:if="{{item[3]!=0}}">
+                        <view class="matchduration-item-name">
+                            <block wx:if="{{item[6]==0}}">{{MatchInfo[2]}}</block>
+                            <block wx:if="{{item[6]==1}}">{{MatchInfo[1]}}</block>
+                        </view>
+                        <view class="matchduration-item-detail">
+                            <view class="matchduration-item-detail-num">{{item[5]}}号</view>
+                            <view class="matchduration-item-detail-type"> {{item[4]}}</view>
+                        </view>
+                    </view>
+                    <view class="matchduration-item" wx:if="{{item[3]!=1}}"></view>
+                </view>
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="SubInfo">
+                <view class="SubInfo-line">
+                    <view class="SubInfo-line-left-name">{{MatchInfo[1]}}</view>
+                    <view class="SubInfo-line-left-count">剩余{{TeamACurrentSetSub}}</view>
+                </view>
+                <view class="SubInfo-line">
+                    <view class="SubInfo-line-left-name">{{MatchInfo[2]}}</view>
+                    <view class="SubInfo-line-left-count">剩余{{TeamBCurrentSetSub}}</view>
+                </view>
+                <view class="SubInfo-line" wx:for="{{SubInfo}}" wx:key="{{index}}">
+                    <view class="SubInfo-line-name">
+                        <block wx:if="{{item[1]==0}}">{{MatchInfo[1]}}</block>
+                        <block wx:if="{{item[1]==1}}">{{MatchInfo[2]}}</block>
+                    </view>
+                    <view class="SubInfo-line-item">第{{item[0]+1}}局</view>
+                    <view class="SubInfo-line-item">{{item[4]}}:{{item[5]}}</view>
+                    <view class="SubInfo-line-num SubInfo-line-num-down">{{item[6]}}</view>
+                    <view class="SubInfo-line-icon">↓</view>
+                    <view class="SubInfo-line-num">{{item[7]}}</view>
+                    <view class="SubInfo-line-icon">↑</view>
+                </view>
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="TimeOutInfo">
+                <view class="SubInfo-line">
+                    <view class="SubInfo-line-left-name">{{MatchInfo[1]}}</view>
+                    <view class="SubInfo-line-left-count">剩余{{TeamACurrentSetTimeOut}}</view>
+                </view>
+                <view class="SubInfo-line">
+                    <view class="SubInfo-line-left-name">{{MatchInfo[2]}}</view>
+                    <view class="SubInfo-line-left-count">剩余{{TeamBCurrentSetTimeOut}}</view>
+                </view>
+                <view class="SubInfo-line" wx:for="{{TimeOut}}" wx:key="{{index}}">
+                    <view class="SubInfo-line-name">
+                        <block wx:if="{{item[1]==0}}">{{MatchInfo[1]}}</block>
+                        <block wx:if="{{item[1]==1}}">{{MatchInfo[2]}}</block>
+                    </view>
+                    <view class="SubInfo-line-item">{{item[1]}}-{{item[2]}}</view>
+                    <view class="SubInfo-line-item">{{item[3]}}:{{item[4]}}</view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+<view class="container" wx:if="{{Side==1}}">
+    <view class="topbar">
+        <view class="TeamAName">{{MatchInfo[2]}}</view>
+        <view class="TeamBName">{{MatchInfo[1]}}</view>
+    </view>
+    <view class="Score">
+        <view bindlongpress="EditBScore" bindtap="AddTeamBScore" class="TeamAScore">{{CurrentScore[1]}}</view>
+        <view class="Setinfo">
+            <view class="Set">
+                <view class="TeamASet">{{TotalScore[1]}}</view>
+                <view class="TeamBSet">{{TotalScore[0]}}</view>
+            </view>
+            <view class="ball">
+                <view bindtap="ChangeServe" class="winball" wx:if="{{LastScore==1}}">
+                    <image class="ball-pic" mode="aspectFit" src="../../../../images/ic_volley_ball_dark.png"></image>
+                </view>
+                <view bindtap="ChangeServe" class="winball" style="margin-left:90rpx" wx:if="{{LastScore==0}}">
+                    <image class="ball-pic" mode="aspectFit" src="../../../../images/ic_volley_ball_dark.png"></image>
+                </view>
+            </view>
+        </view>
+        <view bindlongpress="EditAScore" bindtap="AddTeamAScore" class="TeamBScore TeamAColor">{{CurrentScore[0]}}</view>
+    </view>
+    <view class="tool">
+        <view bindtap="TimeOut" class="tool-item" data-team="1">
+            <image class="tool-pic" mode="aspectFit" src="../../../../images/ic_timeout_tab_dark.png"></image>
+        </view>
+        <view bindtap="ChangeTeamBPosition" class="tool-item">
+            <image class="tool-pic" mode="aspectFit" src="../../../../images/refresh.png"></image>
+        </view>
+        <view class="tool-item">
+            <image bindtap="ChangeSide" class="tool-pic" mode="aspectFit" src="../../../../images/ic_swap.png"></image>
+        </view>
+        <view bindtap="ChangeTeamAPosition" class="tool-item TeamAColor">
+            <image class="tool-pic" mode="aspectFit" src="../../../../images/refresh-light.png"></image>
+        </view>
+        <view bindtap="TimeOut" class="tool-item TeamAColor" data-team="0">
+            <image class="tool-pic" mode="aspectFit" src="../../../../images/ic_timeout_tab.png"></image>
+        </view>
+    </view>
+</view>
+<view class="title" wx:if="{{Side==1}}">比赛信息
+</view>
+<view class="swiper-tab" wx:if="{{Side==1}}">
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==0?'on':''}}" data-current="0">站位</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==1?'on':''}}" data-current="1">进程</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==2?'on':''}}" data-current="2">换人</view>
+    <view bindtap="swichNav" class="swiper-tab-list {{currentTab==3?'on':''}}" data-current="3">暂停</view>
+</view>
+<view class="swiper-tab-temp" wx:if="{{Side==1}}"></view>
+<view wx:if="{{Side==1}}">
+    <swiper bindchange="bindChange" class="swiper-box" current="{{currentTab}}" style="height:{{SwiperHeight}}rpx">
+        <swiper-item>
+            <view class="volleyball-court-position">
+                <view class="line">
+                    <view bindtap="ChooseTeamBPlayer" class="player" data-position="5">{{TeamBCourtPlayer[5]}}
+            </view>
+                    <view bindtap="ChooseTeamBPlayer" class="player" data-position="4">{{TeamBCourtPlayer[4]}}
+            </view>
+                    <view bindtap="ChooseTeamAPlayer" class="player TeamAColor" data-position="2">{{TeamACourtPlayer[2]}}
+            </view>
+                    <view bindtap="ChooseTeamAPlayer" class="player TeamAColor" data-position="1">{{TeamACourtPlayer[1]}}
+            </view>
+                </view>
+                <view class="line">
+                    <view bindtap="ChooseTeamBPlayer" class="player" data-position="6">{{TeamBCourtPlayer[6]}}
+            </view>
+                    <view bindtap="ChooseTeamBPlayer" class="player" data-position="3">{{TeamBCourtPlayer[3]}}
+            </view>
+                    <view bindtap="ChooseTeamAPlayer" class="player TeamAColor" data-position="3">{{TeamACourtPlayer[3]}}
+            </view>
+                    <view bindtap="ChooseTeamAPlayer" class="player TeamAColor" data-position="6">{{TeamACourtPlayer[6]}}
+            </view>
+                </view>
+                <view class="line">
+                    <view bindtap="ChooseTeamBPlayer" class="player" data-position="1">{{TeamBCourtPlayer[1]}}
+            </view>
+                    <view bindtap="ChooseTeamBPlayer" class="player" data-position="2">{{TeamBCourtPlayer[2]}}
+            </view>
+                    <view bindtap="ChooseTeamAPlayer" class="player TeamAColor" data-position="4">{{TeamACourtPlayer[4]}}
+            </view>
+                    <view bindtap="ChooseTeamAPlayer" class="player TeamAColor" data-position="5">{{TeamACourtPlayer[5]}}
+            </view>
+                </view>
+            </view>
+            <view class="volleyball-court-position-tip">点击上方的第2/4个图标可以调整轮转双方站位</view>
+        </swiper-item>
+        <swiper-item>
+            <view class="matchduration">
+                <view class="matchduration-line" wx:for="{{MatchDuration}}" wx:key="{{index}}">
+                    <view class="matchduration-item" wx:if="{{item[3]==0}}">
+                        <view class="matchduration-item-name">
+                            <block wx:if="{{item[6]==0}}">{{MatchInfo[1]}}</block>
+                            <block wx:if="{{item[6]==1}}">{{MatchInfo[2]}}</block>
+                        </view>
+                        <view class="matchduration-item-detail">
+                            <view class="matchduration-item-detail-num">{{item[5]}}号</view>
+                            <view class="matchduration-item-detail-type"> {{item[4]}}</view>
+                        </view>
+                    </view>
+                    <view class="matchduration-item" wx:if="{{item[3]!=0}}"></view>
+                    <view class="matchduration-Score {{item[3]==0?'matchduration-win':''}}">{{item[1]}}</view>
+                    <view class="matchduration-Score {{item[3]==1?'matchduration-win':''}}">{{item[2]}}</view>
+                    <view class="matchduration-item" wx:if="{{item[3]!=0}}">
+                        <view class="matchduration-item-name">
+                            <block wx:if="{{item[6]==0}}">{{MatchInfo[2]}}</block>
+                            <block wx:if="{{item[6]==1}}">{{MatchInfo[1]}}</block>
+                        </view>
+                        <view class="matchduration-item-detail">
+                            <view class="matchduration-item-detail-num">{{item[5]}}号</view>
+                            <view class="matchduration-item-detail-type"> {{item[4]}}</view>
+                        </view>
+                    </view>
+                    <view class="matchduration-item" wx:if="{{item[3]!=1}}"></view>
+                </view>
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="SubInfo">
+                <view class="SubInfo-line">
+                    <view class="SubInfo-line-left-name">{{MatchInfo[1]}}</view>
+                    <view class="SubInfo-line-left-count">剩余{{TeamACurrentSetSub}}</view>
+                </view>
+                <view class="SubInfo-line">
+                    <view class="SubInfo-line-left-name">{{MatchInfo[2]}}</view>
+                    <view class="SubInfo-line-left-count">剩余{{TeamBCurrentSetSub}}</view>
+                </view>
+                <view class="SubInfo-line" wx:for="{{SubInfo}}" wx:key="{{index}}">
+                    <view class="SubInfo-line-name">
+                        <block wx:if="{{item[1]==0}}">{{MatchInfo[1]}}</block>
+                        <block wx:if="{{item[1]==1}}">{{MatchInfo[2]}}</block>
+                    </view>
+                    <view class="SubInfo-line-item">第{{item[0]+1}}局</view>
+                    <view class="SubInfo-line-item">{{item[4]}}:{{item[5]}}</view>
+                    <view class="SubInfo-line-num SubInfo-line-num-down">{{item[6]}}</view>
+                    <view class="SubInfo-line-icon">↓</view>
+                    <view class="SubInfo-line-num">{{item[7]}}</view>
+                    <view class="SubInfo-line-icon">↑</view>
+                </view>
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="TimeOutInfo">
+                <view class="SubInfo-line">
+                    <view class="SubInfo-line-left-name">{{MatchInfo[1]}}</view>
+                    <view class="SubInfo-line-left-count">剩余{{TeamACurrentSetTimeOut}}</view>
+                </view>
+                <view class="SubInfo-line">
+                    <view class="SubInfo-line-left-name">{{MatchInfo[2]}}</view>
+                    <view class="SubInfo-line-left-count">剩余{{TeamBCurrentSetTimeOut}}</view>
+                </view>
+                <view class="SubInfo-line" wx:for="{{TimeOut}}" wx:key="{{index}}">
+                    <view class="SubInfo-line-name">
+                        <block wx:if="{{item[1]==0}}">{{MatchInfo[1]}}</block>
+                        <block wx:if="{{item[1]==1}}">{{MatchInfo[2]}}</block>
+                    </view>
+                    <view class="SubInfo-line-item">{{item[1]}}-{{item[2]}}</view>
+                    <view class="SubInfo-line-item">{{item[3]}}:{{item[4]}}</view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+<action-sheet bindchange="actionSheetbindchange" hidden="{{ShowTeamAALLPlayer}}">
+    <action-sheet-item>请填写首发队员</action-sheet-item>
+    <action-sheet-item bindtap="SetTeamAPlayer" data-num="{{item[0]}}" wx:if="{{TeamACourtPlayer[1]!=item[0]&&TeamACourtPlayer[2]!=item[0]&&TeamACourtPlayer[3]!=item[0]&&TeamACourtPlayer[4]!=item[0]&&TeamACourtPlayer[5]!=item[0]&&TeamACourtPlayer[6]!=item[0]}}" wx:for="{{TeamAPlayer}}" wx:key="{{index}}">{{item[0]}}</action-sheet-item>
+    <action-sheet-item bindtap="SetTeamAPlayer" data-num="！">重新选择</action-sheet-item>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>
+<action-sheet bindchange="actionSheetbindchange" hidden="{{ShowTeamBALLPlayer}}">
+    <action-sheet-item>请填写首发队员</action-sheet-item>
+    <action-sheet-item bindtap="SetTeamBPlayer" data-num="{{item[0]}}" wx:if="{{TeamBCourtPlayer[1]!=item[0]&&TeamBCourtPlayer[2]!=item[0]&&TeamBCourtPlayer[3]!=item[0]&&TeamBCourtPlayer[4]!=item[0]&&TeamBCourtPlayer[5]!=item[0]&&TeamBCourtPlayer[6]!=item[0]}}" wx:for="{{TeamBPlayer}}" wx:key="{{index}}">{{item[0]}}</action-sheet-item>
+    <action-sheet-item bindtap="SetTeamBPlayer" data-num="！">重新选择</action-sheet-item>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>
+<view class="top-matchname">
+  {{MatchInfo[0]}}
+</view>
+<view class="cover" hidden="{{Statisticflag}}"></view>
+<view class="Statistic" hidden="{{Statisticflag}}">
+    <view bindtap="StatisticPoint" class="Statistic-item" data-point_flag="0" data-point_type="SpikePoint">进攻得分</view>
+    <view bindtap="StatisticPoint" class="Statistic-item" data-point_flag="0" data-point_type="BlockPoint">拦网得分</view>
+    <view bindtap="StatisticPoint" class="Statistic-item" data-point_flag="0" data-point_type="ServePoint">发球得分</view>
+    <view class="Statistic-fault">
+        <view class="Statistic-fault-line">
+            <view bindtap="StatisticPoint" class="Statistic-fault-item" data-point_flag="1" data-point_type="SpikeFault">进攻失误</view>
+            <view bindtap="StatisticPoint" class="Statistic-fault-item" data-point_flag="1" data-point_type="ServeFault">发球失误</view>
+        </view>
+        <view class="Statistic-fault-line">
+            <view bindtap="StatisticPoint" class="Statistic-fault-item" data-point_flag="1" data-point_type="OtherFault">其他失误</view>
+            <view bindtap="StatisticPoint" class="Statistic-fault-item Statistic-fault-forget" data-point_flag="2" data-point_type="Forget">我忘记了</view>
+        </view>
+    </view>
+    <view bindtap="StatisticBack" class="Statistic-back">点错了/返回</view>
+</view>
+<view class="cover" hidden="{{ShowTeamAPlayer}}"></view>
+<view class="Statistic-Court" hidden="{{ShowTeamAPlayer}}">
+    <view class="Statistic-Court-title">{{MatchInfo[1]}}</view>
+    <view class="Statistic-Court-title" wx:if="{{point_type=='SpikePoint'}}">进攻得分</view>
+    <view class="Statistic-Court-title" wx:if="{{point_type=='ServePoint'}}">发球得分</view>
+    <view class="Statistic-Court-title" wx:if="{{point_type=='BlockPoint'}}">拦网得分</view>
+    <view class="Statistic-Court-title" wx:if="{{point_type=='ServeFault'}}">发起失误</view>
+    <view class="Statistic-Court-title" wx:if="{{point_type=='SpikeFault'}}">进攻失误</view>
+    <view class="Statistic-Court-title" wx:if="{{point_type=='OtherFault'}}">其他失误</view>
+    <view class="Statistic-Court-line">
+        <view bindtap="SetStatistic" class="Statistic-Court-item　{{point_type!='BlockPoint'&&point_type!='SpikePoint'&&point_type!='SpikeFault'&&point_type!='OtherFault'?'Statistic-Court-item-none':''}}" data-position="{{TeamACourtPlayer[4]}}">{{TeamACourtPlayer[4]}}</view>
+        <view bindtap="SetStatistic" class="Statistic-Court-item {{point_type!='BlockPoint'&&point_type!='SpikePoint'&&point_type!='SpikeFault'&&point_type!='OtherFault'?'Statistic-Court-item-none':''}}" data-position="{{TeamACourtPlayer[3]}}">{{TeamACourtPlayer[3]}}</view>
+        <view bindtap="SetStatistic" class="Statistic-Court-item {{point_type!='BlockPoint'&&point_type!='SpikePoint'&&point_type!='SpikeFault'&&point_type!='OtherFault'?'Statistic-Court-item-none':''}}" data-position="{{TeamACourtPlayer[2]}}">{{TeamACourtPlayer[2]}}</view>
+    </view>
+    <view class="Statistic-Court-line">
+        <view bindtap="SetStatistic" class="Statistic-Court-item {{point_type=='ServeFault'||point_type=='ServePoint'||point_type=='BlockPoint'&&point_type!='SpikeFault'?'Statistic-Court-item-none':''}}" data-position="{{TeamACourtPlayer[5]}}">{{TeamACourtPlayer[5]}}</view>
+        <view bindtap="SetStatistic" class="Statistic-Court-item {{point_type=='ServeFault'||point_type=='ServePoint'||point_type=='BlockPoint'&&point_type!='SpikeFault'?'Statistic-Court-item-none':''}}" data-position="{{TeamACourtPlayer[6]}}">{{TeamACourtPlayer[6]}}</view>
+        <view bindtap="SetStatistic" class="Statistic-Court-item {{point_type=='BlockPoint'&&point_type!='SpikeFault'?'Statistic-Court-item-none':''}}" data-position="{{TeamACourtPlayer[1]}}">{{TeamACourtPlayer[1]}}</view>
+    </view>
+</view>
+<view class="cover" hidden="{{ShowTeamBPlayer}}"></view>
+<view class="Statistic-Court" hidden="{{ShowTeamBPlayer}}">
+    <view class="Statistic-Court-title">{{MatchInfo[2]}}</view>
+    <view class="Statistic-Court-title" wx:if="{{point_type=='SpikePoint'}}">进攻得分</view>
+    <view class="Statistic-Court-title" wx:if="{{point_type=='ServePoint'}}">发球得分</view>
+    <view class="Statistic-Court-title" wx:if="{{point_type=='BlockPoint'}}">拦网得分</view>
+    <view class="Statistic-Court-title" wx:if="{{point_type=='ServeFault'}}">发起失误</view>
+    <view class="Statistic-Court-title" wx:if="{{point_type=='SpikeFault'}}">进攻失误</view>
+    <view class="Statistic-Court-title" wx:if="{{point_type=='OtherFault'}}">其他失误</view>
+    <view class="Statistic-Court-line">
+        <view bindtap="SetStatistic" class="Statistic-Court-item {{point_type!='BlockPoint'&&point_type!='SpikePoint'&&point_type!='SpikeFault'&&point_type!='OtherFault'?'Statistic-Court-item-none':''}}" data-position="{{TeamBCourtPlayer[4]}}">{{TeamBCourtPlayer[4]}}</view>
+        <view bindtap="SetStatistic" class="Statistic-Court-item {{point_type!='BlockPoint'&&point_type!='SpikePoint'&&point_type!='SpikeFault'&&point_type!='OtherFault'?'Statistic-Court-item-none':''}}" data-position="{{TeamBCourtPlayer[3]}}">{{TeamBCourtPlayer[3]}}</view>
+        <view bindtap="SetStatistic" class="Statistic-Court-item {{point_type!='BlockPoint'&&point_type!='SpikePoint'&&point_type!='SpikeFault'&&point_type!='OtherFault'?'Statistic-Court-item-none':''}}" data-position="{{TeamBCourtPlayer[2]}}">{{TeamBCourtPlayer[2]}}</view>
+    </view>
+    <view class="Statistic-Court-line">
+        <view bindtap="SetStatistic" class="Statistic-Court-item {{point_type=='ServeFault'||point_type=='ServePoint'||point_type=='BlockPoint'&&point_type!='SpikeFault'?'Statistic-Court-item-none':''}}" data-position="{{TeamBCourtPlayer[5]}}">{{TeamBCourtPlayer[5]}}</view>
+        <view bindtap="SetStatistic" class="Statistic-Court-item {{point_type=='ServeFault'||point_type=='ServePoint'||point_type=='BlockPoint'&&point_type!='SpikeFault'?'Statistic-Court-item-none':''}}" data-position="{{TeamBCourtPlayer[6]}}">{{TeamBCourtPlayer[6]}}</view>
+        <view bindtap="SetStatistic" class="Statistic-Court-item {{point_type=='BlockPoint'&&point_type!='SpikeFault'?'Statistic-Court-item-none':''}}" data-position="{{TeamBCourtPlayer[1]}}">{{TeamBCourtPlayer[1]}}</view>
+    </view>
+</view>
+<view class="cover" hidden="{{ShowTimeOut}}"></view>
+<view class="TimeOut" hidden="{{ShowTimeOut}}">
+  暂停中：{{time}}
+</view>
+<view class="cover" hidden="{{ShowTeamABenchPlayer}}"></view>
+<view class="Statistic-Court" hidden="{{ShowTeamABenchPlayer}}">
+    <view class="Statistic-Court-title">{{MatchInfo[1]}}-申请换人</view>
+    <view class="Statistic-Court-line">
+        <view bindtap="ConfirmSub" class="Statistic-Court-item" data-position="{{LeftPlayer[0]}}" data-team="0" wx:if="{{LeftPlayer[0]}}">{{LeftPlayer[0]}}</view>
+        <view bindtap="ConfirmSub" class="Statistic-Court-item" data-position="{{LeftPlayer[1]}}" data-team="0" wx:if="{{LeftPlayer[1]}}">{{LeftPlayer[1]}}</view>
+        <view bindtap="ConfirmSub" class="Statistic-Court-item" data-position="{{LeftPlayer[2]}}" data-team="0" wx:if="{{LeftPlayer[2]}}">{{LeftPlayer[2]}}</view>
+    </view>
+    <view class="Statistic-Court-line">
+        <view bindtap="ConfirmSub" class="Statistic-Court-item" data-position="{{LeftPlayer[3]}}" data-team="0" wx:if="{{LeftPlayer[3]}}">{{LeftPlayer[3]}}</view>
+        <view bindtap="ConfirmSub" class="Statistic-Court-item" data-position="{{LeftPlayer[4]}}" data-team="0" wx:if="{{LeftPlayer[4]}}">{{LeftPlayer[4]}}</view>
+        <view bindtap="ConfirmSub" class="Statistic-Court-item" data-position="{{LeftPlayer[5]}}" data-team="0" wx:if="{{LeftPlayer[5]}}">{{LeftPlayer[5]}}</view>
+    </view>
+</view>
+<view class="cover" hidden="{{ShowTeamBBenchPlayer}}"></view>
+<view class="Statistic-Court" hidden="{{ShowTeamBBenchPlayer}}">
+    <view class="Statistic-Court-title">{{MatchInfo[2]}}-申请换人</view>
+    <view class="Statistic-Court-line">
+        <view bindtap="ConfirmSub" class="Statistic-Court-item" data-position="{{LeftPlayer[0]}}" data-team="1" wx:if="{{LeftPlayer[0]}}">{{LeftPlayer[0]}}</view>
+        <view bindtap="ConfirmSub" class="Statistic-Court-item" data-position="{{LeftPlayer[1]}}" data-team="1" wx:if="{{LeftPlayer[1]}}">{{LeftPlayer[1]}}</view>
+        <view bindtap="ConfirmSub" class="Statistic-Court-item" data-position="{{LeftPlayer[2]}}" data-team="1" wx:if="{{LeftPlayer[2]}}">{{LeftPlayer[2]}}</view>
+    </view>
+    <view class="Statistic-Court-line">
+        <view bindtap="ConfirmSub" class="Statistic-Court-item" data-position="{{LeftPlayer[3]}}" data-team="1" wx:if="{{LeftPlayer[3]}}">{{LeftPlayer[3]}}</view>
+        <view bindtap="ConfirmSub" class="Statistic-Court-item" data-position="{{LeftPlayer[4]}}" data-team="1" wx:if="{{LeftPlayer[4]}}">{{LeftPlayer[4]}}</view>
+        <view bindtap="ConfirmSub" class="Statistic-Court-item" data-position="{{LeftPlayer[5]}}" data-team="1" wx:if="{{LeftPlayer[5]}}">{{LeftPlayer[5]}}</view>
+    </view>
+</view>
+<view class="cover" hidden="{{ShowEditAScore}}"></view>
+<view class="editScore" hidden="{{ShowEditAScore}}">
+    <view class="edit-box">
+        <input bindinput="GetTeamANewScore" maxlength="4" name="MatchName" placeholder="输入比分" placeholderStyle="color:gray" style="height:300rpx;line-height:300rpx;width:100%"></input>
+    </view>
+    <view bindtap="ConfirmTeamANewScore" class="edit-confirm" style="color: red" wx:if="{{ANewScore>24}}">输入的比分过大！</view>
+    <view bindtap="ConfirmTeamANewScore" class="edit-confirm" wx:else>确认修改</view>
+</view>
+<view class="cover" hidden="{{ShowEditBScore}}"></view>
+<view class="editScore" hidden="{{ShowEditBScore}}">
+    <view class="edit-box">
+        <input bindinput="GetTeamBNewScore" maxlength="4" name="MatchName" placeholder="输入比分" placeholderStyle="color:gray" style="height:300rpx;line-height:300rpx;width:100%"></input>
+    </view>
+    <view bindtap="ConfirmTeamANewScore" class="edit-confirm" style="color: red" wx:if="{{BNewScore>24}}">输入的比分过大！</view>
+    <view bindtap="ConfirmTeamBNewScore" class="edit-confirm" wx:else>确认修改</view>
+</view>
+<view bindtap="BindClose" class="confirm-btn" hidden="{{ShowTeamBBenchPlayer}}">X</view>
+<view bindtap="BindClose" class="confirm-btn" hidden="{{ShowTeamABenchPlayer}}">X</view>
+<view bindtap="BindClose" class="confirm-btn" hidden="{{ShowEditAScore}}">X</view>
+<view bindtap="BindClose" class="confirm-btn" hidden="{{ShowEditBScore}}">X</view>

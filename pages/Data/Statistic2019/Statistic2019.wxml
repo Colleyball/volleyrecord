@@ -1,0 +1,475 @@
+<view>
+    <view class="swiper-tab swiper-scroll-down">
+        <view bindtap="swichNav" class="swiper-tab-list {{currentTab==0?'on':''}}" data-current="0">概览</view>
+        <view bindtap="swichNav" class="swiper-tab-list {{currentTab==1?'on':''}}" data-current="1">进程</view>
+        <view bindtap="swichNav" class="swiper-tab-list {{currentTab==2?'on':''}}" data-current="2">数据</view>
+    </view>
+    <view>
+        <swiper autoplay="" bindchange="bindChange" class="swiper-box" current="{{currentTab}}" duration="300" style="height:{{swiperHeight}}rpx">
+            <swiper-item>
+                <view class="list">
+                    <view class="matchdetail">
+                        <view class="matchdetail-name">
+                            <view class="matchdetail-matchname">{{matchinfo[0].matchname}}</view>
+                            <view class="matchdetail-status">MATCH {{matchinfo[0].matchid}} COMPLETE</view>
+                        </view>
+                        <view class="matchdetail-score">
+                            <view class="matchdetail-score-teamA">
+                                <view class="matchdetail-score-teamA-name">{{matchinfo[0].teamAname}}</view>
+                                <view class="matchdetail-score-teamA-set">{{matchinfo[0].Amatch}}</view>
+                            </view>
+                            <view class="matchdetail-score-detail">
+                                <block wx:if="{{matchinfo[0].Aset1!=0}}">{{matchinfo[0].Aset1}}:{{matchinfo[0].Bset1}} </block>
+                                <block wx:if="{{matchinfo[0].Aset2!=0}}">{{matchinfo[0].Aset2}}:{{matchinfo[0].Bset2}} </block>
+                                <block wx:if="{{matchinfo[0].Aset3!=0}}">{{matchinfo[0].Aset3}}:{{matchinfo[0].Bset3}}</block>
+                                <block wx:if="{{matchinfo[0].Aset4!=0}}">{{matchinfo[0].Aset4}}:{{matchinfo[0].Bset4}} </block>
+                                <block wx:if="{{matchinfo[0].Aset5!=0}}">{{matchinfo[0].Aset5}}:{{matchinfo[0].Bset5}} </block>
+                            </view>
+                            <view class="matchdetail-score-teamB">
+                                <view class="matchdetail-score-teamB-set">{{matchinfo[0].Bmatch}}</view>
+                                <view class="matchdetail-score-teamB-name">{{matchinfo[0].teamBname}}</view>
+                            </view>
+                        </view>
+                        <view class="matchdetail-other">
+                            <view class="matchdetail-other-item">开始时间：{{matchinfo[0].starttime}}</view>
+                            <view class="matchdetail-other-item">结束时间：{{matchinfo[0].endtime}}</view>
+                            <view class="matchdetail-other-item">一裁：{{matchinfo[0].ref1}} 二裁：{{matchinfo[0].ref2}} 记录员：{{matchinfo[0].ref3}} 辅记员：{{matchinfo[0].ref4}}</view>
+                        </view>
+                    </view>
+                    <view class="triangle">
+                        <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
+                    </view>
+                    <view class="matchdetail-tool">
+                        <image bindtap="BindBack" class="matchdetail-tool-item" mode="aspectFit" src="../../../images/data/back.png"></image>
+                        <image bindtap="BindGift" class="matchdetail-tool-item" mode="aspectFit" src="../../../images/data/favorites.png"></image>
+                        <image bindtap="BindFavor" class="matchdetail-tool-item" mode="aspectFit" src="../../../images/data/star.png" wx:if="{{!favorFlag}}"></image>
+                        <image bindtap="BindFavor_cancle" class="matchdetail-tool-item" mode="aspectFit" src="../../../images/data/star_fill.png" wx:else></image>
+                        <image class="matchdetail-tool-item" mode="aspectFit" src="../../../images/data/share.png"></image>
+                    </view>
+                    <button class="matchdetail-tool-share" openType="share" plain="true" style="border:none"></button>
+                    <view class="text-title" style="color: white">全场最佳</view>
+                    <view class="best-player">
+                        <view class="best-player-info">
+                            <view class="best-player-other">
+                                <view class="best-player-team" wx:if="{{TeamFlag==0}}">{{matchinfo[0].teamAname}}</view>
+                                <view class="best-player-team" wx:else>{{matchinfo[0].teamBname}}</view>
+                                <view class="best-player-name">{{PlayerName}}</view>
+                            </view>
+                            <view class="best-player-num">NO.{{PlayerNum}}</view>
+                        </view>
+                        <view class="best-player-score">
+                            <view class="best-player-total">{{BestScore[0]}}</view>
+                            <view class="best-player-detail">
+                                <view class="best-player-detail-item">
+                                    <view class="best-player-detail-type">SPIKE: </view>
+                                    <view class="best-player-detail-score">{{BestScore[1]}}</view>
+                                </view>
+                                <view class="best-player-detail-item">
+                                    <view class="best-player-detail-type">SERVE: </view>
+                                    <view class="best-player-detail-score">{{BestScore[2]}}</view>
+                                </view>
+                                <view class="best-player-detail-item">
+                                    <view class="best-player-detail-type">BLOCK: </view>
+                                    <view class="best-player-detail-score">{{BestScore[3]}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="triangle">
+                        <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
+                    </view>
+                    <view class="text-title" style="color: white">双方数据对比</view>
+                    <view class="team-statistic">
+                        <view class="teaminfo">
+                            <view class="teamname" style="margin-top:0">
+                                <view class="teamA">
+                  {{matchinfo[0].teamAname}} 
+                </view>
+                                <view class="vs">Vs</view>
+                                <view class="teamB">
+                  {{matchinfo[0].teamBname}}
+                </view>
+                            </view>
+                        </view>
+                        <view class="teaminfo">
+                            <view class="teamname">
+                                <view class="teamA">
+                  {{teamstatistic[0]}} 
+                </view>
+                                <view class="vs">发球</view>
+                                <view class="teamB">
+                  {{teamstatistic[6]}}
+                </view>
+                            </view>
+                        </view>
+                        <view class="progeress" style="margin-left:{{-375*( teamstatistic[0]-teamstatistic[6] )/( teamstatistic[0]+teamstatistic[6] )}}rpx"></view>
+                        <view class="teaminfo">
+                            <view class="teamname">
+                                <view class="teamA">
+                  {{teamstatistic[1]}} 
+                </view>
+                                <view class="vs">拦网</view>
+                                <view class="teamB">
+                  {{teamstatistic[7]}}
+                </view>
+                            </view>
+                        </view>
+                        <view class="progeress" style="margin-left:{{-375*( teamstatistic[1]-teamstatistic[7] )/( teamstatistic[1]+teamstatistic[7] )}}rpx"></view>
+                        <view class="teaminfo">
+                            <view class="teamname">
+                                <view class="teamA">
+                  {{teamstatistic[2]}} 
+                </view>
+                                <view class="vs">进攻</view>
+                                <view class="teamB">
+                  {{teamstatistic[8]}}
+                </view>
+                            </view>
+                        </view>
+                        <view class="progeress" style="margin-left:{{-375*( teamstatistic[2]-teamstatistic[8] )/( teamstatistic[2]+teamstatistic[8] )}}rpx"></view>
+                        <view class="teaminfo">
+                            <view class="teamname">
+                                <view class="teamA">
+                  {{teamstatistic[3]}} 
+                </view>
+                                <view class="vs">发球失误</view>
+                                <view class="teamB">
+                  {{teamstatistic[9]}}
+                </view>
+                            </view>
+                        </view>
+                        <view class="progeress" style="margin-left:{{-375*( teamstatistic[3]-teamstatistic[9] )/( teamstatistic[3]+teamstatistic[9] )}}rpx"></view>
+                        <view class="teaminfo">
+                            <view class="teamname">
+                                <view class="teamA">
+                  {{teamstatistic[4]}} 
+                </view>
+                                <view class="vs">进攻失误</view>
+                                <view class="teamB">
+                  {{teamstatistic[10]}}
+                </view>
+                            </view>
+                        </view>
+                        <view class="progeress" style="margin-left:{{-375*( teamstatistic[4]-teamstatistic[10] )/( teamstatistic[4]+teamstatistic[10] )}}rpx"></view>
+                        <view class="teaminfo">
+                            <view class="teamname">
+                                <view class="teamA">
+                  {{teamstatistic[5]}} 
+                </view>
+                                <view class="vs">其他失误</view>
+                                <view class="teamB">
+                  {{teamstatistic[11]}}
+                </view>
+                            </view>
+                        </view>
+                        <view class="progeress" style="margin-left:{{-375*( teamstatistic[5]-teamstatistic[11] )/( teamstatistic[5]+teamstatistic[11] )}}rpx"></view>
+                    </view>
+                </view>
+            </swiper-item>
+            <swiper-item>
+                <view class="list">
+                    <view class="text-title" style="color: white;margin-top:0">第一局</view>
+                    <view class="matchduration">
+                        <view class="matchduration-line" wx:if="{{item.set==1}}" wx:for="{{MatchDuration}}" wx:key="{{index}}">
+                            <view class="matchduration-item" wx:if="{{item.team==0}}">
+                                <view class="matchduration-item-name">
+                                    <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamAname}} </block>
+                                    <block wx:if="{{item.flag==1}}">{{matchinfo[0].teamBname}} </block>
+                                </view>
+                                <view class="matchduration-item-detail">
+                                    <view class="matchduration-item-detail-num">{{item.player}}号</view>
+                                    <view class="matchduration-item-detail-type"> {{item.description}}</view>
+                                </view>
+                            </view>
+                            <view class="matchduration-item" wx:if="{{item.team!=0}}"></view>
+                            <view class="matchduration-Score {{item.team==0?'matchduration-win':''}}">{{item.teamA}}</view>
+                            <view class="matchduration-Score {{item.team==1?'matchduration-win':''}}">{{item.teamB}}</view>
+                            <view class="matchduration-item" wx:if="{{item.team!=0}}">
+                                <view class="matchduration-item-name">
+                                    <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamBname}}</block>
+                                    <block wx:if="{{item.flag==1}}">{{matchinfo[0].teamAname}}</block>
+                                </view>
+                                <view class="matchduration-item-detail">
+                                    <view class="matchduration-item-detail-num">{{item.player}}号</view>
+                                    <view class="matchduration-item-detail-type"> {{item.description}}</view>
+                                </view>
+                            </view>
+                            <view class="matchduration-item" wx:if="{{item.team!=1}}"></view>
+                        </view>
+                    </view>
+                    <view class="triangle">
+                        <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
+                    </view>
+                    <view class="text-title" style="color: white" wx:if="{{match>=2}}">第二局</view>
+                    <view class="matchduration" wx:if="{{match>=2}}">
+                        <view class="matchduration-line" wx:if="{{item.set==2}}" wx:for="{{MatchDuration}}" wx:key="{{index}}">
+                            <view class="matchduration-item" wx:if="{{item.team==0}}">
+                                <view class="matchduration-item-name">
+                                    <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamAname}} </block>
+                                    <block wx:if="{{item.flag==1}}">{{matchinfo[0].teamBname}} </block>
+                                </view>
+                                <view class="matchduration-item-detail">
+                                    <view class="matchduration-item-detail-num">{{item.player}}号</view>
+                                    <view class="matchduration-item-detail-type"> {{item.description}}</view>
+                                </view>
+                            </view>
+                            <view class="matchduration-item" wx:if="{{item.team!=0}}"></view>
+                            <view class="matchduration-Score {{item.team==0?'matchduration-win':''}}">{{item.teamA}}</view>
+                            <view class="matchduration-Score {{item.team==1?'matchduration-win':''}}">{{item.teamB}}</view>
+                            <view class="matchduration-item" wx:if="{{item.team!=0}}">
+                                <view class="matchduration-item-name">
+                                    <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamBname}}</block>
+                                    <block wx:if="{{item.flag==1}}">{{matchinfo[0].teamAname}}</block>
+                                </view>
+                                <view class="matchduration-item-detail">
+                                    <view class="matchduration-item-detail-num">{{item.player}}号</view>
+                                    <view class="matchduration-item-detail-type"> {{item.description}}</view>
+                                </view>
+                            </view>
+                            <view class="matchduration-item" wx:if="{{item.team!=1}}"></view>
+                        </view>
+                    </view>
+                    <view class="triangle" wx:if="{{match>=2}}">
+                        <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
+                    </view>
+                    <view class="text-title" style="color: white" wx:if="{{match>=3}}">第三局</view>
+                    <view class="matchduration" wx:if="{{match>=3}}">
+                        <view class="matchduration-line" wx:if="{{item.set==3}}" wx:for="{{MatchDuration}}" wx:key="{{index}}">
+                            <view class="matchduration-item" wx:if="{{item.team==0}}">
+                                <view class="matchduration-item-name">
+                                    <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamAname}} </block>
+                                    <block wx:if="{{item.flag==1}}">{{matchinfo[0].teamBname}} </block>
+                                </view>
+                                <view class="matchduration-item-detail">
+                                    <view class="matchduration-item-detail-num">{{item.player}}号</view>
+                                    <view class="matchduration-item-detail-type"> {{item.description}}</view>
+                                </view>
+                            </view>
+                            <view class="matchduration-item" wx:if="{{item.team!=0}}"></view>
+                            <view class="matchduration-Score {{item.team==0?'matchduration-win':''}}">{{item.teamA}}</view>
+                            <view class="matchduration-Score {{item.team==1?'matchduration-win':''}}">{{item.teamB}}</view>
+                            <view class="matchduration-item" wx:if="{{item.team!=0}}">
+                                <view class="matchduration-item-name">
+                                    <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamBname}}</block>
+                                    <block wx:if="{{item.flag==1}}">{{matchinfo[0].teamAname}}</block>
+                                </view>
+                                <view class="matchduration-item-detail">
+                                    <view class="matchduration-item-detail-num">{{item.player}}号</view>
+                                    <view class="matchduration-item-detail-type"> {{item.description}}</view>
+                                </view>
+                            </view>
+                            <view class="matchduration-item" wx:if="{{item.team!=1}}"></view>
+                        </view>
+                    </view>
+                    <view class="triangle" wx:if="{{match>=3}}">
+                        <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
+                    </view>
+                    <view class="text-title" style="color: white" wx:if="{{match>=4}}">第四局</view>
+                    <view class="matchduration" wx:if="{{match>=4}}">
+                        <view class="matchduration-line" wx:if="{{item.set==4}}" wx:for="{{MatchDuration}}" wx:key="{{index}}">
+                            <view class="matchduration-item" wx:if="{{item.team==0}}">
+                                <view class="matchduration-item-name">
+                                    <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamAname}} </block>
+                                    <block wx:if="{{item.flag==1}}">{{matchinfo[0].teamBname}} </block>
+                                </view>
+                                <view class="matchduration-item-detail">
+                                    <view class="matchduration-item-detail-num">{{item.player}}号</view>
+                                    <view class="matchduration-item-detail-type"> {{item.description}}</view>
+                                </view>
+                            </view>
+                            <view class="matchduration-item" wx:if="{{item.team!=0}}"></view>
+                            <view class="matchduration-Score {{item.team==0?'matchduration-win':''}}">{{item.teamA}}</view>
+                            <view class="matchduration-Score {{item.team==1?'matchduration-win':''}}">{{item.teamB}}</view>
+                            <view class="matchduration-item" wx:if="{{item.team!=0}}">
+                                <view class="matchduration-item-name">
+                                    <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamBname}}</block>
+                                    <block wx:if="{{item.flag==1}}">{{matchinfo[0].teamAname}}</block>
+                                </view>
+                                <view class="matchduration-item-detail">
+                                    <view class="matchduration-item-detail-num">{{item.player}}号</view>
+                                    <view class="matchduration-item-detail-type"> {{item.description}}</view>
+                                </view>
+                            </view>
+                            <view class="matchduration-item" wx:if="{{item.team!=1}}"></view>
+                        </view>
+                    </view>
+                    <view class="triangle" wx:if="{{match>=4}}">
+                        <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
+                    </view>
+                    <view class="text-title" style="color: white" wx:if="{{match==5}}">第五局</view>
+                    <view class="matchduration" wx:if="{{match==5}}">
+                        <view class="matchduration-line" wx:if="{{item.set==5}}" wx:for="{{MatchDuration}}" wx:key="{{index}}">
+                            <view class="matchduration-item" wx:if="{{item.team==0}}">
+                                <view class="matchduration-item-name">
+                                    <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamAname}} </block>
+                                    <block wx:if="{{item.flag==1}}">{{matchinfo[0].teamBname}} </block>
+                                </view>
+                                <view class="matchduration-item-detail">
+                                    <view class="matchduration-item-detail-num">{{item.player}}号</view>
+                                    <view class="matchduration-item-detail-type"> {{item.description}}</view>
+                                </view>
+                            </view>
+                            <view class="matchduration-item" wx:if="{{item.team!=0}}"></view>
+                            <view class="matchduration-Score {{item.team==0?'matchduration-win':''}}">{{item.teamA}}</view>
+                            <view class="matchduration-Score {{item.team==1?'matchduration-win':''}}">{{item.teamB}}</view>
+                            <view class="matchduration-item" wx:if="{{item.team!=0}}">
+                                <view class="matchduration-item-name">
+                                    <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamBname}}</block>
+                                    <block wx:if="{{item.flag==1}}">{{matchinfo[0].teamAname}}</block>
+                                </view>
+                                <view class="matchduration-item-detail">
+                                    <view class="matchduration-item-detail-num">{{item.player}}号</view>
+                                    <view class="matchduration-item-detail-type"> {{item.description}}</view>
+                                </view>
+                            </view>
+                            <view class="matchduration-item" wx:if="{{item.team!=1}}"></view>
+                        </view>
+                    </view>
+                    <view class="triangle" wx:if="{{match==5}}">
+                        <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
+                    </view>
+                </view>
+            </swiper-item>
+            <swiper-item>
+                <view class="list">
+                    <view class="text-title" style="color: white;margin-top:0">{{matchinfo[0].teamAname}}</view>
+                    <view class="statistic-title">
+                        <view class="statistic-title-player">
+                            <view class="statistic-title-num">No</view>
+                            <view class="statistic-title-name">
+                                <text>姓
+                    名
+              </text>
+                            </view>
+                        </view>
+                        <view class="statistic-item">
+                            <text>进
+                    攻
+              </text>
+                        </view>
+                        <view class="statistic-item">
+                            <text>发
+                    球
+              </text>
+                        </view>
+                        <view class="statistic-item">
+                            <text>拦
+                    网
+              </text>
+                        </view>
+                        <view class="statistic-item">
+                            <text>进
+                    攻
+                    失
+                    误
+              </text>
+                        </view>
+                        <view class="statistic-item">
+                            <text>发
+                    球
+                    失
+                    误
+              </text>
+                        </view>
+                        <view class="statistic-item">
+                            <text>其
+                    他
+                    失
+                    误
+              </text>
+                        </view>
+                    </view>
+                    <view class="statistic-content" wx:if="{{item.team==0}}" wx:for="{{statistic}}" wx:key="{{index}}">
+                        <view class="statistic-player">
+                            <view class="statistic-num">{{item.num}}</view>
+                            <view class="statistic-name">{{item.name}}</view>
+                        </view>
+                        <view class="statistic-item" wx:if="{{item.SpikePoint!=0}}">{{item.SpikePoint}}</view>
+                        <view class="statistic-item" style="opacity:0.5" wx:if="{{item.SpikePoint==0}}">-</view>
+                        <view class="statistic-item" wx:if="{{item.ServePoint!=0}}">{{item.ServePoint}}</view>
+                        <view class="statistic-item" style="opacity:0.5" wx:if="{{item.ServePoint==0}}">-</view>
+                        <view class="statistic-item" wx:if="{{item.BlockPoint!=0}}">{{item.BlockPoint}}</view>
+                        <view class="statistic-item" style="opacity:0.5" wx:if="{{item.BlockPoint==0}}">-</view>
+                        <view class="statistic-item" wx:if="{{item.SpikeFault!=0}}">{{item.SpikeFault}}</view>
+                        <view class="statistic-item" style="opacity:0.5" wx:if="{{item.SpikeFault==0}}">-</view>
+                        <view class="statistic-item" wx:if="{{item.ServeFault!=0}}">{{item.ServeFault}}</view>
+                        <view class="statistic-item" style="opacity:0.5" wx:if="{{item.ServeFault==0}}">-</view>
+                        <view class="statistic-item" wx:if="{{item.OtherFault!=0}}">{{item.OtherFault}}</view>
+                        <view class="statistic-item" style="opacity:0.5" wx:if="{{item.OtherFault==0}}">-</view>
+                    </view>
+                    <view class="triangle">
+                        <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
+                    </view>
+                    <view class="text-title" style="color: white">{{matchinfo[0].teamBname}}</view>
+                    <view class="statistic-title">
+                        <view class="statistic-title-player">
+                            <view class="statistic-title-num">No</view>
+                            <view class="statistic-title-name">
+                                <text>姓
+                    名
+              </text>
+                            </view>
+                        </view>
+                        <view class="statistic-item">
+                            <text>进
+                    攻
+              </text>
+                        </view>
+                        <view class="statistic-item">
+                            <text>发
+                    球
+              </text>
+                        </view>
+                        <view class="statistic-item">
+                            <text>拦
+                    网
+              </text>
+                        </view>
+                        <view class="statistic-item">
+                            <text>进
+                    攻
+                    失
+                    误
+              </text>
+                        </view>
+                        <view class="statistic-item">
+                            <text>发
+                    球
+                    失
+                    误
+              </text>
+                        </view>
+                        <view class="statistic-item">
+                            <text>其
+                    他
+                    失
+                    误
+              </text>
+                        </view>
+                    </view>
+                    <view class="statistic-content" wx:if="{{item.team==1}}" wx:for="{{statistic}}" wx:key="{{index}}">
+                        <view class="statistic-player">
+                            <view class="statistic-num">{{item.num}}</view>
+                            <view class="statistic-name">{{item.name}}</view>
+                        </view>
+                        <view class="statistic-item" wx:if="{{item.SpikePoint!=0}}">{{item.SpikePoint}}</view>
+                        <view class="statistic-item" style="opacity:0.5" wx:if="{{item.SpikePoint==0}}">-</view>
+                        <view class="statistic-item" wx:if="{{item.ServePoint!=0}}">{{item.ServePoint}}</view>
+                        <view class="statistic-item" style="opacity:0.5" wx:if="{{item.ServePoint==0}}">-</view>
+                        <view class="statistic-item" wx:if="{{item.BlockPoint!=0}}">{{item.BlockPoint}}</view>
+                        <view class="statistic-item" style="opacity:0.5" wx:if="{{item.BlockPoint==0}}">-</view>
+                        <view class="statistic-item" wx:if="{{item.SpikeFault!=0}}">{{item.SpikeFault}}</view>
+                        <view class="statistic-item" style="opacity:0.5" wx:if="{{item.SpikeFault==0}}">-</view>
+                        <view class="statistic-item" wx:if="{{item.ServeFault!=0}}">{{item.ServeFault}}</view>
+                        <view class="statistic-item" style="opacity:0.5" wx:if="{{item.ServeFault==0}}">-</view>
+                        <view class="statistic-item" wx:if="{{item.OtherFault!=0}}">{{item.OtherFault}}</view>
+                        <view class="statistic-item" style="opacity:0.5" wx:if="{{item.OtherFault==0}}">-</view>
+                    </view>
+                    <view class="triangle">
+                        <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>
