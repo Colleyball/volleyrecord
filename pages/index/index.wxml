@@ -1,0 +1,103 @@
+<!--index.wxml-->
+<import src="../../template/model.wxml"/>
+<template wx:if="{{!userlogin}}" is="login"></template>
+
+<view style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">主页</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">视频</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">数据</view>
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">我</view>
+</view>
+  <view class="swiper-tab-temp"></view>
+  <view>
+    <swiper current="{{currentTab}}" autoplay="" class="swiper-box" duration="300" style="height:{{swiperHeight}}rpx" bindchange="bindChange">
+      <swiper-item>
+        <view class="list">
+          <view class="box-wide match-record" bindtap="bindViewTapMatchRecord" hidden="{{!video_status}}">
+            <image class="box-wide-pic" src="../../images/home-pic-1/1.png"  mode="aspectFill" ></image>
+            <text class="box-wide-TxtZh">比赛数据记录</text>
+            <text class="box-wide-TxtEn">记录比赛进程 队员数据统计</text>
+          </view>
+
+          <!--左边一个正方形 右边两个小正方形-->
+          <view class="box-combin-row">
+            <view class="box-middle three-two">
+              <image class="box-middle-pic" src="../../images/2-1.png"  mode="aspectFill" ></image>
+              <view class="box-middle-TxtZh">三局两胜</view>
+            </view>
+            <view class="box-combin-column">
+              <view class="box-small five-three">
+                <image class="box-small-pic" src="../../images/3-2.png"  mode="aspectFill" ></image>
+                <view class="box-small-TxtZh">五局三胜</view>
+              </view>
+              <view class="box-small one-zero">
+                <image class="box-small-pic" src="../../images/1-0.png"  mode="aspectFill" ></image>
+                <view class="box-small-TxtZh">一局胜负</view>
+              </view>
+            </view>
+          </view>
+
+          <view class="box-wide match-box">
+            <image class="box-wide-pic" src=""  mode="scaleToFill" ></image>
+            <text class="box-wide-TxtZh">竞赛工具箱</text>
+            <text class="box-wide-TxtEn">抛硬币 比分扳 战术板</text>
+          </view>
+
+          <view class="box-combin-row">
+            <view class="box-combin-column">
+              <view class="box-small zhanshuban" bindtap="Tactical">
+                <image class="box-small-pic" src="../../images/zhanshuban.png"  mode="aspectFill" ></image>
+                <view class="box-small-TxtZh">战术板</view>
+              </view>
+              <view class="box-small coin" bindtap="Coin">
+                <image class="box-small-pic" src="../../images/coin.png"  mode="aspectFill" ></image>
+                <view class="box-small-TxtZh">抛硬币</view>
+              </view>
+            </view>
+            <view class="box-middle scoreboard" bindtap="ScoreBoard">
+              <image class="box-middle-pic" src="../../images/scoreboard.png"  mode="aspectFill" ></image>
+              <view class="box-middle-TxtZh">比分板</view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+      
+        <view class="title">
+          <image class="title-icon" src='../../images/list.png'></image>
+          <view class="title-name">视频列表</view>
+        </view>
+        <view class="video-list">
+          <block wx:for="{{videoinfo}}" wx:key="no">
+            <view class="video-box" bindtap='VideoList' data-title="{{item.title}}" data-type='{{item.video_type}}'>
+              <image class="video-pic" src='http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/video/{{item.video_type}}.png' mode="aspectFill"/>
+              <view class="video-title">{{item.title}}</view>
+              <view class="video-num">{{item.num}}个视频</view>
+            </view>
+          </block>
+        </view>
+      </swiper-item>
+      <swiper-item>
+
+      </swiper-item>
+      <swiper-item>
+
+      </swiper-item>
+    </swiper>
+  </view>
+
+
+
+
+  
+</view>
+
+<view class="tool" hidden="{{toolflag}}">
+  <view class="item" bindtap="VolleyballOneWin" animation="{{animation}}">一局胜负</view>
+  <view class="item" bindtap="VolleyballTwoWin" animation="{{animation}}">三局两胜</view>
+  <view class="item" bindtap="VolleyballThreeWin" animation="{{animation}}">五局三胜</view>
+  <view class="item" bindtap="BindHelp" animation="{{animation}}">使用帮助</view>
+  <view class="item" bindtap="closetool" animation="{{animation}}">返回</view>
+</view>
+<view class="cover" hidden="{{toolflag}}" animation="{{animation2}}"></view>

@@ -1,0 +1,173 @@
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">比赛信息</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">主队</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">客队</view>
+  <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">挑边</view>
+</view>
+<view class="swiper-tab-temp"></view>
+<view>
+  <swiper current="{{currentTab}}" autoplay="{{false}}" class="swiper-box" duration="300" style="height:{{swiperHeight}}rpx" bindchange="bindChange">
+    <swiper-item>
+      <form bindsubmit="formSubmit">
+        <view class="tablename">输入比赛名称</view>
+          <view class="inputView">
+            <input placeholder-style="color:gray" placeholder="请输入比赛名称" maxlength="25" name="MatchName" bindinput="GetMatchName" style='height:80rpx;line-height:80rpx;width:100%'/>
+          </view>
+        <view class="tablename">输入裁判信息</view>
+          <view class="inputView">
+            <input placeholder-style="color:gray" placeholder="请输入第一裁判" maxlength="10" name="ARef" bindinput="GetRef1" style='height:80rpx;line-height:80rpx;width:100%'/>
+          </view>
+          <view class="inputView">
+            <input placeholder-style="color:gray" placeholder="请输入第二裁判" maxlength="10" name="BRef" bindinput="GetRef2" style='height:80rpx;line-height:80rpx;width:100%'/>
+          </view>
+          <view class="inputView">
+            <input placeholder-style="color:gray" placeholder="请输入记录员" maxlength="10" name="ARec" bindinput="GetRef3" style='height:80rpx;line-height:80rpx;width:100%'/>
+          </view>
+          <view class="inputView">
+            <input placeholder-style="color:gray" placeholder="请输入辅助记录员" maxlength="10"name="BRec" bindinput="GetRef4" style='height:80rpx;line-height:80rpx;width:100%'/>
+          </view>
+      </form>  
+    </swiper-item>
+   
+    <swiper-item>
+      <view class="ChooseTeam">选择已有队伍</view>
+      <view class="tablename">输入队伍名称</view>
+      <view class="inputView">
+        <input placeholder-style="color:gray" placeholder="请输入队伍名称" maxlength="15" name="TeamAName" bindinput="GetTeamAName" style='height:80rpx;line-height:80rpx;width:100%'/>
+        </view>
+      <view class="tablename">选择参赛队员</view>
+        <view class="playerlist">
+          <view class="playerlist-line">
+            <view class="playerlist-player  {{TeamANumFlag[1]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='1'>1</view>
+            <view class="playerlist-player  {{TeamANumFlag[2]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='2'>2</view>
+            <view class="playerlist-player  {{TeamANumFlag[3]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='3'>3</view>
+            <view class="playerlist-player  {{TeamANumFlag[4]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='4'>4</view>
+            <view class="playerlist-player  {{TeamANumFlag[5]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='5'>5</view>
+            <view class="playerlist-player  {{TeamANumFlag[6]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='6'>6</view>
+          </view>
+          <view class="playerlist-line">
+            <view class="playerlist-player  {{TeamANumFlag[7]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='7'>7</view>
+            <view class="playerlist-player  {{TeamANumFlag[8]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='8'>8</view>
+            <view class="playerlist-player  {{TeamANumFlag[9]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='9'>9</view>
+            <view class="playerlist-player  {{TeamANumFlag[10]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='10'>10</view>
+            <view class="playerlist-player  {{TeamANumFlag[11]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='11'>11</view>
+            <view class="playerlist-player  {{TeamANumFlag[12]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='12'>12</view>
+          </view>
+          <view class="playerlist-line">
+            <view class="playerlist-player  {{TeamANumFlag[13]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='13'>13</view>
+            <view class="playerlist-player  {{TeamANumFlag[14]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='14'>14</view>
+            <view class="playerlist-player  {{TeamANumFlag[15]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='15'>15</view>
+            <view class="playerlist-player  {{TeamANumFlag[16]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='16'>16</view>
+            <view class="playerlist-player  {{TeamANumFlag[17]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='17'>17</view>
+            <view class="playerlist-player  {{TeamANumFlag[18]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='18'>18</view>
+          </view>
+            <view class="lasttwo-line">
+              <view class="lasttwo-line-left">
+                <view class="lasttwo-line-left-playerlist">
+                  <view class="playerlist-player  {{TeamANumFlag[19]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='19'>19</view>
+                  <view class="playerlist-player  {{TeamANumFlag[20]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='20'>20</view>
+                  <view class="playerlist-player  {{TeamANumFlag[21]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='21'>21</view>
+                  <view class="playerlist-player  {{TeamANumFlag[22]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='22'>22</view>
+                </view>
+                <view class="lasttwo-line-left-playerlist">
+                  <view class="playerlist-player  {{TeamANumFlag[23]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='23'>23</view>
+                  <view class="playerlist-player  {{TeamANumFlag[24]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='24'>24</view>
+                  <view class="playerlist-player  {{TeamANumFlag[25]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='25'>25</view>
+                  <view class="playerlist-player  {{TeamANumFlag[26]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamA' data-num='26'>26</view>
+                </view>
+              </view>
+              <view class="lasttwo-line-right" bindtap='AddTeamAPlayer'>+</view>
+            </view>
+        </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="tablename">输入队伍名称</view>
+      <view class="inputView">
+        <input placeholder-style="color:gray" placeholder="请输入队伍名称" maxlength="15" name="TeamBName" bindinput="GetTeamBName" style='height:80rpx;line-height:80rpx;width:100%'/>
+        </view>
+      <view class="tablename">选择参赛队员</view>
+        <view class="playerlist">
+          <view class="playerlist-line">
+            <view class="playerlist-player  {{TeamBNum[1]==1 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='1'>1</view>
+            <view class="playerlist-player  {{TeamBNum[2]==2 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='2'>2</view>
+            <view class="playerlist-player  {{TeamBNum[3]==3 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='3'>3</view>
+            <view class="playerlist-player  {{TeamBNum[4]==4 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='4'>4</view>
+            <view class="playerlist-player  {{TeamBNum[5]==5 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='5'>5</view>
+            <view class="playerlist-player  {{TeamBNum[6]==6 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='6'>6</view>
+          </view>
+          <view class="playerlist-line">
+            <view class="playerlist-player  {{TeamBNum[7]==7 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='7'>7</view>
+            <view class="playerlist-player  {{TeamBNum[8]==8 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='8'>8</view>
+            <view class="playerlist-player  {{TeamBNum[9]==9 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='9'>9</view>
+            <view class="playerlist-player  {{TeamBNum[10]==10 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='10'>10</view>
+            <view class="playerlist-player  {{TeamBNum[11]==11 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='11'>11</view>
+            <view class="playerlist-player  {{TeamBNum[12]==12 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='12'>12</view>
+          </view>
+          <view class="playerlist-line">
+            <view class="playerlist-player  {{TeamBNum[13]==13 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='13'>13</view>
+            <view class="playerlist-player  {{TeamBNum[14]==14 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='14'>14</view>
+            <view class="playerlist-player  {{TeamBNum[15]==15 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='15'>15</view>
+            <view class="playerlist-player  {{TeamBNum[16]==16 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='16'>16</view>
+            <view class="playerlist-player  {{TeamBNum[17]==17 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='17'>17</view>
+            <view class="playerlist-player  {{TeamBNum[18]==18 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='18'>18</view>
+          </view>
+          <view class="playerlist-line">
+            <view class="playerlist-player  {{TeamBNum[19]==19 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='19'>19</view>
+            <view class="playerlist-player  {{TeamBNum[20]==20 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='20'>20</view>
+            <view class="playerlist-player  {{TeamBNum[21]==21 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='21'>21</view>
+            <view class="playerlist-player  {{TeamBNum[22]==22 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='22'>22</view>
+            <view class="playerlist-player  {{TeamBNum[23]==23 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='23'>23</view>
+            <view class="playerlist-player  {{TeamBNum[24]==24 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='24'>24</view>
+          </view>
+           <view class="playerlist-line">
+            <view class="playerlist-player  {{TeamBNum[25]==25 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='25'>25</view>
+            <view class="playerlist-player  {{TeamBNum[26]==26 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='26'>26</view>
+            <view class="playerlist-player  {{TeamBNum[27]==27 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='27'>27</view>
+            <view class="playerlist-player  {{TeamBNum[28]==28 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='28'>28</view>
+            <view class="playerlist-player  {{TeamBNum[29]==29 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='29'>29</view>
+            <view class="playerlist-player  {{TeamBNum[30]==30 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='30'>30</view>
+          </view>
+          <view class="playerlist-line">
+            <view class="playerlist-player  {{TeamBNum[31]==31 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='31'>31</view>
+            <view class="playerlist-player  {{TeamBNum[32]==32 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='32'>32</view>
+            <view class="playerlist-player  {{TeamBNum[33]==33 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='33'>33</view>
+            <view class="playerlist-player  {{TeamBNum[34]==34 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='34'>34</view>
+            <view class="playerlist-player  {{TeamBNum[35]==35 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='35'>35</view>
+            <view class="playerlist-player  {{TeamBNum[36]==36 ? 'playerchoose' : ''}}" bindtap='ChoosePlayerTeamB' data-num='36'>36</view>
+          </view>
+        </view>
+    </swiper-item>
+     <swiper-item>
+      <view class="coin" bindtap="Coin">
+        点击抛硬币
+      </view>
+      <view class="tablename">选择首先发球的一方</view>
+      <view class="ChooseServe">
+        <view class="ChooseServe-TeamA {{FirstServe==0 ? 'ServeChoosed' : ''}}" data-team='0' bindtap='ChooseServer'>{{TeamAName}}
+        </view>
+        <view class="ChooseServe-TeamB {{FirstServe==1 ? 'ServeChoosed' : ''}}" data-team='1' bindtap='ChooseServer'>{{TeamBName}}
+        </view>
+      </view>
+      <view class="tablename">选择场地左侧的队伍</view>
+      <image class='volleyball-court' src='../../images/indoor_court_light.png' ></image>
+      <view class="volleyball-court-left">
+        <view class="volleyball-court-left-TeamA {{FirstSide==0 ? 'ServeChoosed' : ''}}" data-team='0' bindtap='ChooseSide'>{{TeamAName}}
+        </view>
+        <view class="volleyball-court-left-TeamB {{FirstSide==1 ? 'ServeChoosed' : ''}}" data-team='1' bindtap='ChooseSide'>{{TeamBName}}
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="confirm-btn {{MatchName && TeamAName && TeamBName &&  TeamACount > 5 && TeamBCount > 5 && FirstServe != 2 && FirstSide !=2 ? 'confirm-btn-yes ' : ''}}" bindtap="BindConfirm">✔
+</view>
+
+<view class="cover" hidden="{{ShowAddNum}}"></view>
+<view class="editScore" hidden="{{ShowAddNum}}">
+  <view class="edit-box">
+    <input placeholder-style="color:gray" placeholder="输入号码" maxlength="2" name="Num" bindinput="GetTeamANewNum" style='height:300rpx;line-height:300rpx;width:100%'/>
+  </view>
+  <view class="edit-confirm" bindtap='ConfirmTeamANewScore'>确认添加</view>
+  <view class="edit-confirm edit-close" bindtap='AddPlayerBack'>返回</view>
+</view>

@@ -1,0 +1,155 @@
+page,.page {
+  font-family: 'PingFang SC', 'Helvetica Neue' ,Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
+    background: url('http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/background.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background: white
+}
+
+.container{
+  padding-top:5rpx;
+  margin: 0;
+}
+
+.team{
+  position: relative;
+  width: 680rpx;
+  height:520rpx;
+  background-color: white;
+  padding: 0;
+  border-radius: 20rpx;
+  box-shadow: 0rpx 20rpx 70rpx rgba(0, 0, 0,0.3);
+  margin: 0rpx 0rpx 70rpx 0rpx;
+}
+
+.teampic{
+  width: 680rpx;
+  height: 360rpx;
+  margin:0;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.teamname{
+  margin-top: 0;
+  width: 90%;
+  margin-left: 5%;
+  height: 90rpx;
+  text-align: left;
+  font-size: 50rpx;
+  line-height: 90rpx;
+  color: rgba(0, 0, 0,0.7)
+}
+
+.teamdetail{
+  width: 90%;
+  margin-left: 5%;
+  height: 60rpx;
+  text-align: left;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: rgba(0, 0, 0,0.5)
+}
+
+.title {
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center
+}
+
+.title-icon {
+  margin-left: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.title-name {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 400rpx;
+  padding-left: 20rpx;
+  font-size: 35rpx;
+}
+
+.video-list {
+  margin-top: 0rpx;
+  width: 100%;
+}
+
+.video-box {
+  height: 370rpx;
+  width: 370rpx;
+  float: left;
+  border: 2.5rpx solid white
+}
+
+.video-pic {
+  width: 370rpx;
+  height: 246rpx;
+}
+
+.video-title {
+  width: 360rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  display:block;
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  background: rgba(0, 0, 0, 0.03);
+  padding-left: 10rpx;
+}
+
+.video-num {
+  width: 360rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 25rpx;
+  color:rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.03);
+  padding-left: 10rpx;
+}
+
+.video-blank {
+  width: 370rpx;
+  height: 30rpx;
+}
+
+.recommand-video {
+  width: 750rpx;
+  height: 400rpx;
+}
+
+.swiper-item {
+
+}
+
+.slide-image {
+  width: 750rpx;
+  height: 400rpx;
+}
+
+.silde-title {
+  width: 750rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: -120rpx;
+  color: white;
+  position: relative;
+  z-index: 11;
+  text-align: center;
+  font-size: 38rpx;
+}
+
+.silde-shadow {
+  width: 750rpx;
+  height: 150rpx;
+  margin-top: -95rpx;
+  background: linear-gradient(to top,black,rgba(0, 0, 0, 0));
+  position: relative;
+  z-index: 10
+ }

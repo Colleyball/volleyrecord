@@ -1,0 +1,125 @@
+page,.page {
+  font-family: 'PingFang SC', 'Helvetica Neue' ,Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
+}
+
+.container{
+  padding-top:5rpx;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 1)
+}
+
+.Setinfo {
+  width: 100%;
+  height: 220rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  text-align: center
+}
+
+.Setinfo-teamA {
+  width: 600rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  flex-direction: row
+}
+
+.Setinfo-teamA-name {
+  width: 500rpx;
+  background: #E03636;
+  color: white;
+  font-size: 40rpx;
+}
+
+.Setinfo-teamA-set {
+  width: 100rpx;
+  background: #1A1A1A;
+  color: white;
+  font-size: 70rpx;
+}
+
+.Setinfo-teamB {
+  width: 600rpx;
+  margin-left:150rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-size: 40rpx;
+}
+
+.Setinfo-teamB-name {
+  width: 500rpx;
+  background: #25C6FC;
+}
+
+.Setinfo-teamB-set {
+  width: 100rpx;
+  background: #1A1A1A;
+  color: white;
+  font-size: 70rpx;
+}
+
+.tablename{
+  border-bottom: 2px solid whitesmoke;
+  width:750rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.Scoreinfo {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Scoreinfo-score {
+  font-size: 40rpx;
+  width:680rpx;
+  height:80rpx;
+  margin-left: 35rpx;
+  line-height: 80rpx;
+  background-color: whitesmoke;
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1) 
+}
+
+.confirm-btn {
+  position: fixed;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  bottom: 20rpx;
+  left: 425rpx;
+  line-height: 150rpx;
+  text-align: center;
+  font-size: 80rpx;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+  background: #EDEDED;
+  color: rgba(0, 0, 0, 0.8 );
+}
+
+.back-btn {
+  position: fixed;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  bottom: 20rpx;
+  left: 175rpx;
+  line-height: 150rpx;
+  text-align: center;
+  font-size: 80rpx;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+  background: #EDEDED;
+  color: rgba(0, 0, 0, 0.8 );
+}

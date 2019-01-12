@@ -1,0 +1,313 @@
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  background-color: #fff;
+  box-shadow: 0rpx 10rpx 20rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 15rpx;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 25%;
+  color: #777;
+  margin-bottom: 10rpx;
+}
+
+.on {
+  color: #000;
+  font-size: 30rpx;
+  border-bottom:5rpx solid #000;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 20rpx;
+}
+
+.swiper-box view {
+  text-align: center;
+}
+
+.ChooseTeam{
+  width:680rpx;
+  height:170rpx;
+  margin-left: 35rpx;
+  line-height: 170rpx;
+  background: linear-gradient(45deg,rgba(37,198,252,1),rgba(246, 214, 255, 0));
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+  font-size: 45rpx;
+  font-weight: bolder;
+  color: rgba(255, 255, 255, 0.9)
+}
+
+.tablename{
+  border-bottom: 2px solid whitesmoke;
+  width:680rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin:0 auto 15rpx auto;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.inputView{
+  font-size: 40rpx;
+  display: flex;
+  width:680rpx;
+  height:80rpx;
+  margin-left: 35rpx;
+  line-height: 80rpx;
+  flex-direction: row;
+  background-color: whitesmoke;
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1)
+}
+
+.playerlist{
+  margin-left: 35rpx;
+  width: 680rpx;
+  height: 600rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.playerlist-line {
+  margin-top: 30rpx;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.playerlist-player {
+  width: 90rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: whitesmoke;
+  text-align: center;
+  border-radius: 5rpx;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1)
+}
+
+.playerchoose {
+  background: #25C6FC;
+  color: white
+}
+
+.lasttwo-line {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.lasttwo-line-left {
+
+}
+
+.lasttwo-line-left-playerlist {
+  width: 444rpx;
+  margin-top: 30rpx;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.lasttwo-line-right {
+  width: 208rpx;
+  height: 170rpx;
+  line-height: 170rpx;
+  margin-top: 30rpx;
+  background: linear-gradient(45deg,rgba(255,83,77,0.8),rgba(246, 214, 255, 0));
+  border-radius: 20rpx;
+  text-align: center;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+  font-size: 85rpx;
+  font-weight: bolder;
+  color: rgba(255, 255, 255, 0.9)
+}
+
+.coin {
+  height: 100rpx;
+  line-height: 100rpx;
+  width:680rpx;
+  margin-left: 35rpx;
+  border-radius: 5rpx;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+  background: #323341;
+  margin-bottom: 30rpx;
+  color: white;
+  font-size: 35rpx;
+}
+
+.ChooseServe {
+  height: 200rpx;
+  width:680rpx;
+  margin-left: 35rpx;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+  font-size: 40rpx;
+  color: white;
+  margin-bottom: 30rpx;
+}
+
+.ChooseServe-TeamA {
+  height: 200rpx;
+  line-height: 200rpx;
+  width: 320rpx;
+  border-radius: 5rpx;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+  background: #FF534D;
+  white-space:nowrap; 
+  text-overflow:ellipsis; 
+  -o-text-overflow:ellipsis; 
+  overflow:hidden;
+}
+
+.ChooseServe-TeamB {
+  height: 200rpx;
+  line-height: 200rpx;
+  width: 320rpx;
+  border-radius: 5rpx;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+  background: #25C6FC;
+  white-space:nowrap; 
+  text-overflow:ellipsis; 
+  -o-text-overflow:ellipsis; 
+  overflow:hidden;
+}
+
+.volleyball-court {
+  width:680rpx;
+  margin-left: 35rpx;
+  height: 473rpx;
+  border-radius: 5rpx;
+}
+
+.volleyball-court-left {
+  width: 320rpx;
+  margin-left: 55rpx;
+  height: 440rpx;
+  margin-top: -473rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 40rpx;
+  color: white
+}
+
+.volleyball-court-left-TeamA {
+  width: 90%;
+  height: 200rpx;
+  line-height: 200rpx;
+  border-radius: 5rpx;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+  background: #FF534D;
+  white-space:nowrap; 
+  text-overflow:ellipsis; 
+  -o-text-overflow:ellipsis; 
+  overflow:hidden;
+}
+
+.volleyball-court-left-TeamB {
+  width: 90%;
+  height: 200rpx;
+  line-height: 200rpx;
+  border-radius: 5rpx;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+  background: #25C6FC;
+  white-space:nowrap; 
+  text-overflow:ellipsis; 
+  -o-text-overflow:ellipsis; 
+  overflow:hidden;
+}
+
+.ServeChoosed {
+  background: #323341;
+}
+
+.confirm-btn {
+  position: fixed;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  bottom: 20rpx;
+  left: 300rpx;
+  background: whitesmoke;
+  line-height: 150rpx;
+  text-align: center;
+  font-size: 80rpx;
+  color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1)
+}
+
+.confirm-btn-yes {
+  background: #25C6FC;
+  color: rgba(0, 0, 0, 0.8 );
+}
+
+.cover{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  background:rgba(255,255,255,0.8);
+  overflow: hidden;
+}
+
+.editScore {
+  position: fixed;
+  width: 500rpx;
+  left: 125rpx;
+  height: 400rpx;
+  top:200rpx;
+}
+
+.edit-box {
+  font-size: 80rpx;
+  display: flex;
+  width:500rpx;
+  height:300rpx;
+  margin-left: 0rpx;
+  line-height: 300rpx;
+  flex-direction: row;
+  background-color: whitesmoke;
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1)
+}
+
+.edit-confirm {
+  width: 500rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+  background: linear-gradient(45deg,rgba(255,83,77,0.8),rgba(246, 214, 255, 0));
+  border:0rpx solid rgba(240, 128, 128, 0.2)
+}
+
+.edit-close {
+  background: linear-gradient(45deg,rgba(37,198,252,1),rgba(246, 214, 255, 0));
+}

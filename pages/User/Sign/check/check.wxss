@@ -1,0 +1,42 @@
+page,.page {
+  font-family: 'PingFang SC', 'Helvetica Neue' ,Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
+    background: url('http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/background.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container{
+  padding-top:125rpx;
+  padding-bottom: 30rpx;
+  margin: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 20rpx 0 0 0;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20rpx;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.item {
+  width: 32%;
+  text-align: center
+}
+.red {
+  color: red;
+  font-weight: bold;
+}
+
+.top {
+  position: fixed;
+  top: 20rpx;
+  left: 5%;
+  background: rgba(255, 255, 255, 0.95);
+}

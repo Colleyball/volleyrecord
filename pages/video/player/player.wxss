@@ -1,0 +1,231 @@
+page,.page {
+  font-family: 'PingFang SC', 'Helvetica Neue' ,Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
+    background: url('http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/background.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background: white
+}
+
+.container{
+  padding-top:5rpx;
+  margin: 0;
+}
+
+.player {
+  width: 680rpx;
+  height: 300rpx;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  border-radius: 20rpx;
+  box-shadow: 0rpx 0rpx 100rpx 0rpx rgba(0, 0, 0, 0.3);
+}
+
+.player-true {
+  width: 750rpx;
+  height: 421.87rpx;
+  margin-top: 50rpx;
+  border-radius: 0rpx;
+  box-shadow: 0rpx 0rpx 100rpx 0rpx rgba(0, 0, 0, 0);
+}
+
+.title {
+  width: 90%;
+  height: auto;
+  padding: 30rpx 5% 30rpx 5%;
+  line-height: 50rpx;
+  margin-top: 0rpx;
+  font-size: 40rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0rpx 0rpx 100rpx 0rpx rgba(0, 0, 0, 0.2);
+}
+
+.copy-like {
+  width: 680rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: rgba(76, 180 ,231, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 20rpx;
+  margin: 80rpx 0 0 35rpx;
+}
+
+.copy-link-icon {
+  height: 80rpx;
+  width: 80rpx;
+}
+
+.copy-link-text {
+  width: 500rpx;
+  text-align: center;
+  color: white;
+  font-size: 40rpx;
+  margin-left: -200rpx;
+}
+
+.comment-title {
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  background: white
+}
+
+.title-icon {
+  margin-left: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.title-name {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 400rpx;
+  padding-left: 20rpx;
+  font-size: 35rpx;
+}
+
+.comment-list {
+  width: 100%;
+  height: 600rpx;
+  background: white;
+  line-height: 400rpx;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.85)
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  height: 80rpx;
+  background: rgba(255, 255, 255, 1);
+  border-top: 1rpx solid rgba(0,0,0,0.5);
+  border-radius: 0rpx;
+  box-shadow: 0rpx 0rpx 100rpx 0rpx rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+
+.input-box {
+  width: 400rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  background: rgba(0,0,0,0.1);
+  font-size: 30rpx;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.75);
+  margin-right: 20rpx;
+}
+
+.bottom-bar-item {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+
+.bottom-bar-share {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: -70rpx;
+  margin-right: 20rpx;
+  background: rgba(0, 0, 0, 0);
+}
+
+.share {
+  width: 100%;
+  height: 100%;
+}
+
+.bottom-comment-box {
+  width: 100%;
+  height: 275rpx;
+  position: fixed;
+  bottom: 0;
+  background: white;
+  border-top: 5rpx solid #3369E8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around
+}
+
+.bottom-input-area {
+  width: 95%;
+  height: 180rpx;
+  margin-left: 2.5%;
+  background: rgba(0, 0, 0, 0.1)
+}
+
+.bottom-input-bar {
+  width: 350rpx;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  margin-left: 400rpx;
+}
+
+.input-cancel {
+  width: 150rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 30rpx;
+  color: rgba(0, 0, 0, 0.85);
+  border-radius: 5rpx;
+}
+
+.input-submit {
+  width: 150rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #3369E8;
+  font-size: 30rpx;
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 5rpx;
+  margin-left: 20rpx;
+}
+
+
+.tip {
+  position: fixed;
+  top: 100rpx;
+  left:75rpx;
+  height: 900rpx;
+  width: 600rpx;
+  border-radius: 30rpx;
+  box-shadow: 0rpx 0rpx 100rpx 0rpx rgba(0, 0, 0, 0.3);
+  z-index: 10
+}
+
+.cover {
+  top: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 9
+}
+
+.close {
+  text-align: center;
+  font-size: 60rpx;
+  font-weight: bold;
+  border-radius: 50%;
+  position: fixed;
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  bottom: 10rpx;
+  left: 335rpx;
+  box-shadow: 0rpx 0rpx 100rpx 0rpx rgba(0, 0, 0, 0.3);
+   z-index: 10
+}

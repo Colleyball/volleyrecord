@@ -1,0 +1,31 @@
+  <view class="list top">
+    <view class="item">姓名</view>
+    <view class="item">出勤</view>
+    <view class="item">回家</view>
+  </view>
+
+<view class="container">
+  <block wx:for="{{info}}" wx:key='{{index}}'>
+    <view class="list">
+    <view class="item">{{item.name}}</view>
+    <block wx:if="{{item.sign == 1}}">
+      <view class="item">已到</view>
+    </block>
+    <block wx:else>
+      <view class="item red">未到</view>
+    </block>
+    <block wx:if="{{item.home == 0}}">
+      <view class="item red">没有回家</view>
+    </block>
+    <block wx:if="{{item.home == 3}}">
+      <view class="item">班车回家</view>
+    </block>
+    <block wx:if="{{item.home == 4}}">
+      <view class="item">父母接送</view>
+    </block>
+    <block wx:if="{{item.home == 5}}">
+      <view class="item">自己回家</view>
+    </block>
+    </view>
+  </block>
+</view>

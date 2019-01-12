@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="card" bindtap='Sign' data-type='1'>
+    <image class="pic" src='../../../images/placeholder.png' mode='AspectFit'></image>
+    <view class="title">签到</view>
+  </view>
+  <view class="card" bindtap='Sign' data-type='2'>
+    <image class="pic" src='../../../images/cocktail.png' mode='AspectFit'></image>
+    <view class="title">午饭</view>
+  </view>
+  <view class="card" bindtap='Sign' data-type='3'>
+    <image class="pic" src='../../../images/bus.png' mode='AspectFit'></image>
+    <view class="title">坐班车回家</view>
+  </view>
+  <view class="card" bindtap='Sign' data-type='4'>
+    <image class="pic" src='../../../images/motorbike.png' mode='AspectFit'></image>
+    <view class="title">父母接送</view>
+  </view>
+  <view class="card" bindtap='Sign' data-type='5'>
+    <image class="pic" src='../../../images/bicycle.png' mode='AspectFit'></image>
+    <view class="title">自己回家</view>
+  </view>
+  <view class="card" bindtap='Check'>
+    <image class="pic" src='../../../images/brochure.png' mode='AspectFit'></image>
+    <view class="title">签到查询</view>
+  </view>
+</view>

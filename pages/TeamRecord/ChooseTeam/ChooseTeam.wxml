@@ -1,0 +1,19 @@
+<view class='container'>
+  <view class="teamlist">
+    <block wx:for="{{teaminfo}}" wx:key="no">
+      <view class="team" bindtap="bindViewTapTeam" data-name="{{item.team}}" data-teamid="{{item.no}}">
+        <image class="teampic" src="{{item.pic}}" mode='scaleToFill'></image>
+        <view class="teamname">{{item.team}}</view>
+        <view class="teamdetail">教练：{{item.coach}}</view>
+      </view>
+      <view class="team-cover" wx:if="{{teamname == item.team}}" bindtap="bindViewTapTeam" data-name="{{item.team}}" data-teamid="{{item.no}}">已选择（点击取消）</view>
+    </block>
+  </view>
+</view>
+      
+<view class="choose-team-info">
+  <view class="choose-team-info-item">选择的球队:{{teamname}}</view>
+</view>
+
+<view class="confirm-btn {{teamname != '' ? 'confirm-btn-yes ' : ''}}" bindtap="BindConfirm">✔
+</view>

@@ -1,0 +1,38 @@
+<view class="search" hidden='{{SearchFlag}}'>
+  <image class="search-icon" src='../../../images/search.png'/>
+  <view class="search-title" bindtap='ShowSearch'>搜索球队、交手记录…</view>
+</view>
+
+<view class="cover" hidden='{{!SearchFlag}}'></view>
+<view class="search search-border" hidden='{{!SearchFlag}}'>
+  <image class="search-icon" src='../../../images/search.png'/>
+  <view class="search-title">
+    <input bindfocus='ShowSearchBtn' bindblur='HideSearchBtn' bindinput='GetSearchContent' placeholder-style="color:gray" focus='{{focus}}' placeholder="搜索球队、交手记录…" maxlength="20" name="name" style="height: 80rpx;line-height: 80rpx"/>
+  </view>
+  <view class="search-btn" hidden='{{!InputFlag}}' bindtap='Search'>搜索</view>
+  <view class="search-btn" hidden='{{InputFlag}}' bindtap='CancelSearch'>取消</view>
+</view>
+<view class="search-tip" hidden='{{!SearchFlag}}'>
+  <text>可输入学院名称
+  例如'电子'、'机械'…
+  也可输入‘计算机vs会计’
+  查询双方交手记录
+  </text>
+</view>
+
+<view class="resultlist">
+  <view class="resultnum">一共为你找到{{resultnum}}搜索结果</view>
+  <block wx:for="{{resultlist}}" wx:key="id">
+    <view class="result" wx:if="{{status==2}}" bindtap='searchresult' data-teama='{{item.teamA}}' data-teamb='{{item.teamB}}' data-status='{{status}}'>
+      <view class="teamA">{{item.teamA}}</view>
+      <view class="teamB">{{item.teamB}}</view>
+      <view class="vs">VS</view>
+    </view>
+    <view class="result" wx:if="{{status==1}}" bindtap='searchresult' data-teama='{{item.teamA}}' data-status='{{status}}' style='height:125rpx'>
+      <view class="teamA" style="line-height:125rpx;">{{item.teamA}}</view>
+    </view>
+    <view class="result" wx:if="{{status==0}}" style='height:250rpx'>
+      <view class="teamA" style="height:250rpx;line-height:250rpx;">换个关键字试试~</view>
+    </view>
+  </block>
+</view>
