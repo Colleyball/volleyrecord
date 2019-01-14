@@ -35,7 +35,7 @@ Page({
         S.push(c[i][0].SpikePoint), S.push(c[i][0].ServeFault), S.push(c[i][0].SpikeFault), 
         S.push(c[i][0].OtherFault));
         wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData2019",
+          url: "https://api.volleywang.cn/VolleyRecord/SetMatchRecord",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },

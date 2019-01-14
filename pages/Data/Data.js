@@ -21,7 +21,7 @@ Page({
                 matchinfo: n
             });
         } else wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData2019/All",
+          url: "https://api.volleywang.cn/VolleyRecord/GetAllMatchInfo",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },

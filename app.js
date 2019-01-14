@@ -25,7 +25,7 @@ App({
                     },
                     fail: function(t) {}
                 }), e.code ? wx.request({
-                    url: "https://volleywang.cn/index.php/toto/getuid",
+                    url: "https://api.volleywang.cn/VolleyRecord/GetUid",
                     header: {
                         "content-type": "application/json;charset=utf8"
                     },

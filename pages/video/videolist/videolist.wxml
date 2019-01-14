@@ -1,11 +1,11 @@
 <view class="container">
     <view class="video-tip">
         <view class="video-tip-item">
-            <image class="video-tip-item-pic" src="../../../images/play.png"></image>
+            <image class="video-tip-item-pic" src="../../../images/video/play.png"></image>
             <view class="video-tip-item-text">小程序内直接播放</view>
         </view>
         <view class="video-tip-item">
-            <image class="video-tip-item-pic" src="../../../images/play-no.png"></image>
+            <image class="video-tip-item-pic" src="../../../images/video/play-no.png"></image>
             <view class="video-tip-item-text">提供视频链接</view>
         </view>
     </view>
@@ -13,9 +13,9 @@
         <view bindtap="player" class="result" data-group="{{item.group}} {{item.length}}" data-link="{{item.link}}" data-qqvideo="{{item.qqvideo}}" data-teama="{{item.teama}}" data-teamb="{{item.teamb}}" wx:for="{{videolist}}" wx:key="no">
             <view class="video-image">
                 <image class="video-pic" mode="aspectFill" src="{{item.pic}}" wx:if="{{item.pic}}"></image>
-                <image class="video-pic" mode="aspectFill" src="../../../images/video.jpg" wx:else></image>
-                <image class="video-type" src="../../../images/play.png" wx:if="{{item.qqvideo==1}}"></image>
-                <image class="video-type" src="../../../images/play-no.png" wx:else></image>
+                <image class="video-pic" mode="aspectFill" src="../../../images/video/video.jpg" wx:else></image>
+                <image class="video-type" src="../../../images/video/play.png" wx:if="{{item.qqvideo==1}}"></image>
+                <image class="video-type" src="../../../images/video/play-no.png" wx:else></image>
             </view>
             <view class="video-info">
                 <view class="teamA">{{item.teama}}</view>

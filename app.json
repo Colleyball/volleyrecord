@@ -16,8 +16,6 @@
         "pages/Data/search/searchresult/searchresult",
         "pages/video/player/player",
         "pages/video/videolist/videolist",
-        "pages/User/Sign/Sign",
-        "pages/User/Sign/check/check",
         "pages/Data/Court/Court",
         "pages/Data/Rank/Rank",
         "pages/Data/Statistic2019/Statistic2019",

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -28,13 +28,36 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "搜索结果2",
+					"pathName": "pages/Data/search/searchresult/searchresult",
+					"query": "teamA=通信工程学院&teamB=机械工程学院&status=2"
+				},
+				{
+					"id": -1,
+					"name": "搜索结果",
+					"pathName": "pages/Data/search/searchresult/searchresult",
+					"query": "teamA=电子信息学院&teamB=undefined&status=1"
+				},
+				{
+					"id": -1,
+					"name": "数据统计2019",
+					"pathName": "pages/Data/Statistic2019/Statistic2019",
+					"query": "matchid=130"
+				}
+			]
 		}
 	}
 }

@@ -8,10 +8,11 @@ Page({
     onPullDownRefresh: function() {},
     onReachBottom: function() {},
     onShareAppMessage: function() {
-        return {
-            title: "赛事窗·杭电排球|比赛数据记录软件",
-            desc: "点击进入赛事窗",
-            path: "/pages/User/Setting/Setting"
-        };
+      var route = 'User/Setting/Setting'
+      return {
+        title: "赛事窗·杭电排球|排球数据记录软件",
+        desc: "点击进入赛事窗",
+        path: "pages/index/index?type=share&route=" + route
+      };
     }
 });

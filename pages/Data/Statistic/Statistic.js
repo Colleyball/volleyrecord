@@ -27,7 +27,7 @@ Page({
         a.setData({
             matchid: t.matchid
         }), wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData/getonematchinfo",
+          url: "https://api.volleywang.cn/VolleyRecord/GetOneMatchInfo",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
@@ -41,7 +41,7 @@ Page({
                 });
             }
         }), wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData/getstatistic",
+          url: "https://api.volleywang.cn/VolleyRecord/GetPlayerStatistic",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
@@ -55,7 +55,7 @@ Page({
                 });
             }
         }), wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData/getteamstatistic",
+          url: "https://api.volleywang.cn/VolleyRecord/GetOneMatchStatistic",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
@@ -78,10 +78,11 @@ Page({
     onReachBottom: function() {},
     onShareAppMessage: function() {
         var t = this;
+      var route = 'Data/Statistic/Statistic&matchid=' + t.data.matchid
         return {
-            title: "[数据]" + t.data.matchinfo[0].teamAname + "vs" + t.data.matchinfo[0].teamBname,
-            desc: "点击进入赛事窗",
-            path: "pages/Data/Statistic/Statistic?matchid=" + t.data.matchid
+          title: "[数据]" + t.data.matchinfo[0].teamAname + "vs" + t.data.matchinfo[0].teamBname,
+          desc: "点击进入赛事窗",
+          path: "pages/index/index?type=share&route=" + route
         };
     }
 });

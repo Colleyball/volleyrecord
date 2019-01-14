@@ -155,7 +155,7 @@ Page({
     },
     VideoList: function(t) {
         wx.navigateTo({
-            url: "../video/videolist/videolist?type=" + t.currentTarget.dataset.type + "&title=" + t.currentTarget.dataset.title
+          url: "../video/videolist/videolist?videotype=" + t.currentTarget.dataset.type + "&title=" + t.currentTarget.dataset.title
         });
     },
     BindMatchInfo: function(t) {
@@ -251,8 +251,21 @@ Page({
     onLoad: function(e) {
         console.log("onLoad");
         var o = this;
+        if (e.type == 'share') {
+          var keys = Object.keys(e)
+          var detail = '?'
+          for (var key in e) {
+            if (key != 'route' && key != 'type') {
+              detail = detail + key + '=' + e[key] + '&'
+            }
+          }
+          var route = e.route
+          wx.navigateTo({
+            url: '../' + route + detail,
+          })
+        }
         wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData/getvideostatus",
+          url: "https://api.volleywang.cn/VolleyRecord/GetVideoPartStatus",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
@@ -264,7 +277,7 @@ Page({
                 });
             }
         }), wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData/getvideorecommand",
+          url: "https://api.volleywang.cn/VolleyRecord/GetRecommandVideo",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
@@ -276,7 +289,7 @@ Page({
                 });
             }
         }), wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData/getvideolist",
+          url: "https://api.volleywang.cn/VolleyRecord/GetAllVideoList",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
@@ -289,7 +302,7 @@ Page({
                 });
             }
         }), wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData2019/All",
+          url: "https://api.volleywang.cn/VolleyRecord/GetAllMatchInfo",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
@@ -355,7 +368,7 @@ Page({
     },
     onShareAppMessage: function() {
         return {
-            title: "赛事窗·杭电排球|比赛数据记录软件",
+            title: "赛事窗·杭电排球|排球数据记录软件",
             desc: "点击进入赛事窗",
             path: "/pages/index/index"
         };

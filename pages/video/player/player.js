@@ -123,11 +123,12 @@ Page({
     onPullDownRefresh: function() {},
     onReachBottom: function() {},
     onShareAppMessage: function() {
-        var t = this;
-        return {
-            title: "[视频]" + t.data.title,
-            desc: "点击进入赛事窗",
-            path: "pages/video/player/player?title=" + t.data.title + "&link=" + t.data.link + "&qqvideo=" + t.data.qqvideo + "&group=" + t.data.group
-        };
+      var t = this;
+      var route = "video/player/player&title=" + t.data.title + "&link=" + t.data.link + "&qqvideo=" + t.data.qqvideo + "&group=" + t.data.group
+      return {
+        title: "[视频]" + t.data.title,
+        desc: "点击进入赛事窗",
+        path: "pages/index/index?type=share&route=" + route
+      };
     }
 });

@@ -66,7 +66,7 @@ Page({
             SearchFlag: !1,
             focus: !1
         }), wx.request({
-            url: "https://volleywang.cn/index.php/api/search",
+          url: "https://api.volleywang.cn/VolleyRecord/Search",
             header: {
                 "content-type": "application/json;charset=utf8"
             },
@@ -100,7 +100,7 @@ Page({
         wx.setNavigationBarTitle({
             title: a.value + " - 搜索结果"
         }), wx.request({
-            url: "https://volleywang.cn/index.php/api/search",
+          url: "https://api.volleywang.cn/VolleyRecord/Search",
             header: {
                 "content-type": "application/json;charset=utf8"
             },

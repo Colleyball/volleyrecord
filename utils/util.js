@@ -12,7 +12,7 @@ module.exports = {
     },
     setpublicinfo: function(t, e) {
         wx.request({
-            url: "https://volleywang.cn/index.php/toto/setpublicinfo",
+          url: "https://api.volleywang.cn/VolleyRecord/SetPublicInfo",
             header: {
                 "content-type": "application/json;charset=utf8"
             },

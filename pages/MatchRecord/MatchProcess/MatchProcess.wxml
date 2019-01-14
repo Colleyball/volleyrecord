@@ -12,10 +12,10 @@
             </view>
             <view class="ball">
                 <view bindtap="ChangeServe" class="winball" wx:if="{{LastScore==0}}">
-                    <image class="ball-pic" mode="aspectFit" src="../../../../images/ic_volley_ball_dark.png"></image>
+                    <image class="ball-pic" mode="aspectFit" src="../../../images/match_record/ic_volley_ball_dark.png"></image>
                 </view>
                 <view bindtap="ChangeServe" class="winball" style="margin-left:90rpx" wx:if="{{LastScore==1}}">
-                    <image class="ball-pic" mode="aspectFit" src="../../../../images/ic_volley_ball_dark.png"></image>
+                    <image class="ball-pic" mode="aspectFit" src="../../../images/match_record/ic_volley_ball_dark.png"></image>
                 </view>
             </view>
         </view>
@@ -23,19 +23,19 @@
     </view>
     <view class="tool">
         <view bindtap="TimeOut" class="tool-item TeamAColor" data-team="0">
-            <image class="tool-pic" mode="aspectFit" src="../../../../images/ic_timeout_tab.png"></image>
+            <image class="tool-pic" mode="aspectFit" src="../../../images/match_record/ic_timeout_tab.png"></image>
         </view>
         <view bindtap="ChangeTeamAPosition" class="tool-item TeamAColor">
-            <image class="tool-pic" mode="aspectFit" src="../../../../images/refresh-light.png"></image>
+            <image class="tool-pic" mode="aspectFit" src="../../../images/match_record/refresh-light.png"></image>
         </view>
         <view class="tool-item">
-            <image bindtap="ChangeSide" class="tool-pic" mode="aspectFit" src="../../../../images/ic_swap.png"></image>
+            <image bindtap="ChangeSide" class="tool-pic" mode="aspectFit" src="../../../images/match_record/ic_swap.png"></image>
         </view>
         <view bindtap="ChangeTeamBPosition" class="tool-item">
-            <image class="tool-pic" mode="aspectFit" src="../../../../images/refresh.png"></image>
+            <image class="tool-pic" mode="aspectFit" src="../../../images/match_record/refresh.png"></image>
         </view>
         <view bindtap="TimeOut" class="tool-item" data-team="1">
-            <image class="tool-pic" mode="aspectFit" src="../../../../images/ic_timeout_tab_dark.png"></image>
+            <image class="tool-pic" mode="aspectFit" src="../../../images/match_record/ic_timeout_tab_dark.png"></image>
         </view>
     </view>
 </view>
@@ -175,10 +175,10 @@
             </view>
             <view class="ball">
                 <view bindtap="ChangeServe" class="winball" wx:if="{{LastScore==1}}">
-                    <image class="ball-pic" mode="aspectFit" src="../../../../images/ic_volley_ball_dark.png"></image>
+                    <image class="ball-pic" mode="aspectFit" src="../../../images/match_record/ic_volley_ball_dark.png"></image>
                 </view>
                 <view bindtap="ChangeServe" class="winball" style="margin-left:90rpx" wx:if="{{LastScore==0}}">
-                    <image class="ball-pic" mode="aspectFit" src="../../../../images/ic_volley_ball_dark.png"></image>
+                    <image class="ball-pic" mode="aspectFit" src="../../../images/match_record/ic_volley_ball_dark.png"></image>
                 </view>
             </view>
         </view>
@@ -186,19 +186,19 @@
     </view>
     <view class="tool">
         <view bindtap="TimeOut" class="tool-item" data-team="1">
-            <image class="tool-pic" mode="aspectFit" src="../../../../images/ic_timeout_tab_dark.png"></image>
+            <image class="tool-pic" mode="aspectFit" src="../../../images/match_record/ic_timeout_tab_dark.png"></image>
         </view>
         <view bindtap="ChangeTeamBPosition" class="tool-item">
-            <image class="tool-pic" mode="aspectFit" src="../../../../images/refresh.png"></image>
+            <image class="tool-pic" mode="aspectFit" src="../../../images/match_record/refresh.png"></image>
         </view>
         <view class="tool-item">
-            <image bindtap="ChangeSide" class="tool-pic" mode="aspectFit" src="../../../../images/ic_swap.png"></image>
+            <image bindtap="ChangeSide" class="tool-pic" mode="aspectFit" src="../../../images/match_record/ic_swap.png"></image>
         </view>
         <view bindtap="ChangeTeamAPosition" class="tool-item TeamAColor">
-            <image class="tool-pic" mode="aspectFit" src="../../../../images/refresh-light.png"></image>
+            <image class="tool-pic" mode="aspectFit" src="../../../images/match_record/refresh-light.png"></image>
         </view>
         <view bindtap="TimeOut" class="tool-item TeamAColor" data-team="0">
-            <image class="tool-pic" mode="aspectFit" src="../../../../images/ic_timeout_tab.png"></image>
+            <image class="tool-pic" mode="aspectFit" src="../../../images/match_record/ic_timeout_tab.png"></image>
         </view>
     </view>
 </view>

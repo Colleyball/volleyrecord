@@ -56,7 +56,7 @@ Page({
         }), this.setData({
             status: t.status
         }), wx.request({
-            url: "https://volleywang.cn/index.php/api/search/fight",
+          url: "https://api.volleywang.cn/VolleyRecord/Search/OneTeamMatchRecordWithOtherTeam",
             header: {
                 "content-type": "application/json;charset=utf8"
             },
@@ -73,7 +73,7 @@ Page({
                 }), wx.hideLoading();
             }
         }), wx.request({
-            url: "https://volleywang.cn/index.php/api/search/h2h",
+          url: "https://api.volleywang.cn/VolleyRecord/Search/OneTeamWinAndLostMatchNumberWithOtherTeam",
             header: {
                 "content-type": "application/json;charset=utf8"
             },
@@ -95,7 +95,7 @@ Page({
         }), this.setData({
             status: t.status
         }), wx.request({
-            url: "https://volleywang.cn/index.php/api/search/onefight",
+          url: "https://api.volleywang.cn/VolleyRecord/Search/OneTeamMatchRecordWithAllOther",
             header: {
                 "content-type": "application/json;charset=utf8"
             },
@@ -110,7 +110,7 @@ Page({
                 }), wx.hideLoading();
             }
         }), wx.request({
-            url: "https://volleywang.cn/index.php/api/search/oneh2h",
+          url: "https://api.volleywang.cn/VolleyRecord/Search/OneTeamWinAndLostMatchNumberWithAllOther",
             header: {
                 "content-type": "application/json;charset=utf8"
             },
@@ -136,10 +136,20 @@ Page({
     onReachBottom: function() {},
     onShareAppMessage: function() {
         var t = this;
+      var route = 'Data/search/searchresult/searchresult&teamA=' + t.data.teamA + '&teamB=' + t.data.teamB + '&status=' + t.data.status
+      if (t.data.status == 1) {
         return {
-            title: "[数据]" + t.data.teamA,
-            desc: "点击进入赛事窗",
-            path: "pages/Data/search/searchresult/searchresult?teamA=" + t.data.teamA + "&TeamB=" + t.data.teamB + "&status=" + t.data.status
+          title: "[数据]" + t.data.teamA,
+          desc: "点击进入赛事窗",
+          path: "pages/index/index?type=share&route=" + route
         };
+      }
+      if (t.data.status == 2) {
+        return {
+          title: "[数据]" + t.data.teamA + 'vs' +t.data.teamB,
+          desc: "点击进入赛事窗",
+          path: "pages/index/index?type=share&route=" + route
+        };
+      }
     }
 });

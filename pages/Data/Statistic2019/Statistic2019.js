@@ -66,7 +66,7 @@ Page({
         a.setData({
             matchid: t.matchid
         }), wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData/getonematchinfo",
+          url: "https://api.volleywang.cn/VolleyRecord/GetOneMatchInfo",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
@@ -86,7 +86,7 @@ Page({
                 });
             }
         }), wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData2019/GetStatistic",
+          url: "https://api.volleywang.cn/VolleyRecord/GetPlayerStatisticNew",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
@@ -107,7 +107,7 @@ Page({
                 });
             }
         }), wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData/getteamstatistic",
+          url: "https://api.volleywang.cn/VolleyRecord/GetOneMatchStatistic",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
@@ -121,7 +121,7 @@ Page({
                 });
             }
         }), wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData2019/GetMatchDuration",
+          url: "https://api.volleywang.cn/VolleyRecord/GetMatchDuration",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
@@ -144,11 +144,12 @@ Page({
     onPullDownRefresh: function() {},
     onReachBottom: function() {},
     onShareAppMessage: function() {
-        var t = this;
-        return {
-            title: "[数据]" + t.data.matchinfo[0].teamAname + "vs" + t.data.matchinfo[0].teamBname,
-            desc: "点击进入赛事窗",
-            path: "pages/Data/Statistic2019/Statistic2019?matchid=" + t.data.matchid
-        };
+      var t = this;
+      var route = 'Data/Statistic2019/Statistic2019&matchid=' + t.data.matchid
+      return {
+          title: "[数据]" + t.data.matchinfo[0].teamAname + "vs" + t.data.matchinfo[0].teamBname,
+          desc: "点击进入赛事窗",
+          path: "pages/index/index?type=share&route=" + route
+      };
     }
 });

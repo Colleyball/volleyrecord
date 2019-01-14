@@ -1,5 +1,5 @@
 <view class="container">
-    <image bindtap="BindVideo" class="player" mode="aspectFill" src="../../../images/video.jpg" wx:if="{{qqvideo==0}}"></image>
+    <image bindtap="BindVideo" class="player" mode="aspectFill" src="../../../images/video/video.jpg" wx:if="{{qqvideo==0}}"></image>
     <video autoplay="" bindended="playEnd" class="player-true" id="myVideo" objectFit="cover" src="{{videUrl}}" wx:if="{{qqvideo==1}}"></video>
     <view class="video-bar">
         <view bindtap="back" class="video-bar-back">

@@ -21,15 +21,15 @@ Page({
             title: "赛事窗 " + decodeURIComponent(t.title)
         }), e.setData({
             title: decodeURIComponent(t.title),
-            videotype: t.type
+          videotype: t.videotype
         }), wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData/getvideoinfo",
+          url: "https://api.volleywang.cn/VolleyRecord/GetOneVideoListItem",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
             method: "POST",
             data: {
-                video_type: t.type
+              video_type: t.videotype
             },
             success: function(t) {
                 console.log(t.data), e.setData({
@@ -45,11 +45,12 @@ Page({
     onPullDownRefresh: function() {},
     onReachBottom: function() {},
     onShareAppMessage: function() {
-        var t = this;
-        return {
-            title: "[视频]" + t.data.title,
-            desc: "点击进入赛事窗",
-            path: "pages/video/videolist/videolist?title=" + t.data.title + "&type=" + t.data.videotype
-        };
+      var t = this;
+      var route = "video/videolist/videolist&title=" + t.data.title + "&videotype=" + t.data.videotype
+      return {
+        title: "[视频]" + t.data.title,
+        desc: "点击进入赛事窗",
+        path: "pages/index/index?type=share&route=" + route
+      };
     }
 });

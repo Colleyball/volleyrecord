@@ -10,7 +10,7 @@ Page({
     onLoad: function(t) {
         var a = this;
         wx.request({
-            url: "https://volleywang.cn/index.php/VolleyData/getmatchinfo",
+          url: "https://api.volleywang.cn/VolleyRecord/GetUserRecordInfo",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },

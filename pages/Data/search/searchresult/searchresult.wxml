@@ -32,7 +32,7 @@
                 <view class="teamb-name">{{item.teamB}}</view>
             </view>
         </view>
-        <image bindtap="video" class="match-video" data-videolink="{{item.video}}" data-videotitle="{{item.teamA}}{{item.setA}}-{{item.setB}}{{item.teamB}}" src="../../../../images/video.jpg" wx:if="{{item.video}}"></image>
+        <image bindtap="video" class="match-video" data-videolink="{{item.video}}" data-videotitle="{{item.teamA}}{{item.setA}}-{{item.setB}}{{item.teamB}}" src="../../../../images/video/video.jpg" wx:if="{{item.video}}"></image>
         <view bindtap="Statistic" class="match-statistic" data-matchid="{{item.statistic}}" wx:if="{{item.statistic!=null}}">
         点击查看详细技术统计
       </view>

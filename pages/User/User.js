@@ -66,12 +66,5 @@ Page({
     onReady: function() {},
     onShow: function() {},
     onHide: function() {},
-    onUnload: function() {},
-    onShareAppMessage: function() {
-        return {
-            title: "赛事窗·杭电排球|比赛数据记录软件",
-            desc: "点击进入赛事窗",
-            path: "/pages/index/index"
-        };
-    }
+    onUnload: function() {}
 });
