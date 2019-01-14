@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 3,
 			"list": [
 				{
 					"id": 0,
@@ -56,6 +56,12 @@
 					"name": "数据统计2019",
 					"pathName": "pages/Data/Statistic2019/Statistic2019",
 					"query": "matchid=130"
+				},
+				{
+					"id": -1,
+					"name": "关于",
+					"pathName": "pages/User/Setting/Setting",
+					"query": ""
 				}
 			]
 		}

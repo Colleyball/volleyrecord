@@ -345,10 +345,19 @@ Page({
             }) : t.setData({
                 userlogin: !1
             });
-        }, 1e3), wx.setNavigationBarColor({
+        }, 1e3)
+        if (t.data.ScrollFlag == 1) {
+          wx.setNavigationBarColor({
+            frontColor: "#000000",
+            backgroundColor: "#ffffff"
+          })
+        }
+        if (t.data.ScrollFlag == 0) {
+          wx.setNavigationBarColor({
             frontColor: "#000000",
             backgroundColor: "#EAF048"
-        });
+          });
+        }
     },
     onLaunch: function() {},
     onReady: function() {},
@@ -368,7 +377,7 @@ Page({
     },
     onShareAppMessage: function() {
         return {
-            title: "赛事窗·杭电排球|排球数据记录软件",
+          title: "赛事窗·排球数据统计",
             desc: "点击进入赛事窗",
             path: "/pages/index/index"
         };

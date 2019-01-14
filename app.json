@@ -22,7 +22,7 @@
         "pages/User/FavouriteVideo/FavouriteVideo"
     ],
     "window": {
-        "navigationBarTitleText": "赛事窗·杭电排球",
+        "navigationBarTitleText": "赛事窗·排球数据统计",
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTextStyle": "black",
