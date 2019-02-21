@@ -1,5 +1,5 @@
 <view class="Top">
-    <image class="userpic" mode="aspectfit" src="https://volleywang.cn/liansaiquan/images/wechat/user/setting/logo.png"></image>
+    <image class="userpic" mode="aspectfit" src="http://images.volleywang.cn/VolleyRecord/user/setting/logo.png"></image>
     <view class="name" selectable="true">赛事窗·排球数据统计</view>
 </view>
 <view class="card">

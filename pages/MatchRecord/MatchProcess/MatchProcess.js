@@ -253,7 +253,7 @@ Page({
         Side: 0
     },
     BindHelp: function() {
-        var t = [ "https://volleywang.cn/liansaiquan/images/help/1.jpg", "https://volleywang.cn/liansaiquan/images/help/2.jpg", "https://volleywang.cn/liansaiquan/images/help/3.jpg", "https://volleywang.cn/liansaiquan/images/help/4.jpg" ];
+      var t = ["http://www.game-win.cn/resource/images/help/1.JPG", "http://www.game-win.cn/resource/images/help/2.JPG", "http://www.game-win.cn/resource/images/help/3.JPG", "http://www.game-win.cn/resource/images/help/4.JPG" ];
         wx.previewImage({
             current: 0,
             urls: t

@@ -1,6 +1,6 @@
 page,.page {
 	font-family: “PingFang SC“, “Helvetica Neue“ ,Helvetica, “Droid Sans Fallback“, “Microsoft Yahei“, sans-serif;
-	background: url(“http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/background.jpg“) no-repeat;
+	background: url(“http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/background.jpg“) no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 	background: white

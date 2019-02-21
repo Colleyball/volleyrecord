@@ -2,21 +2,21 @@ Page({
     data: {
         pen: 3,
         color: "#cc0033",
-        courtimage: "https://volleywang.cn/liansaiquan/images/tactical/volleyballcourt.jpg"
+        courtimage: "http://images.volleywang.cn/matchbox/volleyballcourt.jpg"
     },
     volleycourt: function() {
         this.setData({
-            courtimage: "https://volleywang.cn/liansaiquan/images/tactical/volleyballcourt.jpg"
+            courtimage: "http://images.volleywang.cn/matchbox/volleyballcourt.jpg"
         });
     },
     basketballcourt: function() {
         this.setData({
-            courtimage: "https://volleywang.cn/liansaiquan/images/tactical/basketballcourt.jpg"
+            courtimage: "http://images.volleywang.cn/matchbox/basketballcourt.jpg"
         });
     },
     footballcourt: function() {
         this.setData({
-            courtimage: "https://volleywang.cn/liansaiquan/images/tactical/footballcourt.jpg"
+            courtimage: "http://images.volleywang.cn/matchbox/footballcourt.jpg"
         });
     },
     blank: function() {

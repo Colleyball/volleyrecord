@@ -47,7 +47,7 @@ Page({
         });
     },
     Coin: function() {
-        var a = 5, t = this, e = setInterval(function() {
+        var a = 3, t = this, e = setInterval(function() {
             wx.showLoading({
                 title: "正在抛硬币~" + a,
                 mask: !0
@@ -63,7 +63,7 @@ Page({
                 content: t.data.coin,
                 showCancel: !1
             });
-        }, 5500);
+        }, 3400);
     },
     ChoosePlayerTeamA: function(a) {
         var t, e = 0, s = this.data.TeamACount, i = this.data.TeamANum, n = a.currentTarget.dataset.num, r = this.data.TeamANumFlag, m = 0, o = -1, u = i.length;

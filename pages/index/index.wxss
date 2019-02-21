@@ -237,32 +237,32 @@ swiper-scroll-down {
 }
 
 .scoreboard {
-	background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/8.png");
+	background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/8.png");
 	background-size: cover;
 }
 
 .zhanshuban {
-	background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/6.png");
+	background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/6.png");
 	background-size: cover;
 }
 
 .coin {
-	background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/7.png");
+	background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/7.png");
 	background-size: cover;
 }
 
 .five-three {
-	background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/3.png");
+	background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/3.png");
 	background-size: cover;
 }
 
 .three-two {
-	background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/4.png");
+	background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/4.png");
 	background-size: cover;
 }
 
 .one-zero {
-	background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/2.png");
+	background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/2.png");
 	background-size: cover;
 }
 
@@ -275,12 +275,12 @@ swiper-scroll-down {
 }
 
 .nearby {
-	background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/wide-2.png") center;
+	background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/wide-2.png") center;
 	background-size: cover;
 }
 
 .bet {
-	background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/wide-3.png") center;
+	background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/wide-3.png") center;
 	background-size: cover;
 }
 
@@ -593,7 +593,7 @@ swiper-scroll-down {
 }
 
 .team-rank {
-	background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/wide-1.png");
+	background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/wide-1.png");
 	background-size: cover;
 }
 
@@ -643,22 +643,22 @@ swiper-scroll-down {
 }
 
 .user-search {
-	background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/9.png");
+	background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/9.png");
 	background-size: cover;
 }
 
 .user-favourite {
-	background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/12.png");
+	background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/12.png");
 	background-size: cover;
 }
 
 .user-about {
-	background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/11.png");
+	background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/11.png");
 	background-size: cover;
 }
 
 .user-statistic {
-	background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/10.png");
+	background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/10.png");
 	background-size: cover;
 }
 

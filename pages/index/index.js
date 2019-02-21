@@ -3,9 +3,9 @@ var t = require("../../utils/util.js"), a = getApp();
 Page({
     data: {
         mainpic: {
-            volleyball: "http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/MatchRecord.png",
-            basketball: "http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/TeamRecord1.png",
-            tool: "http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/matchbox.png"
+            volleyball: "http://www.aibojiaoyu.cnImgFiles/ABSports/matchwin/MatchRecord.png",
+            basketball: "http://www.aibojiaoyu.cnImgFiles/ABSports/matchwin/TeamRecord1.png",
+            tool: "http://www.aibojiaoyu.cnImgFiles/ABSports/matchwin/matchbox.png"
         },
         currentTab: "1",
         swiperHeight: 2160,
@@ -85,7 +85,7 @@ Page({
         });
     },
     BindHelp: function() {
-        var t = [ "https://volleywang.cn/liansaiquan/images/helpPic/1.jpg", "https://volleywang.cn/liansaiquan/images/helpPic/2.jpg", "https://volleywang.cn/liansaiquan/images/helpPic/3.jpg", "https://volleywang.cn/liansaiquan/images/helpPic/4.jpg" ];
+      var t = ["http://www.game-win.cn/resource/images/help/1.JPG", "http://www.game-win.cn/resource/images/help/2.JPG", "http://www.game-win.cn/resource/images/help/3.JPG", "http://www.game-win.cn/resource/images/help/4.JPG" ];
         wx.previewImage({
             current: 0,
             urls: t

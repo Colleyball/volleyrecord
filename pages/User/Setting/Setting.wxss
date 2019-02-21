@@ -4,7 +4,7 @@ page,.page {
 
 .Top{
   height: 400rpx;
-  background-image: url("https://volleywang.cn/liansaiquan/images/wechat/user/setting/bg.png");
+  background-image: url("http://images.volleywang.cn/VolleyRecord/user/setting/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
@@ -38,7 +38,7 @@ page,.page {
 }
 
 .pic{
-  background: url('https://volleywang.cn/liansaiquan/images/wechat/user/setting/about.png') no-repeat center;
+  background: url('http://images.volleywang.cn/VolleyRecord/user/setting/about.png') no-repeat center;
   background-size: auto 100rpx;
   position: relative;
   width: 150rpx;
@@ -58,7 +58,7 @@ page,.page {
 }
 
 .pic2{
-  background: url('https://volleywang.cn/liansaiquan/images/wechat/user/setting/phone.png') no-repeat center;
+  background: url('http://images.volleywang.cn/VolleyRecord/user/setting/phone.png') no-repeat center;
   background-size: auto 100rpx;
   position: relative;
   width: 150rpx;

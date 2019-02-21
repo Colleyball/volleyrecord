@@ -1,7 +1,7 @@
 Page({
     data: {
         matchid: 0,
-        imgalist: [ "https://volleywang.cn/liansaiquan/images/pay.jpg" ]
+      imgalist: [ "http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/video/player/pay.png" ]
     },
     back: function(t) {
         wx.switchTab({

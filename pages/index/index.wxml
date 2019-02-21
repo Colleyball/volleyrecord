@@ -106,14 +106,14 @@
                     <view class="text-title">推荐</view>
                     <swiper autoplay="true" circular="true" class="recommand-video" current="0" duration="500" indicatorActiveColor="rgba(255,255,255,0.9)" indicatorColor="rgba(255,255,255,0.5)" indicatorDots="true" interval="5000" style="height:480rpx" vertical="true">
                         <swiper-item class="swiper-item-video" wx:for="{{recommand_video}}" wx:key="no">
-                            <image bindtap="PlayVideo" class="slide-image-video" data-group="{{item.group}} {{item.length}}" data-link="{{item.link}}" data-qqvideo="{{item.qqvideo}}" data-title="{{item.title}}" mode="aspectFill" src="http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/video/banner/{{item.no}}.png"></image>
+                            <image bindtap="PlayVideo" class="slide-image-video" data-group="{{item.group}} {{item.length}}" data-link="{{item.link}}" data-qqvideo="{{item.qqvideo}}" data-title="{{item.title}}" mode="aspectFill" src="http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/video/banner/{{item.no}}.png"></image>
                             <view bindtap="PlayVideo" class="silde-title" data-group="{{item.group}} {{item.length}}" data-link="{{item.link}}" data-qqvideo="{{item.qqvideo}}" data-title="{{item.title}}">{{item.title}}</view>
                         </swiper-item>
                     </swiper>
                     <view class="text-title">视频列表</view>
                     <view class="video-list">
                         <view bindtap="VideoList" class="video-box" data-title="{{item.title}}" data-type="{{item.video_type}}" wx:for="{{videoinfo}}" wx:key="no">
-                            <image class="video-pic" mode="aspectFill" src="http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/video/{{item.video_type}}.png"></image>
+                            <image class="video-pic" mode="aspectFill" src="http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/video/{{item.video_type}}.png"></image>
                             <view class="video-detail-background"></view>
                             <view class="video-detail">
                                 <view class="video-title">{{item.title}}</view>
