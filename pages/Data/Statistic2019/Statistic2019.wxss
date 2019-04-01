@@ -235,13 +235,14 @@ page,.page {
 	height: 32rpx;
 	text-align: center;
 	margin: -2rpx 0  35rpx 0;
-	opacity: 0.95
+	opacity: 0.95;
 }
 
 .triangle-pic {
 	width: 64rpx;
 	height: 32rpx;
 	margin: 0;
+  border: none
 }
 
 .best-player {
@@ -320,22 +321,22 @@ page,.page {
 	-webkit-flex-direction: row;
 	flex-direction: row;
 	-webkit-justify-content: space-around;
-	justify-content: space-around;
+	justify-content: space-between;
 	margin: 35rpx 0 0 0;
 }
 
 .best-player-total {
-	width: 250rpx;
-	height: 200rpx;
-	line-height: 200rpx;
-	font-size: 220rpx;
+	width: 340rpx;
+	height: 180rpx;
+	line-height: 180rpx;
+	font-size: 180rpx;
 	font-style: italic;
 	color: rgba(0,127,207,1);
 	font-weight: bold
 }
 
 .best-player-detail {
-	width: 170rpx;
+	width: 200rpx;
 	height: 200rpx;
 	display: -webkit-flex;
 	display: flex;
@@ -370,8 +371,8 @@ page,.page {
 }
 
 .best-player-detail-score {
-	width: 30rpx;
-	text-align: right;
+	width: 50rpx;
+	text-align: left;
 	font-size: 40rpx;
 	color: rgba(0,127,207,0.9);
 	font-style: italic

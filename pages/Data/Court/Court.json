@@ -1,10 +1,5 @@
 {
     "navigationBarBackgroundColor": "#82A6F5",
     "navigationBarTitleText": "附近的球场",
-    "navigationBarTextStyle": "white",
-    "permission": {
-        "scope.userLocation": {
-            "desc": "你的位置信息将用于展示你附近的球场"
-        }
-    }
+    "navigationBarTextStyle": "white"
 }

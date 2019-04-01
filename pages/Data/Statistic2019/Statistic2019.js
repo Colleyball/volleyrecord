@@ -1,7 +1,7 @@
 Page({
     data: {
         currentTab: "0",
-        swiperHeight: 2650,
+        swiperHeight: 2700,
       imgalist: [ "http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/video/player/pay.png" ],
         favorFlag: 0
     },
@@ -10,15 +10,15 @@ Page({
         if (a.setData({
             currentTab: t.detail.current
         }), 0 == t.detail.current && this.setData({
-            swiperHeight: 2650
+            swiperHeight: 2700
         }), 1 == t.detail.current) {
-            var e = 110 * a.data.length + 550;
+            var e = 110 * a.data.length + 600;
             a.setData({
                 swiperHeight: e
             });
         }
         2 == t.detail.current && a.setData({
-            swiperHeight: 2750
+            swiperHeight: 2800
         });
     },
     swichNav: function(t) {

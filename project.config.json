@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -12,7 +12,7 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.5.0",
+	"libVersion": "2.6.2",
 	"appid": "wxe5579059094161f4",
 	"projectname": "%E8%B5%9B%E4%BA%8B%E7%AA%97%20%E6%8E%92%E7%90%83%E6%95%B0%E6%8D%AE%E8%AE%B0%E5%BD%95",
 	"debugOptions": {
@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 5,
 			"list": [
 				{
 					"id": 0,
@@ -66,7 +66,15 @@
 				{
 					"id": -1,
 					"name": "比赛过程",
-					"pathName": "pages/MatchRecord/MatchProcess/MatchProcess"
+					"pathName": "pages/MatchRecord/MatchProcess/MatchProcess",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "数据统计",
+					"pathName": "pages/Data/Statistic2019/Statistic2019",
+					"query": "matchid=130",
+					"scene": null
 				}
 			]
 		}
