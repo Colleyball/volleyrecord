@@ -33,12 +33,12 @@
             <view class="matchdetail-other">
               <view class="matchdetail-other-item">开始时间：{{matchinfo[0].starttime}}</view>
               <view class="matchdetail-other-item">结束时间：{{matchinfo[0].endtime}}</view>
-              <view class="matchdetail-other-item">一裁：{{matchinfo[0].ref1}} 二裁：{{matchinfo[0].ref2}} 记录员：{{matchinfo[0].ref3}} 辅记员：{{matchinfo[0].ref4}}</view>
+              <view class="matchdetail-other-item" style='font-size: 22rpx'>
+              一裁：{{matchinfo[0].ref1}} 二裁：{{matchinfo[0].ref2}} 
+              记录员：{{matchinfo[0].ref3}} 辅记员：{{matchinfo[0].ref4}}</view>
             </view>
           </view>
-          <view class="triangle">
-            <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
-          </view>
+          <view class="triangle"></view>
           <view class="matchdetail-tool">
             <image bindtap="BindBack" class="matchdetail-tool-item" mode="aspectFit" src="../../../images/data/back.png"></image>
             <image bindtap="BindGift" class="matchdetail-tool-item" mode="aspectFit" src="../../../images/data/favorites.png"></image>
@@ -75,9 +75,7 @@
               </view>
             </view>
           </view>
-          <view class="triangle">
-            <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
-          </view>
+          <view class="triangle"></view>
           <view class="text-title" style="color: white">双方数据对比</view>
           <view class="team-statistic">
             <view class="teaminfo">
@@ -197,9 +195,7 @@
               <view class="matchduration-item" wx:if="{{item.team!=1}}"></view>
             </view>
           </view>
-          <view class="triangle">
-            <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
-          </view>
+          <view class="triangle"></view>
           <view class="text-title" style="color: white" wx:if="{{match>=2}}">第二局</view>
           <view class="matchduration" wx:if="{{match>=2}}">
             <view class="matchduration-line" wx:if="{{item.set==2}}" wx:for="{{MatchDuration}}" wx:key="{{index}}">
@@ -229,9 +225,7 @@
               <view class="matchduration-item" wx:if="{{item.team!=1}}"></view>
             </view>
           </view>
-          <view class="triangle" wx:if="{{match>=2}}">
-            <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
-          </view>
+          <view class="triangle" wx:if="{{match>=2}}"></view>
           <view class="text-title" style="color: white" wx:if="{{match>=3}}">第三局</view>
           <view class="matchduration" wx:if="{{match>=3}}">
             <view class="matchduration-line" wx:if="{{item.set==3}}" wx:for="{{MatchDuration}}" wx:key="{{index}}">
@@ -261,9 +255,7 @@
               <view class="matchduration-item" wx:if="{{item.team!=1}}"></view>
             </view>
           </view>
-          <view class="triangle" wx:if="{{match>=3}}">
-            <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
-          </view>
+          <view class="triangle" wx:if="{{match>=3}}"></view>
           <view class="text-title" style="color: white" wx:if="{{match>=4}}">第四局</view>
           <view class="matchduration" wx:if="{{match>=4}}">
             <view class="matchduration-line" wx:if="{{item.set==4}}" wx:for="{{MatchDuration}}" wx:key="{{index}}">
@@ -293,9 +285,7 @@
               <view class="matchduration-item" wx:if="{{item.team!=1}}"></view>
             </view>
           </view>
-          <view class="triangle" wx:if="{{match>=4}}">
-            <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
-          </view>
+          <view class="triangle" wx:if="{{match>=4}}"></view>
           <view class="text-title" style="color: white" wx:if="{{match==5}}">第五局</view>
           <view class="matchduration" wx:if="{{match==5}}">
             <view class="matchduration-line" wx:if="{{item.set==5}}" wx:for="{{MatchDuration}}" wx:key="{{index}}">
@@ -325,9 +315,7 @@
               <view class="matchduration-item" wx:if="{{item.team!=1}}"></view>
             </view>
           </view>
-          <view class="triangle" wx:if="{{match==5}}">
-            <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
-          </view>
+          <view class="triangle" wx:if="{{match==5}}"></view>
         </view>
       </swiper-item>
       <swiper-item>
@@ -397,9 +385,7 @@
             <view class="statistic-item" wx:if="{{item.OtherFault!=0}}">{{item.OtherFault}}</view>
             <view class="statistic-item" style="opacity:0.5" wx:if="{{item.OtherFault==0}}">-</view>
           </view>
-          <view class="triangle">
-            <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
-          </view>
+          <view class="triangle"></view>
           <view class="text-title" style="color: white">{{matchinfo[0].teamBname}}</view>
           <view class="statistic-title">
             <view class="statistic-title-player">
@@ -465,9 +451,7 @@
             <view class="statistic-item" wx:if="{{item.OtherFault!=0}}">{{item.OtherFault}}</view>
             <view class="statistic-item" style="opacity:0.5" wx:if="{{item.OtherFault==0}}">-</view>
           </view>
-          <view class="triangle">
-            <image class="triangle-pic" mode="aspectFill" src="../../../images/data/triangle.png"></image>
-          </view>
+          <view class="triangle"></view>
         </view>
       </swiper-item>
     </swiper>

@@ -1,6 +1,12 @@
 var t = require("../../utils/util.js"),
   app = getApp();
+function t(t) {
+  var n;
+  for (n in t) return !1;
+  return !0;
+}
 
+var n = require("../../utils/util.js"), e = getApp();
 Page({
   data: {
     mainpic: {
@@ -41,14 +47,14 @@ Page({
       }) : a.setData({
         swiperHeight: 2660
       })), 2 == t.detail.current) {
-      var e = 538 * a.data.videoCount + 1000;
+      var e = 538 * a.data.videoCount + 900;
       a.setData({
         swiperHeight: e,
         focus: !1
       });
     }
     3 == t.detail.current && a.setData({
-      swiperHeight: 2550,
+      swiperHeight: 2350,
       focus: !1
     });
   },
@@ -83,7 +89,7 @@ Page({
       }), console.log("上滑超过阀值"));
   },*/
   onPageScroll: function(t) {
-    t.scrollTop >= 200 ? 1 == this.data.ScrollFlag || (
+    t.scrollTop >= 150 ? 1 == this.data.ScrollFlag || (
       this.animation3.opacity(1).step(),
       this.setData({
         ScrollFlag: 1,
@@ -143,7 +149,7 @@ Page({
   },
   VolleyballThreeWin: function() {
     wx.navigateTo({
-      url: "../MatchRecord/MatchRecord?win=2"
+      url: "../MatchRecord/MatchRecord?win=3"
     });
   },
   Tactical: function() {
@@ -256,10 +262,18 @@ Page({
       url: "../Data/search/search?value=" + a.data.SearchContent
     });
   },
-  model_login: function() {
-    wx.navigateTo({
-      url: "../User/User"
-    });
+  bindGetUserInfo: function(t) {
+    var e = this;
+    console.log(t.detail.userInfo), t.detail.userInfo ? (e.setData({
+      userInfo: t.detail.userInfo
+    }), n.setpublicinfo(wx.getStorageSync("Uid"), t.detail.userInfo), wx.setStorageSync("userInfo", t.detail.userInfo),
+      e.setData({
+      userlogin: !0
+      }), wx.navigateBack()) : wx.showModal({
+        title: "提示",
+        content: "如需使用用户中心的全部功能(比赛数据、关注的球队)，赛事窗需要获取您的昵称和头像，点击确认重新登录",
+        showCancel: !1
+      });
   },
   model_login_cancle: function() {
     this.setData({

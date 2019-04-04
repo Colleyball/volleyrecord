@@ -71,28 +71,28 @@
             <image class="box-thin-icon" mode="aspectFill" src="../../images/home/live.png"></image>
             <text class="box-thin-TxtZh">你还有未上传的比赛数据</text>
           </view>
-          <view bindtap="bindViewTapMatchRecord" class="box-wide match-record">
-            <image class="box-wide-pic" mode="aspectFill" src="../../images/home/1.png"></image>
+          <view bindtap="bindViewTapMatchRecord" class="box-wide">
+            <image class="box-wide-pic" mode="scaleToFill" src="../../images/home/1.png"></image>
             <text class="box-wide-TxtZh">比赛数据记录</text>
             <text class="box-wide-TxtEn">记录比赛进程 队员数据统计</text>
           </view>
           <view class="box-combin-row">
             <view bindtap="VolleyballTwoWin" class="box-middle three-two">
-              <image class="box-middle-pic" mode="aspectFill" src="../../images/home/2-1.png"></image>
+              <image class="box-middle-pic" mode="scaleToFill" src="../../images/home/2-1.png"></image>
               <view class="box-middle-TxtZh">三局两胜</view>
             </view>
             <view class="box-combin-column">
               <view bindtap="VolleyballThreeWin" class="box-small five-three">
-                <image class="box-small-pic" mode="aspectFill" src="../../images/home/3-2.png"></image>
+                <image class="box-small-pic" mode="scaleToFill" src="../../images/home/3-2.png"></image>
                 <view class="box-small-TxtZh">五局三胜</view>
               </view>
               <view bindtap="VolleyballOneWin" class="box-small one-zero">
-                <image class="box-small-pic" mode="aspectFill" src="../../images/home/1-0.png"></image>
+                <image class="box-small-pic" mode="scaleToFill" src="../../images/home/1-0.png"></image>
                 <view class="box-small-TxtZh">一局胜负</view>
               </view>
             </view>
           </view>
-          <view class="box-wide match-box">
+          <view class="box-wide">
             <image class="box-wide-pic" mode="aspectFill" src="../../images/home/5.png"></image>
             <text class="box-wide-TxtZh">竞赛工具箱</text>
             <text class="box-wide-TxtEn">抛硬币 比分扳 战术板</text>
@@ -122,7 +122,6 @@
       </swiper-item>
       <swiper-item>
         <view class="list" wx:if="{{video_status.status==1}}">
-          <view class="text-title">推荐</view>
           <swiper autoplay="true" circular="true" class="recommand-video" current="0" duration="500" indicatorActiveColor="rgba(255,255,255,0.9)" indicatorColor="rgba(255,255,255,0.5)" indicatorDots="true" interval="5000" style="height:480rpx" vertical="true">
             <swiper-item class="swiper-item-video" wx:for="{{recommand_video}}" wx:key="no">
               <image bindtap="PlayVideo" class="slide-image-video" data-group="{{item.group}} {{item.length}}" data-link="{{item.link}}" data-qqvideo="{{item.qqvideo}}" data-title="{{item.title}}" mode="aspectFill" src="http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/video/banner/{{item.no}}.png"></image>
@@ -156,7 +155,6 @@
             <text class="box-wide-TxtZh" style="font-size:60rpx">杭电排球胜率排行</text>
             <text class="box-wide-TxtEn">2010-2019所有成绩累计排行</text>
           </view>
-          <view class="text-title">最近比赛</view>
           <view class="match-result" wx:if="{{index<=1}}" wx:for="{{matchinfo}}" wx:key="index">
             <view class="match-detail">
               <view class="match-detail-no">{{item.matchdetail[0].matchid}}</view>

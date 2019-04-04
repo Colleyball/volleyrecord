@@ -157,35 +157,41 @@ page,.page {
 
 .tool {
 	width: 680rpx;
-	height: 120rpx;
-	display: -webkit-flex;
+	height: 200rpx;
 	display: flex;
-	-webkit-flex-direction: row;
 	flex-direction: row;
-	-webkit-align-items: center;
 	align-items: center;
-	-webkit-justify-content: space-around;
-	justify-content: space-around
+	justify-content: space-between
 }
 
 .tool-item {
-	width: 80rpx;
-	height: 80rpx;
-	border-radius: 50%;
+	width: 120rpx;
+	height: 160rpx;
+	border-radius: 0rpx;
 	background-color: #fff;
 	box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
-	display: -webkit-flex;
 	display: flex;
-	-webkit-align-items: center;
+  flex-direction: column;
 	align-items: center;
-	-webkit-justify-content: space-around;
 	justify-content: space-around
 }
 
 .tool-pic {
-	width: 40rpx;
-	height: 40rpx;
+	width: 60rpx;
+	height: 60rpx;
 	margin: 0;
+}
+
+.tool-text {
+  font-size: 25rpx
+}
+
+.tool-swap-court {
+  background: linear-gradient(90deg,rgba(157, 211, 250,0.7),white)
+}
+
+.tool-swap-court-2 {
+  background: linear-gradient(90deg,white,rgba(157, 211, 250,0.7))
 }
 
 .swiper-tab {
@@ -680,31 +686,45 @@ page,.page {
 }
 
 .end-set {
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.95);
   position: fixed;
   top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.95);
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
-  align-items: center
+  z-index: 999
 }
+
 
 .end-set-title {
   width: 100%;
   height: 100rpx;
   line-height: 100rpx;
-  font-size: 50rpx
+  font-size: 75rpx;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.8);
+
 }
 
-.end-set-tip {
+.end-set-subtitle {
   width: 580rpx;
   height: auto;
   line-height: 50rpx;
-  font-size: 30rpx;
-  color: rgba(0, 0, 0, 0.8);
-  margin: 40rpx 0 200rpx 0
+  font-size: 40rpx;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 40rpx 0 0 0
+}
+
+.end-set-bigtitle {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 70rpx;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 40rpx 0 0 0
 }
 
 .end-set-buttom {
@@ -712,7 +732,10 @@ page,.page {
   height: 80rpx;
   line-height: 80rpx;
   margin: 40rpx 0 0 0;
-   font-size: 35rpx
+  font-size: 35rpx;
+  background: rgba(26,173,25,1);
+  color: white;
+  border-radius: 5rpx;
 }
 
 
@@ -720,4 +743,5 @@ page,.page {
 	background: rgba(157, 211, 250,1);
 	color: rgba(255,255,255,1)
 }
+
 
