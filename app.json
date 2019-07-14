@@ -1,36 +1,38 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/User/User",
-        "pages/User/Setting/Setting",
-        "pages/User/History/History",
-        "pages/MatchBox/Coin/coin",
-        "pages/MatchBox/Tactical/Tactical",
-        "pages/MatchBox/ScoreBoard/ScoreBoard",
-        "pages/MatchRecord/MatchRecord",
-        "pages/MatchRecord/MatchProcess/MatchProcess",
-        "pages/EndMatch/EndMatch",
-        "pages/Data/Data",
-        "pages/Data/Statistic/Statistic",
-        "pages/Data/search/search",
-        "pages/Data/search/searchresult/searchresult",
-        "pages/video/player/player",
-        "pages/video/videolist/videolist",
-        "pages/Data/Court/Court",
-        "pages/Data/Rank/Rank",
-        "pages/Data/Statistic2019/Statistic2019",
-        "pages/User/FavouriteVideo/FavouriteVideo"
-    ],
-    "window": {
-        "navigationBarTitleText": "赛事窗·排球数据统计",
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTextStyle": "black",
-        "navigationStyle": "default"
-    },
-    "permission": {
-      "scope.userLocation": {
-        "desc": "你的位置信息将用于展示你附近的球场"
-      }
+  "pages": [
+    "pages/index/index",
+    "pages/User/User",
+    "pages/User/Setting/Setting",
+    "pages/User/History/History",
+    "pages/MatchBox/Coin/coin",
+    "pages/MatchBox/Tactical/Tactical",
+    "pages/MatchBox/ScoreBoard/ScoreBoard",
+    "pages/MatchRecord/MatchRecord",
+    "pages/MatchRecord/MatchProcess/MatchProcess",
+    "pages/EndMatch/EndMatch",
+    "pages/Data/Data",
+    "pages/Data/Statistic/Statistic",
+    "pages/Data/search/search",
+    "pages/Data/search/searchresult/searchresult",
+    "pages/video/player/player",
+    "pages/video/videolist/videolist",
+    "pages/Data/Court/Court",
+    "pages/Data/Rank/Rank",
+    "pages/Data/Statistic2019/Statistic2019",
+    "pages/User/FavouriteVideo/FavouriteVideo",
+    "pages/TeamRecord/TeamRecord"
+  ],
+  "window": {
+    "navigationBarTitleText": "赛事窗·排球数据统计",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于展示你附近的球场"
     }
+  },
+  "sitemapLocation": "sitemap.json"
 }
