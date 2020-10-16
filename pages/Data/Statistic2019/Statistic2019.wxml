@@ -168,7 +168,7 @@
         <view class="list">
           <view class="text-title" style="color: white;margin-top:0">第一局</view>
           <view class="matchduration">
-            <view class="matchduration-line" wx:if="{{item.set==1}}" wx:for="{{MatchDuration}}" wx:key="{{index}}">
+            <view class="matchduration-line" wx:if="{{item.set==1}}" wx:for="{{MatchDuration}}" wx:key="index">
               <view class="matchduration-item" wx:if="{{item.team==0}}">
                 <view class="matchduration-item-name">
                   <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamAname}} </block>
@@ -198,7 +198,7 @@
           <view class="triangle"></view>
           <view class="text-title" style="color: white" wx:if="{{match>=2}}">第二局</view>
           <view class="matchduration" wx:if="{{match>=2}}">
-            <view class="matchduration-line" wx:if="{{item.set==2}}" wx:for="{{MatchDuration}}" wx:key="{{index}}">
+            <view class="matchduration-line" wx:if="{{item.set==2}}" wx:for="{{MatchDuration}}" wx:key="index">
               <view class="matchduration-item" wx:if="{{item.team==0}}">
                 <view class="matchduration-item-name">
                   <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamAname}} </block>
@@ -228,7 +228,7 @@
           <view class="triangle" wx:if="{{match>=2}}"></view>
           <view class="text-title" style="color: white" wx:if="{{match>=3}}">第三局</view>
           <view class="matchduration" wx:if="{{match>=3}}">
-            <view class="matchduration-line" wx:if="{{item.set==3}}" wx:for="{{MatchDuration}}" wx:key="{{index}}">
+            <view class="matchduration-line" wx:if="{{item.set==3}}" wx:for="{{MatchDuration}}" wx:key="index">
               <view class="matchduration-item" wx:if="{{item.team==0}}">
                 <view class="matchduration-item-name">
                   <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamAname}} </block>
@@ -258,7 +258,7 @@
           <view class="triangle" wx:if="{{match>=3}}"></view>
           <view class="text-title" style="color: white" wx:if="{{match>=4}}">第四局</view>
           <view class="matchduration" wx:if="{{match>=4}}">
-            <view class="matchduration-line" wx:if="{{item.set==4}}" wx:for="{{MatchDuration}}" wx:key="{{index}}">
+            <view class="matchduration-line" wx:if="{{item.set==4}}" wx:for="{{MatchDuration}}" wx:key="index">
               <view class="matchduration-item" wx:if="{{item.team==0}}">
                 <view class="matchduration-item-name">
                   <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamAname}} </block>
@@ -288,7 +288,7 @@
           <view class="triangle" wx:if="{{match>=4}}"></view>
           <view class="text-title" style="color: white" wx:if="{{match==5}}">第五局</view>
           <view class="matchduration" wx:if="{{match==5}}">
-            <view class="matchduration-line" wx:if="{{item.set==5}}" wx:for="{{MatchDuration}}" wx:key="{{index}}">
+            <view class="matchduration-line" wx:if="{{item.set==5}}" wx:for="{{MatchDuration}}" wx:key="index">
               <view class="matchduration-item" wx:if="{{item.team==0}}">
                 <view class="matchduration-item-name">
                   <block wx:if="{{item.flag==0}}">{{matchinfo[0].teamAname}} </block>
@@ -367,7 +367,7 @@
               </text>
             </view>
           </view>
-          <view class="statistic-content" wx:if="{{item.team==0}}" wx:for="{{statistic}}" wx:key="{{index}}">
+          <view class="statistic-content" wx:if="{{item.team==0}}" wx:for="{{statistic}}" wx:key="index">
             <view class="statistic-player">
               <view class="statistic-num">{{item.num}}</view>
               <view class="statistic-name">{{item.name}}</view>
@@ -433,7 +433,7 @@
               </text>
             </view>
           </view>
-          <view class="statistic-content" wx:if="{{item.team==1}}" wx:for="{{statistic}}" wx:key="{{index}}">
+          <view class="statistic-content" wx:if="{{item.team==1}}" wx:for="{{statistic}}" wx:key="index">
             <view class="statistic-player">
               <view class="statistic-num">{{item.num}}</view>
               <view class="statistic-name">{{item.name}}</view>

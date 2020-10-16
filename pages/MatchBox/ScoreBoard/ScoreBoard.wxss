@@ -1,18 +1,43 @@
 .contain{
   width: 100%;
   height: 100%;
-  background:url('http://www.volleywang.cn/liansaiquan/images/matchbox/sb/bg.png') no-repeat;
-  background-size: 100%;
-  background-position: bottom;
   position: absolute;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #404040
 }
 
 .score{
-  width: 100%;
-  height: 400rpx;
+  width: 680rpx;
+  height: auto;
   position: relative;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+
+.teamA{
+  height: auto;
+  width:43%;
+  border-radius: 20rpx;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+  background: white
+}
+
+.teamB{
+  height: auto;
+  width: 43%;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+  background: white
 }
 
 .teamname{
@@ -24,39 +49,10 @@
   padding-top: 15rpx;
 }
 
-.teamA{
-  height: 70rpx;
-  line-height: 70rpx;
-  width: 40%;
-  margin-left: 5%;
-  border-radius: 20rpx;
-  box-shadow: 0rpx 0rpx 30rpx rgba(0, 0, 0, 0.2);
-}
-
-.vs{
-  margin-top: 10rpx;
-  height: 50rpx;
-  width: 50rpx;
-  line-height: 50rpx;
-  margin-left: 12.5rpx;
-  border-radius: 35rpx;
-  box-shadow: 0rpx 0rpx 30rpx rgba(0, 0, 0, 0.2);
-  font-size: 30rpx;
-}
-
-.teamB{
-  height: 70rpx;
-  line-height: 70rpx;
-  width: 40%;
-  margin-left: 12.5rpx;
-  border-radius: 20rpx;
-  box-shadow: 0rpx 0rpx 30rpx rgba(0, 0, 0, 0.2);
-}
-
 .teamscore{
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   text-align: center;
   height: 300rpx;
 }
@@ -64,21 +60,25 @@
 .scoreA{
   height: 300rpx;
   line-height: 300rpx;
-  width: 45%;
-  margin-left: 2.25%;
+  width: 100%;
+  margin: 0;
   border-radius: 20rpx;
   box-shadow: 0rpx 0rpx 30rpx rgba(0, 0, 0, 0.2);
   font-size: 150rpx;
+  color: white;
+  background: linear-gradient(45deg, #da765b, #fdb933)
 }
 
 .scoreB{
   height: 300rpx;
   line-height: 300rpx;
-  width: 45%;
-  margin-left: 5%;
+  width: 100%;
+  margin: 0;
   border-radius: 20rpx;
   box-shadow: 0rpx 0rpx 30rpx rgba(0, 0, 0, 0.2);
   font-size: 150rpx;
+  color: white;
+  background: linear-gradient(45deg, #7bbfea, #2A8FBD)
 }
 
 .tips{
@@ -98,15 +98,14 @@
 }
 
 .control{
-  margin-left: 5%;
   margin-top: 50rpx;
   width: 90%;
   height: auto;
   border-radius: 20rpx;
-  box-shadow: 0rpx 0rpx 30rpx rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   color: rgba(0, 0, 0, 0.6);
+  background: white
 }
 
 .addscore{
@@ -122,6 +121,11 @@
   text-align: center;
 }
 
+.add-hover {
+  background: #ddf0ed;
+  border-radius: 20rpx;
+}
+
 .reducescore{
   display: flex;
   flex-direction: row;
@@ -131,6 +135,11 @@
   width: 50%;
   line-height: 100rpx;
   text-align: center;
+}
+
+.reduce-hover {
+  background: #f17c67;
+  border-radius: 20rpx;
 }
 
 .history{

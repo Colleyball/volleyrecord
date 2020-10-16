@@ -1,0 +1,117 @@
+page, .page {
+  font-family: 'PingFang SC',
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Droid Sans Fallback',
+                 'Microsoft Yahei',
+                 sans-serif;
+  background: rgba(238,238,238,1);
+}
+
+
+.statusBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 100;
+}
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 101.4rpx;
+  z-index: 100;
+}
+
+.content-1 {
+  width: 100%;
+  height: 3687.5rpx;
+  padding: 0 0 0 0;
+}
+
+.time {
+  position: absolute;
+  z-index: 10;
+  width: 680rpx;
+  margin: -2700rpx 0 0 35rpx;
+  background: rgba(255,255,255,1);
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  font-weight: 550;
+  text-align: center;
+}
+
+.name {
+  position: absolute;
+  z-index: 10;
+  width: 500rpx;
+  margin: -2517rpx 0 0 180rpx;
+  background: rgba(255,255,255,1);
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 33rpx;
+  font-weight: 300;
+  text-align: right;
+  color: rgba(0,0,0,1)
+}
+
+.no {
+  position: absolute;
+  z-index: 10;
+  width: 500rpx;
+  margin: -2410rpx 0 0 180rpx;
+  background: rgba(255,255,255,1);
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 33rpx;
+  font-weight: 300;
+  text-align: right;
+  color: rgba(0,0,0,1)
+}
+
+.college {
+  position: absolute;
+  z-index: 10;
+  width: 535rpx;
+  margin: -2298rpx 0 0 145rpx;
+  background: rgba(255,255,255,1);
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 33rpx;
+  font-weight: 300;
+  text-align: right;
+  color: rgba(0,0,0,1)
+}
+
+.date1 {
+  position: absolute;
+  z-index: 10;
+  width: 500rpx;
+  margin: -1515rpx 0 0 80rpx;
+  background: rgba(255,255,255,1);
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 33rpx;
+  font-weight: 300;
+  text-align: left;
+  color: rgba(0,0,0,0.8)
+}
+
+.date2 {
+  position: absolute;
+  z-index: 10;
+  width: 500rpx;
+  margin: -1275rpx 0 0 80rpx;
+  background: rgba(255,255,255,1);
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 33rpx;
+  font-weight: 300;
+  text-align: left;
+  color: rgba(0,0,0,0.8)
+}

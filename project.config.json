@@ -38,8 +38,12 @@
 			"currentL": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
-			"current": 5,
+			"current": 13,
 			"list": [
 				{
 					"id": 0,
@@ -76,6 +80,124 @@
 					"name": "数据统计",
 					"pathName": "pages/Data/Statistic2019/Statistic2019",
 					"query": "matchid=130",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/MatchBox/ScoreBoard/ScoreBoard",
+					"pathName": "pages/MatchBox/ScoreBoard/ScoreBoard",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "战术板",
+					"pathName": "pages/MatchBox/Tactical/Tactical",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "videolist",
+					"pathName": "pages/video/videolist/videolist",
+					"query": "videotype=2019jbs&title=2019%E6%B5%99%E6%B1%9F%E7%9C%81%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%8E%92%E7%90%83%E9%94%A6%E6%A0%87%E8%B5%9B",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/MatchRecord/MatchRecord",
+					"pathName": "pages/MatchRecord/MatchRecord",
+					"query": "win=3",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "四人制排球",
+					"pathName": "pages/4Volley/4Volley",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "四人制排球完善用户信息",
+					"pathName": "pages/4Volley/PersonalInfo/PersonalInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 12,
+					"name": "报名",
+					"pathName": "pages/4Volley/SignUp/SignUp",
+					"query": "name=程旺&school=14011304&uid=20180208",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "创建队伍",
+					"pathName": "pages/4Volley/SignUp/CreateTeam/CreateTeam",
+					"query": "name=程旺&uid=20180208&school=14011304",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "填写比赛结果",
+					"pathName": "pages/4Volley/administrator/administrator",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "管理员",
+					"pathName": "pages/4Volley/administrator/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/DD/dd_index",
+					"pathName": "pages/DD/dd_index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/DD/dd_leave/dd_leave",
+					"pathName": "pages/DD/dd_leave/dd_leave",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/DD/dd_leave/dd_leave_detail/dd_leave_detail",
+					"pathName": "pages/DD/dd_leave/dd_leave_detail/dd_leave_detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/DD/dd_leave/dd_leave_sign/dd_leave_sign",
+					"pathName": "pages/DD/dd_leave/dd_leave_sign/dd_leave_sign",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/DD/dd_leave/dd_leave_sign/dd_camera/dd_camera",
+					"pathName": "pages/DD/dd_leave/dd_leave_sign/dd_camera/dd_camera",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/DD/dd_setting/dd_setting",
+					"pathName": "pages/DD/dd_setting/dd_setting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/DD/dd_start/dd_start",
+					"pathName": "pages/DD/dd_start/dd_start",
 					"scene": null
 				}
 			]

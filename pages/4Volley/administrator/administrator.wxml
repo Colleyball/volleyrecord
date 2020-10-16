@@ -1,0 +1,71 @@
+<view class="list">
+  <view class="text-title m-left">填写比赛结果</view>
+  <view wx:if="{{!team_choose[0]}}" class="choose-team" bindtap="ChooseTeam" data-flag='0'>选择参赛队-1</view>
+  <view wx:else class="team-card" bindtap="ChooseTeam" data-flag='0'>
+    <view class="team-card-title">参赛队-1</view>
+    <view class="team-card-name">队伍名称：{{team[team_choose[0] - 1].name}}</view>
+    <view class="team-card-player">参赛队员：{{team[team_choose[0] - 1].player[0].name}} {{team[team_choose[0] - 1].player[1].name}} {{team[team_choose[0] - 1].player[2].name}} {{team[team_choose[0] - 1].player[3].name}}</view>
+  </view>
+  <view wx:if="{{!team_choose[1]}}" class="choose-team" bindtap="ChooseTeam" data-flag='1'>选择参赛队-2</view>
+  <view wx:else class="team-card" bindtap="ChooseTeam" data-flag='1'>
+    <view class="team-card-title">参赛队-2</view>
+    <view class="team-card-name">队伍名称：{{team[team_choose[1] - 1].name}}</view>
+    <view class="team-card-player">参赛队员：{{team[team_choose[1] - 1].player[0].name}} {{team[team_choose[1] - 1].player[1].name}} {{team[team_choose[1] - 1].player[2].name}} {{team[team_choose[1] - 1].player[3].name}}</view>
+  </view>
+  <view class="title">填写比分信息</view>
+  <view class="score">
+    <view class="score-num" hover-class="hover" bindtap="SetScore" data-set='0'>{{all_score[0]}}</view>
+    <view class="set">第一局</view>
+    <view class="score-num" hover-class="hover" bindtap="SetScore" data-set='1'>{{all_score[1]}}</view>
+  </view>
+  <view class="score">
+    <view class="score-num" hover-class="hover" bindtap="SetScore" data-set='2'>{{all_score[2]}}</view>
+    <view class="set">第二局</view>
+    <view class="score-num" hover-class="hover" bindtap="SetScore" data-set='3'>{{all_score[3]}}</view>
+  </view>
+  <view class="score">
+    <view class="score-num" hover-class="hover" bindtap="SetScore" data-set='4'>{{all_score[4]}}</view>
+    <view class="set">第三局</view>
+    <view class="score-num" hover-class="hover" bindtap="SetScore" data-set='5'>{{all_score[5]}}</view>
+  </view>
+</view>
+
+<view bindtap="BindConfirm" class="confirm-btn {{Name ? 'confirm-btn-yes ' : ''}}">提交比赛结果
+</view>
+
+<view class="socre-select" hidden="{{score_border}}">
+  <block wx:for="{{5}}" wx:for-index="line" wx:key="">
+    <view class="score-select-line">
+      <block wx:for="{{5}}" wx:key="">
+        <view class="score-select-item" hover-class="hover" bindtap="ConfirmScore" data-score="{{line*5 + index + 1}}">{{line*5 + index + 1}}</view>
+      </block>
+    </view>
+  </block>
+</view>
+
+<view class="team-list" hidden="{{TeamListFlag}}">
+  <block wx:for="{{team}}" wx:key="no">
+    <view class="team">
+      <view class="team-name">{{item.name}}</view>
+      <view class="team-time">创建时间：{{item.gmt}}</view>
+      <view class="player">
+        <block wx:for="{{item.player}}" wx:for-item="player" wx:key="uid">
+          <view class="player-item">
+            <image class="player-avatar" src="{{player.Pic}}" />
+            <view class="player-name">{{player.name}}</view>
+          </view>
+        </block>
+        <block wx:for="{{4 - item.player_count}}" wx:key="no">
+          <view class="player-item">
+            <image class="player-avatar invite" src="../../../images/4volley/invite.png" />
+            <view class="player-name">邀请好友</view>
+          </view>
+        </block>
+      </view>
+      <view class="join-team" hover-class="join-team-hover" bindtap="ConfirmTeam" data-team="{{index + 1}}" wx:if="{{index + 1 != team_choose[0] && index + 1 != team_choose[1]}}">选择队伍</view>
+      <view class="join-team forbidden" bindtap="CancelTeam" wx:else>取消选择</view>
+    </view>
+  </block>
+</view>
+
+<view class="close" hidden="{{TeamListFlag}}" bindtap="BindClose">X</view>

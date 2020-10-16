@@ -1,0 +1,100 @@
+page, .page {
+  font-family: 'PingFang SC',
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Droid Sans Fallback',
+                 'Microsoft Yahei',
+                 sans-serif;
+  background: rgba(250,250,250,1);
+}
+
+.list {
+  width: 680rpx;
+  margin: 20rpx 0 0 35rpx;
+}
+
+.team {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: whitesmoke;
+  padding: 20rpx 0;
+  margin: 20rpx 0
+}
+
+.team-name {
+  width: 100%;
+  height: 80rpx;
+	line-height: 80rpx;
+	background-color: whitesmoke;
+  margin: 0 0 10rpx 0;
+	text-align: center;
+  color: #333333;
+  font-size: 35rpx
+}
+
+.player {
+  width: 100%;
+  height: 140rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 0 20rpx 0
+}
+
+.player-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%
+}
+
+.player-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.player-name {
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #333333;
+  font-size: 25rpx;
+  text-align: center
+}
+
+.invite {
+  background: #04BE02
+}
+
+.join-team {
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 5rpx;
+  border: 1rpx solid blueviolet;
+  text-align: center;
+  color: blueviolet;
+  font-size: 35rpx
+}
+
+.join-team-hover {
+  background: blueviolet;
+  color: white
+}
+
+.forbidden {
+  color: rgba(0, 0, 0, 0.4)
+}
+
+.create-team {
+  width: 100%;
+  height: 120rpx;
+  position: fixed;
+  bottom: 0;
+  z-index: 10
+}

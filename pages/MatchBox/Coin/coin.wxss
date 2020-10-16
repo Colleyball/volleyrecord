@@ -39,7 +39,7 @@ page,.page {
   margin-top: 75rpx;
   width: 250rpx;
   height: 250rpx;
-  background: url('https://volleywang.cn/liansaiquan/images/wechat/rr/coin.png') no-repeat;
+  background: url('http://images.volleywang.cn/VolleyRecord/macthbox/coin/coin.png') no-repeat;
   background-position: center;
   background-size: 280rpx;
   box-shadow: 0rpx 0rpx 100rpx rgba(255,228, 120, 1);
@@ -90,7 +90,7 @@ page,.page {
   height: 100rpx;
   background-position: center;
   background-size: 100rpx;
-  background-image: url('https://volleywang.cn/liansaiquan/images/wechat/matchbox/coin/drink.png');
+  background-image: url('http://images.volleywang.cn/VolleyRecord/macthbox/coin/drink.png');
 }
 
 .smallcoineat{
@@ -99,7 +99,7 @@ page,.page {
   height: 100rpx;
   background-position: center;
   background-size: 100rpx;
-  background-image: url('https://volleywang.cn/liansaiquan/images/wechat/matchbox/coin/food.png');
+  background-image: url('http://images.volleywang.cn/VolleyRecord/macthbox/coin/food.png');
 }
 
 

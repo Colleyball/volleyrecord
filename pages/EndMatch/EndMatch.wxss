@@ -106,32 +106,23 @@ page,.page {
 	border-radius: 0rpx;
 	margin: 20rpx 0 20rpx 35rpx;
 	text-align: center;
-	box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1)
 }
 
-.confirm-btn {
-	position: fixed;
-	width: 150rpx;
-	height: 150rpx;
-	border-radius: 50%;
-	bottom: 20rpx;
-	left: 425rpx;
-	line-height: 150rpx;
-	text-align: center;
-	font-size: 80rpx;
-	box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
-	background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));
-	color: rgba(0, 0, 0, 0.8);
+.upload-tool {
+  position: fixed;
+  bottom: 20rpx;
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around
 }
 
-.back-btn {
-	position: fixed;
-	width: 150rpx;
-	height: 150rpx;
+.upload-tool-item {
+	height: 100rpx;
+  width: 100rpx;
 	border-radius: 50%;
-	bottom: 20rpx;
-	left: 175rpx;
-	line-height: 150rpx;
 	text-align: center;
 	font-size: 80rpx;
 	box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);

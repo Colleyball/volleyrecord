@@ -20,7 +20,19 @@
     "pages/Data/Rank/Rank",
     "pages/Data/Statistic2019/Statistic2019",
     "pages/User/FavouriteVideo/FavouriteVideo",
-    "pages/TeamRecord/TeamRecord"
+    "pages/TeamRecord/TeamRecord",
+    "pages/4Volley/4Volley",
+    "pages/4Volley/PersonalInfo/PersonalInfo",
+    "pages/4Volley/SignUp/SignUp",
+    "pages/4Volley/SignUp/CreateTeam/CreateTeam",
+    "pages/4Volley/SignUp/JoinTeam/JoinTeam",
+    "pages/4Volley/administrator/login/login",
+    "pages/4Volley/administrator/administrator",
+    "pages/DD/dd_index",
+    "pages/DD/dd_leave/dd_leave",
+    "pages/DD/dd_leave/dd_leave_detail/dd_leave_detail",
+    "pages/DD/dd_setting/dd_setting",
+    "pages/DD/dd_start/dd_start"
   ],
   "window": {
     "navigationBarTitleText": "赛事窗·排球数据统计",

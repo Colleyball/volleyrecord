@@ -12,7 +12,7 @@ Page({
     },
     addscoreA: function(t) {
         var a = parseInt(t.target.dataset.score);
-        this.animationA.translateY(-300).scale(2).opacity(.8).step(), this.setData({
+        this.animationA.translateY(-350).scale(2).opacity(.8).step(), this.setData({
             tip_score: "+" + t.target.dataset.score,
             animationA: this.animationA.export()
         }), setTimeout(function() {
@@ -24,7 +24,7 @@ Page({
     },
     addscoreB: function(t) {
         var a = parseInt(t.target.dataset.score);
-        this.animationB.translateY(-300).scale(2).opacity(.8).step(), this.setData({
+      this.animationB.translateY(-350).scale(2).opacity(.8).step(), this.setData({
             tip_score: "+" + t.target.dataset.score,
             animationB: this.animationB.export()
         }), setTimeout(function() {
@@ -35,7 +35,7 @@ Page({
         }.bind(this), 1e3);
     },
     reducescoreA: function(t) {
-        this.animationA.translateY(-300).scale(2).opacity(.8).step(), this.setData({
+      this.animationA.translateY(-350).scale(2).opacity(.8).step(), this.setData({
             tip_score: "-1",
             animationA: this.animationA.export()
         }), setTimeout(function() {
@@ -46,7 +46,7 @@ Page({
         }.bind(this), 1e3);
     },
     reducescoreB: function(t) {
-        this.animationB.translateY(-300).scale(2).opacity(.8).step(), this.setData({
+      this.animationB.translateY(-350).scale(2).opacity(.8).step(), this.setData({
             tip_score: "-1",
             animationB: this.animationB.export()
         }), setTimeout(function() {

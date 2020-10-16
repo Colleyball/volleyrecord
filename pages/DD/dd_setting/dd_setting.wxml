@@ -1,0 +1,41 @@
+<view class="swiper-tab">
+  <view bindtap="swichNav" class="swiper-tab-list {{currentTab==0?'on':''}}" data-current="0">使用说明</view>
+  <view bindtap="swichNav" class="swiper-tab-list {{currentTab==1?'on':''}}" data-current="1">用户信息</view>
+</view>
+<view class="swiper-tab-temp"></view>
+<view>
+  <swiper autoplay="{{false}}" bindchange="bindChange" class="swiper-box" current="{{currentTab}}" duration="300" style="height:{{swiperHeight}}rpx">
+  <swiper-item>
+      <view class="list">
+        <text style="font-size:30rpx">
+        若要开始使用本软件，则代表你已阅读并同意下述协议。
+        1.本软件仅作为学习相关技术使用，与“钉钉”无任何关系。
+        2.本人在外出期间，将严格遵守各项防疫措施，自身承担所有安全责任。
+        3.合理使用，绝不滥用，每人每天有2次使用机会，点开通行码视作使用一次机会。
+        4.本人承诺仅个人使用，不分享、不传播该软件。        
+        </text>
+        <text style="font-size:30rpx">
+        今日剩余使用次数：{{dd_count}}  
+        </text>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="list">
+        <form bindsubmit="formSubmit">
+          <view class="text-title m-left">请填写你的信息</view>
+          <view class="inputView">
+            <input bindinput="GetName" maxlength="10" placeholder="请输入姓名" placeholderStyle="color:gray" style="height:80rpx;line-height:80rpx;width:100%"></input>
+          </view>
+          <view class="inputView">
+            <input bindinput="GetNo" maxlength="10" placeholder="请输入学号" placeholderStyle="color:gray" style="height:80rpx;line-height:80rpx;width:100%"></input>
+          </view>
+          <view class="inputView">
+            <input bindinput="GetCollege" maxlength="30" placeholder="请输入学院" placeholderStyle="color:gray" style="height:80rpx;line-height:80rpx;width:100%"></input>
+          </view>
+        </form>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+<view bindtap="BindConfirm" class="confirm-btn {{name&&no&&college?'confirm-btn-yes ':''}}">保存信息
+</view>

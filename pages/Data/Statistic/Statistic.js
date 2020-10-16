@@ -1,7 +1,7 @@
 Page({
     data: {
         matchid: 0,
-      imgalist: [ "http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/video/player/pay.png" ]
+      imgalist: [ "http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/video/player/pay.png" ]
     },
     back: function(t) {
         wx.switchTab({

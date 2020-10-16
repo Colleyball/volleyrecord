@@ -134,7 +134,7 @@
         <view class="statistic-item">发球F</view>
         <view class="statistic-item">其他F</view>
     </view>
-    <view class="statistic-content" wx:if="{{item.team==0}}" wx:for="{{statistic}}" wx:key="{{index}}">
+    <view class="statistic-content" wx:if="{{item.team==0}}" wx:for="{{statistic}}" wx:key="index">
         <view class="statistic-num">{{item.num}}</view>
         <view class="statistic-item" wx:if="{{item.SpikePoint!=0}}">{{item.SpikePoint}}</view>
         <view class="statistic-item" style="opacity:0.5" wx:if="{{item.SpikePoint==0}}">-</view>
@@ -159,7 +159,7 @@
         <view class="statistic-item">发球F</view>
         <view class="statistic-item">其他F</view>
     </view>
-    <view class="statistic-content" wx:if="{{item.team==1}}" wx:for="{{statistic}}" wx:key="{{index}}">
+    <view class="statistic-content" wx:if="{{item.team==1}}" wx:for="{{statistic}}" wx:key="index">
         <view class="statistic-num">{{item.num}}</view>
         <view class="statistic-item" wx:if="{{item.SpikePoint!=0}}">{{item.SpikePoint}}</view>
         <view class="statistic-item" style="opacity:0.5" wx:if="{{item.SpikePoint==0}}">-</view>

@@ -5,8 +5,7 @@ page, .page {
                  'Droid Sans Fallback',
                  'Microsoft Yahei',
                  sans-serif;
-  background: url('http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/background.jpg') no-repeat top fixed;
-  background-size: cover;
+  background: rgba(250,250,250,1);
 }
 
 .background-blur {
@@ -20,40 +19,77 @@ page, .page {
   opacity: 0;
 }
 
+.home-title {
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  background: white;
+  align-items: center
+}
+
+.homt-title-text {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 40rpx;
+  color: rgba(88,79,96,1);
+  margin: 0 0 0 35rpx
+}
+
+.homt-title-search {
+  height: 50rpx;
+  width: 300rpx;
+  border-radius: 30rpx;
+  background: rgba(242,242,242,1);
+  margin: 0 0 0 35rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+
+.homt-title-search-icon {
+  height: 26rpx;
+  width: 26rpx;
+  margin: 0 0 0 10rpx
+}
+
+.homt-title-search-text {
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 26rpx;
+  margin: 0 0 0 10rpx;
+  color: rgba(153,153,153,1)
+}
+
 .swiper-tab {
   width: 100%;
-  height: 120rpx;
+  height: 60rpx;
   text-align: center;
   line-height: 50rpx;
   position: fixed;
-  bottom: 0;
+  top: 100rpx;
   z-index: 20;
-  background: rgba(247, 247, 247, 0.99);
+  background: rgba(255, 255, 255, 1);
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-top: 1rpx solid rgba(2210, 210, 210, 1);
-  box-shadow: 0 0rpx 20rpx rgba(0, 0, 0, 0.3);
-  border-radius: 15rpx 15rpx 0 0;
+  padding: 0 0 10rpx 15rpx
 }
 
 .swiper-tab-list {
-  height: 120rpx;
-  line-height: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
   font-size: 40rpx;
   display: flex;
   flex-direction: column;
-  width: 25%;
-  color: rgba(0, 0, 0, 0.6);
+  width: auto;
+  color: rgba(153,153,153,1);
   padding: 0 20rpx;
   align-items: center;
   justify-content: center;
-}
-
-.swiper-tab-icon {
-  width: 55rpx;
-  height: 55rpx;
-  margin: 0 0 5rpx 0;
 }
 
 .swiper-tab-text {
@@ -64,8 +100,9 @@ page, .page {
 }
 
 .on {
-  color: rgba(8, 193, 97, 1);
+  color: rgba(88,79,96,1);
   font-weight: bold;
+  border-bottom: 4rpx solid rgba(88,79,96,1);
 }
 
 .swiper-box {
@@ -81,25 +118,148 @@ page, .page {
 
 .list {
   width: 680rpx;
-  margin: 150rpx 0 0 35rpx;
+  margin: 260rpx 0 0 35rpx;
 }
+
+.wrap {
+  width: 640rpx;
+  height: auto;
+  padding: 20rpx;
+  background: red;
+  border-radius: 6rpx;
+  margin: 0 0 30rpx 0;
+}
+
+.wrap-title {
+  height: 120rpx;
+  color: white;
+  margin: 20rpx 0 0 0
+}
+
+.wrap-main-title {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 40rpx;
+}
+
+.wrap-sub-title {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+}
+
+.wrap-content {
+  width: 640rpx;
+  height: auto;
+  background: rgba(255,255,255,0.95);
+  border-radius: 6rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 60rpx 0 0 0 
+}
+
+.wrap-content-big {
+   margin: 400rpx 0 0 0 
+}
+
+.wrap-item {
+  width: 600rpx;
+  height: 150rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between
+}
+
+.wrap-item-image-bg {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 6rpx;
+}
+
+.wrap-item-image {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 20rpx;
+}
+
+.wrap-item-title {
+  width: 450rpx;
+  height: 140rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+.wrap-item-title-main {
+  height: 60rpx;
+  line-height: 60rpx;
+  color: rgba(51,51,51,1);
+  font-size: 30rpx;
+}
+
+.wrap-item-title-sub {
+  height: 40rpx;
+  line-height: 40rpx;
+  color: rgba(153,153,153,1);
+  font-size: 26rpx;
+}
+
+.wrap-title-shadow {
+  text-shadow: 0 0 20rpx rgba(0, 0, 0, 0.5)
+}
+
+.wrap-item-line {
+  border-bottom: 1rpx solid #ededed
+}
+
+.wrap-bg-1 {
+  background: url('http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic-new/1.jpg') no-repeat bottom;
+  background-size: cover
+}
+
+.wrap-bg-2 {
+  background: url('http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic-new/2.jpg') no-repeat top;
+  background-size: cover
+}
+
+.wrap-item-image-bg-a {
+  background: linear-gradient(45deg, #DDF0ED, #F2EFE6)
+}
+
+.wrap-item-image-bg-b {
+  background: linear-gradient(45deg, #376956, #495A80)
+}
+
+.wrap-item-image-bg-c {
+  background: linear-gradient(45deg, #404040, #563624)
+}
+
+.wrap-item-image-bg-d {
+  background: linear-gradient(45deg, #00755E, #483C32)
+}
+
+.wrap-item-image-bg-e {
+  background: linear-gradient(45deg, #515733, #9C5657)
+}
+
 
 .box-thin {
   display: flex;
   flex-direction: row;
   width: 680rpx;
   height: 80rpx;
-  margin: 0 0 -20rpx 0;
+  margin: 0 0 30rpx 0;
   padding: 0;
-  background: rgba(255, 255, 255, 0.95);
-  /*background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05)); */
+  background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05)); 
   border: 1rpx solid rgba(0, 0, 0, 0);
   align-items: center;
   justify-content: space-around;
   font-size: 30rpx;
   color: rgba(0, 0, 0, 0.9);
-  border-radius: 15rpx;
-  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.3);
+  border-radius: 6rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0);
 }
 
 .box-thin-icon {
@@ -124,7 +284,7 @@ page, .page {
   flex-direction: column;
   -webkit-align-items: center;
   align-items: center;
-  border-radius: 15rpx;
+  border-radius: 6rpx;
 }
 
 .box-wide-pic {
@@ -132,8 +292,8 @@ page, .page {
   width: 680rpx;
   height: 320rpx;
   opacity: 1;
-  border-radius: 15rpx;
-  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.3);
+  border-radius: 6rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0);
 }
 
 .box-wide-TxtZh {
@@ -195,8 +355,8 @@ page, .page {
   flex-direction: column;
   -webkit-align-items: center;
   align-items: center;
-  border-radius: 15rpx;
-  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.3);
+  border-radius: 6rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0);
 }
 
 .box-middle-pic {
@@ -205,7 +365,7 @@ page, .page {
   height: 260rpx;
   box-shadow: 0rpx 0rpx 100rpx 0rpx rgba(0, 0, 0, 0);
   opacity: 1;
-  border-radius: 15rpx;
+  border-radius: 6rpx;
 }
 
 .box-middle-TxtZh {
@@ -229,8 +389,8 @@ page, .page {
   flex-direction: column;
   -webkit-align-items: center;
   align-items: center;
-  border-radius: 15rpx;
-  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.3);
+  border-radius: 6rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0);
 }
 
 .box-small-pic {
@@ -239,7 +399,7 @@ page, .page {
   height: 120rpx;
   box-shadow: 0rpx 0rpx 100rpx 0rpx rgba(0, 0, 0, 0);
   opacity: 1;
-  border-radius: 15rpx;
+  border-radius: 6rpx;
 }
 
 .box-small-TxtZh {
@@ -263,10 +423,9 @@ page, .page {
 
 .item {
   margin-top: 30rpx;
-  margin-left: 10%;
-  width: 80%;
+  width: 100%;
   height: 100rpx;
-  border: 2rpx solid rgba(0, 0, 0, 0.4);
+  border: 3rpx solid rgba(0, 0, 0, 0.2);
   border-radius: 30rpx;
   background: rgba(255, 255, 255, 0.8);
   text-align: center;
@@ -275,32 +434,32 @@ page, .page {
 }
 
 .scoreboard {
-  background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/8.png");
+  background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/8.png");
   background-size: cover;
 }
 
 .zhanshuban {
-  background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/6.png");
+  background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/6.png");
   background-size: cover;
 }
 
 .coin {
-  background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/7.png");
+  background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/7.png");
   background-size: cover;
 }
 
 .five-three {
-  background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/3-1.png");
+  background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/3-1.png");
   background-size: cover;
 }
 
 .three-two {
-  background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/4-1.png");
+  background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/4-1.png");
   background-size: cover;
 }
 
 .one-zero {
-  background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/2-1.png");
+  background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/2-1.png");
   background-size: cover;
 }
 
@@ -309,12 +468,12 @@ page, .page {
 }
 
 .nearby {
-  background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/wide-2.png") center;
+  background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/wide-2.png") center;
   background-size: cover;
 }
 
 .bet {
-  background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/wide-3.png") center;
+  background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/wide-3.png") center;
   background-size: cover;
 }
 
@@ -322,18 +481,18 @@ page, .page {
   margin: 0 0 0 0rpx;
   width: 680rpx;
   height: 480rpx;
-  border-radius: 15rpx;
-  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.3);
+  border-radius: 6rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0);
 }
 
 .swiper-item-video {
-  border-radius: 15rpx;
+  border-radius: 6rpx;
 }
 
 .slide-image-video {
   width: 680rpx;
   height: 480rpx;
-  border-radius: 15rpx;
+  border-radius: 6rpx;
 }
 
 .silde-title {
@@ -366,53 +525,42 @@ page, .page {
 .video-pic {
   width: 680rpx;
   height: 400rpx;
-  border-radius: 15rpx;
-  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.3);
-}
-
-.video-detail-background {
-  position: relative;
-  z-index: 9;
-  margin: -110rpx 0 0rpx 50rpx;
-  width: 580rpx;
-  height: 180rpx;
-  background: rgba(255, 255, 255, 0.9);
+  border-radius: 6rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0);
 }
 
 .video-detail {
   position: relative;
   z-index: 10;
-  display: -webkit-flex;
   display: flex;
-  margin: -180rpx 0 50rpx 50rpx;
-  width: 580rpx;
-  height: 180rpx;
-  border: 1rpx solid rgba(0, 0, 0, 0.1);
+  margin: 10rpx 0 35rpx 0;
+  width: 680rpx;
+  height: 140rpx;
   background: linear-gradient(45deg, rgba(31, 174, 221, 0.05), rgba(255, 83, 77, 0.05));
   text-align: center;
-  -webkit-flex-direction: column;
   flex-direction: column;
+  border-radius: 6rpx;
 }
 
 .video-title {
   overflow: hidden;
   margin: 0;
-  width: 580rpx;
-  height: 100rpx;
-  color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 80rpx;
+  color: rgba(51,51,51,1);
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 45rpx;
-  line-height: 100rpx;
+  font-size: 40rpx;
+  line-height: 80rpx;
 }
 
 .video-num {
   margin: 0;
-  width: 580rpx;
-  height: 80rpx;
+  width: 100%;
+  height: 40rpx;
   color: rgba(0, 0, 0, 0.6);
   font-size: 30rpx;
-  line-height: 80rpx;
+  line-height: 40rpx;
 }
 
 .no-data {
@@ -437,14 +585,13 @@ page, .page {
   width: 680rpx;
   height: auto;
   border: 1rpx solid rgba(0, 0, 0, 0);
-  /*background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));*/
-  background: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));
   -webkit-flex-direction: column;
   flex-direction: column;
   -webkit-align-items: center;
   align-items: center;
-  border-radius: 15rpx;
-  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.3);
+  border-radius: 6rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0);
 }
 
 .match-detail {
@@ -634,15 +781,20 @@ page, .page {
 }
 
 .team-rank {
-  background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/wide-1.png");
+  background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/wide-1.png");
   background-size: cover;
+}
+
+.Fvolley {
+  background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/wide-1.png");
+  background-size: cover;
+  margin:0 0 30rpx 0
 }
 
 .all-match-data {
   margin: 0;
   border: 1rpx solid rgba(0, 0, 0, 0);
-  /*background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));*/
-  background: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));
 }
 
 .add-match-data-font {
@@ -650,22 +802,22 @@ page, .page {
 }
 
 .user-search {
-  background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/9.png");
+  background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/9.png");
   background-size: cover;
 }
 
 .user-favourite {
-  background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/12.png");
+  background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/12.png");
   background-size: cover;
 }
 
 .user-about {
-  background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/11.png");
+  background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/11.png");
   background-size: cover;
 }
 
 .user-statistic {
-  background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/home-pic/10.png");
+  background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic/10.png");
   background-size: cover;
 }
 
@@ -675,8 +827,10 @@ page, .page {
   overflow: hidden;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.95);
+  background: url('http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/home-pic-new/cover-bg-blur.jpg') no-repeat top;
+  background-size: cover;
   opacity: 0;
+  z-index: 30
 }
 
 .search {
@@ -752,17 +906,14 @@ page, .page {
   height: 80rpx;
   margin: 0 0 0 0;
   padding: 0;
-  background: rgba(255, 255, 255, 0.95);
-  /*background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05)); */
+  background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05)); 
   border: 1rpx solid rgba(0, 0, 0, 0);
   align-items: center;
   justify-content: space-around;
   font-size: 30rpx;
   color: rgba(0, 0, 0, 0.8);
-  border-radius: 15rpx;
-  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.3);
-  position: fixed;
-  top: 150rpx;
+  border-radius: 6rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0);
 }
 
 .top-bar-icon {
@@ -789,11 +940,10 @@ page, .page {
   line-height: 80rpx;
   font-size: 45rpx;
   margin: 75rpx 0 20rpx 0;
-  color: rgba(0, 0, 0, 0.8);
-  border-radius: 15rpx;
-  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.3);
-  background: rgba(255, 255, 255, 0.95);
-  /*background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05)); */
+  color: rgba(51, 51, 51, 1);
+  border-radius: 6rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0);
+  background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05)); 
   border: 1rpx solid rgba(0, 0, 0, 0);
   padding: 0 0 0 20rpx
 }

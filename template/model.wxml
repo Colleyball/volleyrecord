@@ -1,7 +1,7 @@
 <template name="login">
     <view class="model-login-box ">
         <view class="model-login-title">提示</view>
-        <view class="model-login-text">请授权小程序以继续使用赛事窗服务</view>
+        <view class="model-login-text">进入个人中心/使用比赛记录需授权小程序</view>
         <button bindgetuserinfo="bindGetUserInfo" class="model-login-btn" openType="getUserInfo">微信授权登录</button>
         <view bindtap="model_login_cancle" class="model-login-btn model-login-close">取消</view>
     </view>

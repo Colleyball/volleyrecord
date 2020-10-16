@@ -1,6 +1,6 @@
 page,.page {
 	font-family: "PingFang SC", "Helvetica Neue" ,Helvetica, "Droid Sans Fallback", "Microsoft Yahei", sans-serif;
-	background: url("http://www.aibojiaoyu.cn/ImgFiles/ABSports/matchwin/background.jpg") no-repeat;
+	background: url("http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/background.jpg") no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 	background: white  
@@ -13,8 +13,8 @@ page,.page {
 
 .player { 
   width: 680rpx; 
-  height: 300rpx; 
-  margin: 0,30rpx 0 50rpx 0;
+  height: 400rpx; 
+  margin: 30rpx 0 50rpx 0;
 	border-radius: 20rpx;
 	box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.3);
 }

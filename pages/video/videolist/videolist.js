@@ -7,7 +7,7 @@ Page({
         if (t.currentTarget.dataset.link) {
             var e = t.currentTarget.dataset.teama + "-" + t.currentTarget.dataset.teamb;
             wx.navigateTo({
-                url: "../player/player?title=" + e + "&link=" + t.currentTarget.dataset.link + "&qqvideo=" + t.currentTarget.dataset.qqvideo + "&group=" + t.currentTarget.dataset.group
+              url: "../player/player?title=" + e + "&link=" + t.currentTarget.dataset.link + "&qqvideo=" + t.currentTarget.dataset.qqvideo + "&group=" + t.currentTarget.dataset.group + "&picture=" + t.currentTarget.dataset.picture
             });
         } else wx.showModal({
             title: "提示",

@@ -1,5 +1,5 @@
 <view class="container">
-    <view bindtap="BindMatchInfo" data-matchid="{{item.matchdetail.matchid}}" data-type="{{item.type}}" wx:for="{{matchinfo}}" wx:key="{{index}}">
+    <view bindtap="BindMatchInfo" data-matchid="{{item.matchdetail.matchid}}" data-type="{{item.type}}" wx:for="{{matchinfo}}" wx:key="index">
         <view class="tablename">{{item.matchdetail.matchname}}</view>
         <view class="Setinfo">
             <view class="Setinfo-teamA">

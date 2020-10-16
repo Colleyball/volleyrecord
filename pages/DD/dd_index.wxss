@@ -1,0 +1,38 @@
+/* pages/DD/dd_index.wxss */
+.statusBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 100;
+}
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 101.4rpx;
+  z-index: 100;
+}
+
+.content-1 {
+  padding: 101.4rpx 0 0 0;
+  width: 100%;
+  height: 1144.44rpx
+}
+
+.content-2 {
+  width: 100%;
+  height: 1072.22rpx;
+  padding: 0 0 120rpx 0
+}
+
+.btn-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 109.7rpx
+}

@@ -1,0 +1,84 @@
+<view class="list" style="padding-top:{{statusBarHeight * 2 + 200}}rpx">
+  <view bindtap="" class="box-thin">
+    <image class="box-thin-icon" mode="aspectFill" src="{{userInfo.avatarUrl}}"></image>
+    <text class="box-thin-TxtZh">{{userInfo.nickName}},点击进入个人中心</text>
+  </view>
+  <view class="wrap wrap-bg-1">
+    <view class="wrap-title">
+      <view class="wrap-main-title">四人制排球赛</view>
+      <view class="wrap-sub-title">2019-2赛季</view>
+    </view>
+    <view class="wrap-content wrap-content-big">
+      <view class="wrap-item" bindtap="bindViewTapMatch">
+        <view class="wrap-item-image-bg wrap-item-image-bg-d">
+          <image class="wrap-item-image" mode="aspectFill" src="../../images/4volley/join.png"></image>
+        </view>
+        <view class="wrap-item-title">
+          <view class="wrap-item-title-main">立即报名</view>
+          <view class="wrap-item-title-sub">现可报名{{match_date}}的比赛</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="wrap" style="background: url('http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/4volley/2.jpg') no-repeat top;background-size: cover">
+    <view class="wrap-title wrap-title-shadow">
+      <view class="wrap-main-title">比赛信息</view>
+      <view class="wrap-sub-title">Competition Center</view>
+    </view>
+    <view class="wrap-content">
+      <view class="wrap-item wrap-item-line">
+        <view class="wrap-item-image-bg wrap-item-image-bg-a">
+          <image class="wrap-item-image" mode="aspectFill" src="../../images/4volley/rank.png"></image>
+        </view>
+        <view class="wrap-item-title">
+          <view class="wrap-item-title-main">赛季排行榜</view>
+          <view class="wrap-item-title-sub">No.1 XXX</view>
+        </view>
+      </view>
+      <view class="wrap-item wrap-item-line">
+        <view class="wrap-item-image-bg wrap-item-image-bg-b">
+          <image class="wrap-item-image" mode="aspectFill" src="../../images/4volley/result.png"></image>
+        </view>
+        <view class="wrap-item-title">
+          <view class="wrap-item-title-main">比赛结果</view>
+          <view class="wrap-item-title-sub">点击查看全部比赛结果</view>
+        </view>
+      </view>
+      <view class="wrap-item">
+        <view class="wrap-item-image-bg wrap-item-image-bg-c">
+          <image class="wrap-item-image" mode="aspectFill" src="../../images/4volley/time.png"></image>
+        </view>
+        <view class="wrap-item-title">
+          <view class="wrap-item-title-main">今日赛程</view>
+          <view class="wrap-item-title-sub">请留意你的比赛时间</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="wrap wrap-bg-2">
+    <view class="wrap-title">
+      <view class="wrap-main-title">更多</view>
+      <view class="wrap-sub-title">Details</view>
+    </view>
+    <view class="wrap-content">
+      <view class="wrap-item wrap-item-line" bindtap="Coin">
+        <view class="wrap-item-image-bg wrap-item-image-bg-c">
+          <image class="wrap-item-image" mode="aspectFill" src="../../images/4volley/help.png"></image>
+        </view>
+        <view class="wrap-item-title">
+          <view class="wrap-item-title-main">比赛规则</view>
+          <view class="wrap-item-title-sub">Rules</view>
+        </view>
+      </view>
+      <view class="wrap-item" bindtap="Admin">
+        <view class="wrap-item-image-bg wrap-item-image-bg-d">
+          <image class="wrap-item-image" mode="aspectFill" src="../../images/4volley/admin.png"></image>
+        </view>
+        <view class="wrap-item-title">
+          <view class="wrap-item-title-main">管理员登录</view>
+          <view class="wrap-item-title-sub">Administrator</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

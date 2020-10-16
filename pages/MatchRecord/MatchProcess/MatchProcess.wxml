@@ -92,7 +92,7 @@
     </swiper-item>
     <swiper-item>
       <view class="matchduration">
-        <view class="matchduration-line" wx:for="{{MatchDuration}}" wx:key="{{index}}">
+        <view class="matchduration-line" wx:for="{{MatchDuration}}" wx:key="index">
           <view class="matchduration-item" wx:if="{{item[3]==0}}">
             <view class="matchduration-item-name">
               <block wx:if="{{item[6]==0}}">{{MatchInfo[1]}}</block>
@@ -130,7 +130,7 @@
           <view class="SubInfo-line-left-name">{{MatchInfo[2]}}</view>
           <view class="SubInfo-line-left-count">剩余{{TeamBCurrentSetSub}}</view>
         </view>
-        <view class="SubInfo-line" wx:for="{{SubInfo}}" wx:key="{{index}}">
+        <view class="SubInfo-line" wx:for="{{SubInfo}}" wx:key="index">
           <view class="SubInfo-line-name">
             <block wx:if="{{item[1]==0}}">{{MatchInfo[1]}}</block>
             <block wx:if="{{item[1]==1}}">{{MatchInfo[2]}}</block>
@@ -154,7 +154,7 @@
           <view class="SubInfo-line-left-name">{{MatchInfo[2]}}</view>
           <view class="SubInfo-line-left-count">剩余{{TeamBCurrentSetTimeOut}}</view>
         </view>
-        <view class="SubInfo-line" wx:for="{{TimeOut}}" wx:key="{{index}}">
+        <view class="SubInfo-line" wx:for="{{TimeOut}}" wx:key="index">
           <view class="SubInfo-line-name">
             <block wx:if="{{item[1]==0}}">{{MatchInfo[1]}}</block>
             <block wx:if="{{item[1]==1}}">{{MatchInfo[2]}}</block>
@@ -260,7 +260,7 @@
     </swiper-item>
     <swiper-item>
       <view class="matchduration">
-        <view class="matchduration-line" wx:for="{{MatchDuration}}" wx:key="{{index}}">
+        <view class="matchduration-line" wx:for="{{MatchDuration}}" wx:key="index">
           <view class="matchduration-item" wx:if="{{item[3]==0}}">
             <view class="matchduration-item-name">
               <block wx:if="{{item[6]==0}}">{{MatchInfo[1]}}</block>
@@ -298,7 +298,7 @@
           <view class="SubInfo-line-left-name">{{MatchInfo[2]}}</view>
           <view class="SubInfo-line-left-count">剩余{{TeamBCurrentSetSub}}</view>
         </view>
-        <view class="SubInfo-line" wx:for="{{SubInfo}}" wx:key="{{index}}">
+        <view class="SubInfo-line" wx:for="{{SubInfo}}" wx:key="index">
           <view class="SubInfo-line-name">
             <block wx:if="{{item[1]==0}}">{{MatchInfo[1]}}</block>
             <block wx:if="{{item[1]==1}}">{{MatchInfo[2]}}</block>
@@ -322,7 +322,7 @@
           <view class="SubInfo-line-left-name">{{MatchInfo[2]}}</view>
           <view class="SubInfo-line-left-count">剩余{{TeamBCurrentSetTimeOut}}</view>
         </view>
-        <view class="SubInfo-line" wx:for="{{TimeOut}}" wx:key="{{index}}">
+        <view class="SubInfo-line" wx:for="{{TimeOut}}" wx:key="index">
           <view class="SubInfo-line-name">
             <block wx:if="{{item[1]==0}}">{{MatchInfo[1]}}</block>
             <block wx:if="{{item[1]==1}}">{{MatchInfo[2]}}</block>
@@ -337,14 +337,14 @@
 <action-sheet bindchange="actionSheetbindchange" hidden="{{ShowTeamAALLPlayer}}">
   <action-sheet-item>请填写首发队员</action-sheet-item>
   <action-sheet-item bindtap="SetTeamAPlayer" data-num="{{item[0]}}" wx:if="{{TeamACourtPlayer[1]!=item[0]&&TeamACourtPlayer[2]!=item[0]&&TeamACourtPlayer[3]!=item[0]&&TeamACourtPlayer[4]!=item[0]&&TeamACourtPlayer[5]!=item[0]&&TeamACourtPlayer[6]!=item[0]}}"
-    wx:for="{{TeamAPlayer}}" wx:key="{{index}}">{{item[0]}}</action-sheet-item>
+    wx:for="{{TeamAPlayer}}" wx:key="index">{{item[0]}}</action-sheet-item>
   <action-sheet-item bindtap="SetTeamAPlayer" data-num="！">重新选择</action-sheet-item>
   <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
 </action-sheet>
 <action-sheet bindchange="actionSheetbindchange" hidden="{{ShowTeamBALLPlayer}}">
   <action-sheet-item>请填写首发队员</action-sheet-item>
   <action-sheet-item bindtap="SetTeamBPlayer" data-num="{{item[0]}}" wx:if="{{TeamBCourtPlayer[1]!=item[0]&&TeamBCourtPlayer[2]!=item[0]&&TeamBCourtPlayer[3]!=item[0]&&TeamBCourtPlayer[4]!=item[0]&&TeamBCourtPlayer[5]!=item[0]&&TeamBCourtPlayer[6]!=item[0]}}"
-    wx:for="{{TeamBPlayer}}" wx:key="{{index}}">{{item[0]}}</action-sheet-item>
+    wx:for="{{TeamBPlayer}}" wx:key="index">{{item[0]}}</action-sheet-item>
   <action-sheet-item bindtap="SetTeamBPlayer" data-num="！">重新选择</action-sheet-item>
   <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
 </action-sheet>

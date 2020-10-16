@@ -36,13 +36,13 @@ page{
 
 .volleyball{
     background-size: 100rpx 100rpx;
-    background-image: url('http://images.volleywang.cn/matchbox/volleyball.png');
+    background-image: url('http://images.volleywang.cn/VolleyRecord/macthbox/volleyball.png');
     background-repeat:no-repeat;
     background-position: center;
 }
 
 .basketball{
-    background-image: url('http://images.volleywang.cn/matchbox/basketball.png');
+    background-image: url('http://images.volleywang.cn/VolleyRecord/macthbox/basketball.png');
     background-size: 100rpx 100rpx;
     background-repeat:no-repeat;
     background-position: center;
@@ -50,21 +50,21 @@ page{
 
 .football{
     background-size: 100rpx 100rpx;
-    background-image: url('http://images.volleywang.cn/matchbox/football.png');
+    background-image: url('http://images.volleywang.cn/VolleyRecord/macthbox/football.png');
     background-repeat:no-repeat;
     background-position: center;
 }
 
 .blank{
     background-size: 80rpx 80rpx;
-    background-image: url('http://images.volleywang.cn/matchbox/blank.png');
+    background-image: url('http://images.volleywang.cn/VolleyRecord/macthbox/blank.png');
     background-repeat:no-repeat;
     background-position: center;
 }
 
 .refresh{
     background-size: 95rpx 95rpx;
-    background-image: url('http://images.volleywang.cn/matchbox/refresh.png');
+    background-image: url('http://images.volleywang.cn/VolleyRecord/macthbox/refresh.png');
     background-repeat:no-repeat;
     background-position: center;
 }

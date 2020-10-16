@@ -4,7 +4,7 @@
         <view class="weather">仅供参考</view>
     </view>
     <view class="court_list">
-        <view bindtap="" class="court" wx:for="{{court.data}}" wx:key="{{index}}">
+        <view bindtap="" class="court" wx:for="{{court.data}}" wx:key="index">
             <view class="court_name">{{item.title}}</view>
             <view class="court_distance">{{item._distance}}m | {{item.category}}</view>
             <view class="court_address">{{item.address}}</view>

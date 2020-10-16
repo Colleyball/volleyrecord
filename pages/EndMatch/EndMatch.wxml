@@ -1,27 +1,34 @@
 <view class="container">
-    <view class="tablename">本场比赛结果</view>
-    <view class="Setinfo">
-        <view class="Setinfo-teamA">
-            <view class="Setinfo-teamA-name">{{Matchinfo[1]}}</view>
-            <view class="Setinfo-teamA-set">{{TotalScore[0]}}</view>
-        </view>
-        <view class="Setinfo-teamB">
-            <view class="Setinfo-teamB-set">{{TotalScore[1]}}</view>
-            <view class="Setinfo-teamB-name">{{Matchinfo[2]}}</view>
-        </view>
+  <view class="tablename">本场比赛结果</view>
+  <view class="Setinfo">
+    <view class="Setinfo-teamA">
+      <view class="Setinfo-teamA-name">{{Matchinfo[1]}}</view>
+      <view class="Setinfo-teamA-set">{{TotalScore[0]}}</view>
     </view>
-    <view class="tablename">局分信息</view>
-    <view class="Scoreinfo">
-        <view class="Scoreinfo-score">{{TotalScore[2]}}:{{TotalScore[3]}}</view>
-        <view class="Scoreinfo-score" wx:if="{{win>1}}">{{TotalScore[4]}}:{{TotalScore[5]}}</view>
-        <view class="Scoreinfo-score" wx:if="{{win>1}}">{{TotalScore[6]}}:{{TotalScore[7]}}</view>
-        <view class="Scoreinfo-score" wx:if="{{win>2}}">{{TotalScore[8]}}:{{TotalScore[9]}}</view>
-        <view class="Scoreinfo-score" wx:if="{{win>2}}">{{TotalScore[10]}}:{{TotalScore[11]}}</view>
+    <view class="Setinfo-teamB">
+      <view class="Setinfo-teamB-set">{{TotalScore[1]}}</view>
+      <view class="Setinfo-teamB-name">{{Matchinfo[2]}}</view>
     </view>
+  </view>
+  <view class="tablename">局分信息</view>
+  <view class="Scoreinfo">
+    <view class="Scoreinfo-score">{{TotalScore[2]}}:{{TotalScore[3]}}</view>
+    <view class="Scoreinfo-score" wx:if="{{win>1}}">{{TotalScore[4]}}:{{TotalScore[5]}}</view>
+    <view class="Scoreinfo-score" wx:if="{{win>1}}">{{TotalScore[6]}}:{{TotalScore[7]}}</view>
+    <view class="Scoreinfo-score" wx:if="{{win>2}}">{{TotalScore[8]}}:{{TotalScore[9]}}</view>
+    <view class="Scoreinfo-score" wx:if="{{win>2}}">{{TotalScore[10]}}:{{TotalScore[11]}}</view>
+  </view>
 </view>
-<view bindtap="upload" class="confirm-btn">
-    <image mode="aspectFit" src="../../images/cloud.png" style="width:100rpx; height:100rpx;margin-top:25rpx;"></image>
-</view>
-<view bindtap="back" class="back-btn">
-    <image mode="aspectFit" src="../../images/back.png" style="width:100rpx; height:100rpx;margin-top:25rpx;"></image>
+
+<view class="upload-tool">
+  <view bindtap="back" class="upload-tool-item">
+    <image mode="aspectFit" src="../../images/back.png" style="width:60rpx; height:60rpx;margin-top:20rpx;"></image>
+  </view>
+  <view bindtap="upload" class="upload-tool-item" style="width:150rpx; height:150rpx">
+    <image mode="aspectFit" src="../../images/upload.png" style="width:90rpx; height:90rpx;margin-top:30rpx;"></image>
+  </view>
+  <view bindtap="del" class="upload-tool-item">
+    <image mode="aspectFit" src="../../images/del.png" style="width:60rpx; height:60rpx;margin-top:20rpx;"></image>
+  </view>
+
 </view>
