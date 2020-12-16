@@ -5,7 +5,7 @@
         <view animation="{{dotAnData3}}" class="teamB">{{teamB}}</view>
     </view>
 </view>
-<view class="list">
+<view class="list" wx:if="{{type == 0}}">
     <view class="smallcard" style="transform: perspective(400px) rotateX({{drinkdeg}}deg)">
         <view class="title">今天喝{{drinkwhat}}</view>
         <view bindtap="drink" class="smallcoindrink"></view>
@@ -14,4 +14,7 @@
         <view class="title">今天吃{{eatwhat}}</view>
         <view bindtap="eat" class="smallcoineat"></view>
     </view>
+</view>
+<view class="list" wx:else bindtap="back">
+    <view class="smallcard">返回</view>
 </view>

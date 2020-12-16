@@ -64,7 +64,7 @@
             <image class="box-thin-icon" mode="aspectFill" src="../../images/home/live.png"></image>
             <text class="box-thin-TxtZh">你还有未上传的比赛数据</text>
           </view>
-          <view class="wrap" style="background: url('http://aibotiyu.game-win.cn/resource/class/images/weather/weather-bg/{{LifeInfo.weather.type}}.jpg') no-repeat top;background-size: cover">
+          <view class="wrap" style="background: url('{{LifeInfo.weather.weather_bg}}') no-repeat top;background-size: cover">
             <view class="wrap-title wrap-title-shadow">
               <view wx:if="{{userInfo.nickName}}" class="wrap-main-title">{{userInfo.nickName}},{{LifeInfo.welcome}}</view>
               <view wx:else class="wrap-main-title">{{LifeInfo.welcome}}</view>
@@ -73,7 +73,7 @@
             <view class="wrap-content">
               <view class="wrap-item wrap-item-line">
                 <view class="wrap-item-image-bg wrap-item-image-bg-a">
-                  <image class="wrap-item-image" mode="aspectFill" src="http://aibotiyu.game-win.cn/resource/class/images/weather/{{LifeInfo.weather.type}}.png"></image>
+                  <image class="wrap-item-image" mode="aspectFill" src="{{LifeInfo.weather.weather_icon}}"></image>
                 </view>
                 <view class="wrap-item-title">
                   <view class="wrap-item-title-main">杭州天气</view>

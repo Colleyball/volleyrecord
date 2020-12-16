@@ -463,13 +463,13 @@
 
 <view class="end-set" hidden='{{EndSetFlag}}'>
   <view class="end-set-title">本局比赛结束</view>
-  <view class="end-set-subtitle">你可以选择</view>
-  <buttom class="end-set-buttom" bindtap="LoadPosition" data-type="0">填写双方站位</buttom>
+  <view class="end-set-subtitle">你可以在询问双方队长后选择</view>
+  <buttom class="end-set-buttom" bindtap="LoadPosition" data-type="0">重新填写双方站位</buttom>
   <view class="end-set-bigtitle">或</view>
   <view class="end-set-subtitle">选择一个选项载入上局站位</view>
-  <buttom class="end-set-buttom" bindtap="LoadPosition" data-type="3">双方</buttom>
-  <buttom class="end-set-buttom" bindtap="LoadPosition" data-type="1">{{MatchInfo[1]}}</buttom>
-  <buttom class="end-set-buttom" bindtap="LoadPosition" data-type="2">{{MatchInfo[2]}}</buttom>
+  <buttom class="end-set-buttom" bindtap="LoadPosition" data-type="3">双方站位不变</buttom>
+  <buttom class="end-set-buttom" bindtap="LoadPosition" data-type="1">{{MatchInfo[1]}}站位不变</buttom>
+  <buttom class="end-set-buttom" bindtap="LoadPosition" data-type="2">{{MatchInfo[2]}}站位不变</buttom>
   <view class="end-set-bigtitle">或</view>
   <buttom class="end-set-buttom" bindtap="LoadPosition" data-type="4">提前结束比赛</buttom>
 </view>

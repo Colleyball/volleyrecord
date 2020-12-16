@@ -10,7 +10,7 @@ var n = require("../../utils/util.js"), e = getApp();
 Page({
   data: {
     currentTab: "1",
-    swiperHeight: 2270,
+    swiperHeight: 2200,
     userInfo: {},
     userlogin: true,
     userlogin_box: false,
@@ -45,11 +45,11 @@ Page({
       case 1:
         if (1 == that.data.StatusFlag || 2 == that.data.StatusFlag) {
           that.setData({
-            swiperHeight: 2400
+            swiperHeight: 2300
           })
         } else {
           that.setData({
-            swiperHeight: 2270
+            swiperHeight: 2200
           })
         }
         break
@@ -407,13 +407,13 @@ Page({
     if (wx.getStorageSync("Status") == 1 || wx.getStorageSync("Status") == 2) {
       this.setData({
         StatusFlag: 1,
-        swiperHeight: 2700
+        swiperHeight: 2300
       })
     }
     if (5 == wx.getStorageSync("Status")) {
       this.setData({
         StatusFlag: 2,
-        swiperHeight: 2700
+        swiperHeight: 2300
       })
     }
     set_search_content(that)

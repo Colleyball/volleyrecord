@@ -223,6 +223,14 @@
 					"id": -1,
 					"name": "结束比赛",
 					"pathName": "pages/EndMatch/EndMatch",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 25,
+					"name": "pages/MatchBox/Coin/coin",
+					"pathName": "pages/MatchBox/Coin/coin",
+					"query": "",
 					"scene": null
 				}
 			]

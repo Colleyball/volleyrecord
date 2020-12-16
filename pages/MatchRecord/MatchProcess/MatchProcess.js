@@ -1,3 +1,4 @@
+var util = require("../../../utils/util.js");
 
 //调整轮次
 function TurnPosition(that, player, team) {
@@ -35,11 +36,11 @@ function EndMatch(that, AScore, BScore) {
         var BMatch_New = BMatch
         TotalScore[0] = AMatch_New
         TotalScore[1] = BMatch_New,
-        TotalScore[2] = AScore
+          TotalScore[2] = AScore
         TotalScore[3] = BScore
         wx.setStorageSync("TotalScore", TotalScore)
         wx.setStorageSync("Status", 5)
-        GoToEndMatch()
+        GoToEndMatch(that)
         console.log("A win a match")
       }
       if (BScore >= 25 && BScore - AScore >= 2) {
@@ -51,21 +52,21 @@ function EndMatch(that, AScore, BScore) {
         TotalScore[3] = BScore
         wx.setStorageSync("TotalScore", TotalScore)
         wx.setStorageSync("Status", 5)
-        GoToEndMatch()
+        GoToEndMatch(that)
         console.log("B win a match")
       }
       break;
 
     case 2:
-      if (TotalSet == 0){
+      if (TotalSet == 0) {
         if (AScore >= 25 && AScore - BScore >= 2) {
           EndSet(that, TotalScore, AScore, BScore, AMatch_New = AMatch + 1, BMatch_New = BMatch)
-           console.log("A win a set")
+          console.log("A win a set")
         }
         if (BScore >= 25 && BScore - AScore >= 2) {
           EndSet(that, TotalScore, AScore, BScore, AMatch_New = AMatch, BMatch_New = BMatch + 1)
           console.log("B win a set")
-        } 
+        }
       }
       if (TotalSet == 1) {
         if (1 == AMatch) {
@@ -78,14 +79,14 @@ function EndMatch(that, AScore, BScore) {
             TotalScore[2 * TotalSet + 3] = BScore
             wx.setStorageSync("TotalScore", TotalScore)
             wx.setStorageSync("Status", 5)
-            GoToEndMatch()
+            GoToEndMatch(that)
           }
           if (BScore >= 25 && BScore - AScore >= 2) {
             EndSet(that, TotalScore, AScore, BScore, AMatch_New = AMatch, BMatch_New = BMatch + 1)
             console.log("B win a set")
           }
         }
-        if (1 == BMatch){
+        if (1 == BMatch) {
           if (AScore >= 25 && AScore - BScore >= 2) {
             EndSet(that, TotalScore, AScore, BScore, AMatch_New = AMatch + 1, BMatch_New = BMatch)
             console.log("A win a set")
@@ -99,7 +100,7 @@ function EndMatch(that, AScore, BScore) {
             TotalScore[2 * TotalSet + 3] = BScore
             wx.setStorageSync("TotalScore", TotalScore)
             wx.setStorageSync("Status", 5)
-            GoToEndMatch()
+            GoToEndMatch(that)
           }
         }
       }
@@ -113,7 +114,7 @@ function EndMatch(that, AScore, BScore) {
           TotalScore[2 * TotalSet + 3] = BScore
           wx.setStorageSync("TotalScore", TotalScore)
           wx.setStorageSync("Status", 5)
-          GoToEndMatch()
+          GoToEndMatch(that)
         }
         if (BScore >= 15 && BScore - AScore >= 2) {
           var AMatch_New = AMatch
@@ -124,7 +125,7 @@ function EndMatch(that, AScore, BScore) {
           TotalScore[2 * TotalSet + 3] = BScore
           wx.setStorageSync("TotalScore", TotalScore)
           wx.setStorageSync("Status", 5)
-          GoToEndMatch()
+          GoToEndMatch(that)
         }
       }
       break;
@@ -150,7 +151,7 @@ function EndMatch(that, AScore, BScore) {
             TotalScore[2 * TotalSet + 3] = BScore
             wx.setStorageSync("TotalScore", TotalScore)
             wx.setStorageSync("Status", 5)
-            GoToEndMatch()
+            GoToEndMatch(that)
           }
           if (BScore >= 25 && BScore - AScore >= 2) {
             EndSet(that, TotalScore, AScore, BScore, AMatch_New = AMatch, BMatch_New = BMatch + 1)
@@ -171,7 +172,7 @@ function EndMatch(that, AScore, BScore) {
             TotalScore[2 * TotalSet + 3] = BScore
             wx.setStorageSync("TotalScore", TotalScore)
             wx.setStorageSync("Status", 5)
-            GoToEndMatch()
+            GoToEndMatch(that)
           }
         }
         if (AMatch == 1 && BMatch == 1) {
@@ -195,7 +196,7 @@ function EndMatch(that, AScore, BScore) {
           TotalScore[2 * TotalSet + 3] = BScore
           wx.setStorageSync("TotalScore", TotalScore)
           wx.setStorageSync("Status", 5)
-          GoToEndMatch()
+          GoToEndMatch(that)
         }
         if (BScore >= 15 && BScore - AScore >= 2) {
           var AMatch_New = AMatch
@@ -206,7 +207,7 @@ function EndMatch(that, AScore, BScore) {
           TotalScore[2 * TotalSet + 3] = BScore
           wx.setStorageSync("TotalScore", TotalScore)
           wx.setStorageSync("Status", 5)
-          GoToEndMatch()
+          GoToEndMatch(that)
         }
       }
       break;
@@ -218,7 +219,7 @@ function EndSet(that, TotalScore, AScore, BScore, AMatch_New, BMatch_New) {
   var FirstSide = that.data.FirstSide
   var FirstServe = that.data.FirstServe
   var TotalSet = n[0] + n[1],
-  win = wx.getStorageSync("win")
+    win = wx.getStorageSync("win")
   TotalScore[2 * TotalSet + 2] = AScore
   TotalScore[2 * TotalSet + 3] = BScore
   TotalScore[0] = AMatch_New
@@ -273,7 +274,9 @@ function EndSet(that, TotalScore, AScore, BScore, AMatch_New, BMatch_New) {
       wx.setStorageSync('EndSetFlag', false)
     }
     if (TotalSet == 3) {
-      that.setData({ EndSetFlag: false })
+      that.setData({
+        EndSetFlag: false
+      })
       wx.setStorageSync('EndSetFlag', false)
     }
   }
@@ -291,8 +294,10 @@ function EndSet(that, TotalScore, AScore, BScore, AMatch_New, BMatch_New) {
       wx.setStorageSync('EndSetFlag', false)
     }
     if (TotalSet == 1) {
-      that.setData({ EndSetFlag: false })
-      wx.setStorageSync('EndSetFlag', false)    
+      that.setData({
+        EndSetFlag: false
+      })
+      wx.setStorageSync('EndSetFlag', false)
     }
   }
 }
@@ -338,7 +343,7 @@ function GetBenchPlayer(that, e, a, r) {
     u.push(c[s][7]));
   var h = i(h = (h = u.concat(l)).concat(e), n);
   console.log(h);
-  for (var g = 0, T = 0, s = 0; s < c.length; s++) that.data.PickedPlayer == c[s][7] && c[s][1] == r && c[s][0] == S && (g++ ,
+  for (var g = 0, T = 0, s = 0; s < c.length; s++) that.data.PickedPlayer == c[s][7] && c[s][1] == r && c[s][0] == S && (g++,
     T = s), that.data.PickedPlayer == c[s][6] && c[s][1] == r && c[s][0] == S && g++;
   1 == g && (h = [c[T][6]]), 2 == g && (h = ["-"]), that.setData({
     LeftPlayer: h
@@ -375,12 +380,18 @@ function i(that, e) {
   return o;
 }
 
-function GoToEndMatch() {
+function GoToEndMatch(that) {
+  var MatchInfo = that.data.MatchInfo
+  MatchInfo[8] = util.formatTime(new Date())
+  wx.setStorageSync('Matchinfo', MatchInfo)
+  that.setData({
+    MatchInfo: MatchInfo
+  })
   wx.showModal({
     title: "提示",
     content: "比赛结束，点击确认比赛结果",
     showCancel: !1,
-    success: function (t) {
+    success: function(t) {
       t.confirm && wx.redirectTo({
         url: "../../EndMatch/EndMatch"
       });
@@ -421,7 +432,7 @@ function u(t, e, a, r, o) {
     });
   }
 
-  
+
 }
 
 Page({
@@ -458,20 +469,20 @@ Page({
     Side: 0,
     EndSetFlag: true
   },
-  BindHelp: function () {
+  BindHelp: function() {
     var t = ["http://www.game-win.cn/resource/images/help/1.JPG", "http://www.game-win.cn/resource/images/help/2.JPG", "http://www.game-win.cn/resource/images/help/3.JPG", "http://www.game-win.cn/resource/images/help/4.JPG"];
     wx.previewImage({
       current: 0,
       urls: t
     });
   },
-  bindChange: function (t) {
+  bindChange: function(t) {
     var e = this;
     if (e.setData({
-      currentTab: t.detail.current
-    }), 0 == t.detail.current && e.setData({
-      SwiperHeight: 600
-    }), 1 == t.detail.current) {
+        currentTab: t.detail.current
+      }), 0 == t.detail.current && e.setData({
+        SwiperHeight: 600
+      }), 1 == t.detail.current) {
       a = 110 * this.data.MatchDuration.length;
       e.setData({
         SwiperHeight: a
@@ -490,32 +501,32 @@ Page({
       });
     }
   },
-  swichNav: function (t) {
+  swichNav: function(t) {
     this.setData({
       currentTab: t.target.dataset.current
     });
   },
-  EditAScore: function () {
+  EditAScore: function() {
     this.setData({
       ShowEditAScore: !1
     });
   },
-  EditBScore: function () {
+  EditBScore: function() {
     this.setData({
       ShowEditBScore: !1
     });
   },
-  GetTeamANewScore: function (t) {
+  GetTeamANewScore: function(t) {
     this.setData({
       ANewScore: t.detail.value
     });
   },
-  GetTeamBNewScore: function (t) {
+  GetTeamBNewScore: function(t) {
     this.setData({
       BNewScore: t.detail.value
     });
   },
-  ConfirmTeamANewScore: function (t) {
+  ConfirmTeamANewScore: function(t) {
     var e = this,
       a = parseInt(e.data.ANewScore);
     if (a > 24) wx.showModal({
@@ -531,13 +542,13 @@ Page({
       }), wx.setStorageSync("CurrentScore", r);
     }
   },
-  ChangeTeamAPosition: function (e) {
+  ChangeTeamAPosition: function(e) {
     TurnPosition(this, this.data.TeamACourtPlayer, 0);
   },
-  ChangeTeamBPosition: function (e) {
+  ChangeTeamBPosition: function(e) {
     TurnPosition(this, this.data.TeamBCourtPlayer, 1);
   },
-  ConfirmTeamBNewScore: function (t) {
+  ConfirmTeamBNewScore: function(t) {
     var e = this,
       a = parseInt(e.data.BNewScore);
     if (a > 24) wx.showModal({
@@ -553,15 +564,15 @@ Page({
       }), wx.setStorageSync("CurrentScore", r);
     }
   },
-  ChooseTeamAPlayer: function (t) {
+  ChooseTeamAPlayer: function(t) {
     console.log("ChooseTeamAPlayer");
     var TeamACourtPlayer = this.data.TeamACourtPlayer
     var a = t.currentTarget.dataset.position
     var TeamAPlayer = this.data.TeamAPlayer
     if (2 == wx.getStorageSync("Status") && this.setData({
-      ShowTeamAALLPlayer: !1,
-      currentTeamAPosition: a
-    }), 1 == this.data.Status) {
+        ShowTeamAALLPlayer: !1,
+        currentTeamAPosition: a
+      }), 1 == this.data.Status) {
       var o = TeamACourtPlayer[a];
       this.setData({
         PickedPlayer: o,
@@ -571,15 +582,15 @@ Page({
       GetBenchPlayer(this, TeamACourtPlayer, TeamAPlayer, 0);
     }
   },
-  ChooseTeamBPlayer: function (t) {
+  ChooseTeamBPlayer: function(t) {
     console.log("ChooseTeamBPlayer")
     var TeamBCourtPlayer = this.data.TeamBCourtPlayer
     var a = t.currentTarget.dataset.position
     var TeamBPlayer = this.data.TeamBPlayer
     if (2 == wx.getStorageSync("Status") && this.setData({
-      ShowTeamBALLPlayer: !1,
-      currentTeamBPosition: a
-    }), 1 == this.data.Status) {
+        ShowTeamBALLPlayer: !1,
+        currentTeamBPosition: a
+      }), 1 == this.data.Status) {
       var o = TeamBCourtPlayer[a];
       this.setData({
         PickedPlayer: o,
@@ -589,7 +600,7 @@ Page({
       GetBenchPlayer(this, TeamBCourtPlayer, TeamBPlayer, 1);
     }
   },
-  SetTeamAPlayer: function (t) {
+  SetTeamAPlayer: function(t) {
     var that = this
     var a = this.data.currentTeamAPosition
     var TeamACourtPlayer = this.data.TeamACourtPlayer
@@ -609,7 +620,7 @@ Page({
         content: "是否确认本局比赛双方的首发队员",
         cancelText: "返回修改",
         confirmText: "开始比赛",
-        success: function (res) {
+        success: function(res) {
           if (res.confirm) {
             AllTeamACourtPlayer.push(TeamACourtPlayer)
             AllTeamBCourtPlayer.push(TeamBCourtPlayer)
@@ -628,7 +639,7 @@ Page({
       })
     }
   },
-  SetTeamBPlayer: function (t) {
+  SetTeamBPlayer: function(t) {
     var that = this
     var a = this.data.currentTeamBPosition
     var TeamACourtPlayer = this.data.TeamACourtPlayer
@@ -648,7 +659,7 @@ Page({
         content: "是否确认本局比赛双方的首发队员",
         cancelText: "返回修改",
         confirmText: "开始比赛",
-        success: function (res) {
+        success: function(res) {
           if (res.confirm) {
             AllTeamACourtPlayer.push(TeamACourtPlayer)
             AllTeamBCourtPlayer.push(TeamBCourtPlayer)
@@ -667,13 +678,13 @@ Page({
       })
     }
   },
-  actionSheetbindchange: function () {
+  actionSheetbindchange: function() {
     this.setData({
       ShowTeamAALLPlayer: !0,
       ShowTeamBALLPlayer: !0
     });
   },
-  AddTeamAScore: function () {
+  AddTeamAScore: function() {
     if (2 != wx.getStorageSync("Status")) {
       var t = this.data.CurrentScore,
         e = t[0],
@@ -690,7 +701,7 @@ Page({
       showCancel: !1
     });
   },
-  AddTeamBScore: function () {
+  AddTeamBScore: function() {
     if (2 != wx.getStorageSync("Status")) {
       var t = this.data.CurrentScore,
         e = (t[0], t[1] + 1);
@@ -706,7 +717,7 @@ Page({
       showCancel: !1
     });
   },
-  StatisticBack: function (t) {
+  StatisticBack: function(t) {
     var e = this.data.LastScore_tmp,
       a = this.data.LastScore,
       r = this.data.CurrentScore,
@@ -725,7 +736,7 @@ Page({
       Statisticflag: !0
     });
   },
-  StatisticPoint: function (a) {
+  StatisticPoint: function(a) {
     var o = a.currentTarget.dataset.point_flag,
       S = a.currentTarget.dataset.point_type,
       n = this.data.CurrentScore,
@@ -733,28 +744,28 @@ Page({
       s = n[1],
       c = this.data.LastScore_tmp;
     if (this.setData({
-      Statisticflag: !0,
-      point_type: S,
-      point_flag: o
-    }), 0 == o && (0 == this.data.LastScore_tmp ? this.setData({
-      ShowTeamAPlayer: !1
-    }) : this.setData({
-      ShowTeamBPlayer: !1
-    })), 1 == o && (0 == this.data.LastScore_tmp ? this.setData({
-      ShowTeamBPlayer: !1
-    }) : this.setData({
-      ShowTeamAPlayer: !1
-    })), 2 == o) {
+        Statisticflag: !0,
+        point_type: S,
+        point_flag: o
+      }), 0 == o && (0 == this.data.LastScore_tmp ? this.setData({
+        ShowTeamAPlayer: !1
+      }) : this.setData({
+        ShowTeamBPlayer: !1
+      })), 1 == o && (0 == this.data.LastScore_tmp ? this.setData({
+        ShowTeamBPlayer: !1
+      }) : this.setData({
+        ShowTeamAPlayer: !1
+      })), 2 == o) {
       var u = this.data.TeamACourtPlayer,
         l = this.data.TeamBCourtPlayer;
       0 == c && (1 == this.data.LastScore && TurnPosition(this, u, 0), this.setData({
         LastScore: 0
       })), 1 == c && (0 == this.data.LastScore && TurnPosition(this, l, 1), this.setData({
         LastScore: 1
-        })), r(this, i, s, c, S, 0), EndMatch(this, i, s);
+      })), r(this, i, s, c, S, 0), EndMatch(this, i, s);
     }
   },
-  SetStatistic: function (a) {
+  SetStatistic: function(a) {
     var o = a.currentTarget.dataset.position,
       S = this.data.point_type,
       n = this.data.point_flag,
@@ -765,9 +776,9 @@ Page({
       h = u[1],
       g = this.data.LastScore_tmp;
     if (this.setData({
-      ShowTeamBPlayer: !0,
-      ShowTeamAPlayer: !0
-    }), 0 == g) {
+        ShowTeamBPlayer: !0,
+        ShowTeamAPlayer: !0
+      }), 0 == g) {
       if (0 == this.data.point_flag) {
         w = wx.getStorageSync("TeamAStatistic");
         console.log(o), "SpikePoint" == S && (w[o][0].SpikePoint = w[o][0].SpikePoint + 1),
@@ -800,19 +811,19 @@ Page({
     }
     r(this, l, h, g, S = c(S), o, n), EndMatch(this, l, h);
   },
-  ChangeServe: function () {
+  ChangeServe: function() {
     var t = !this.data.LastScore;
     this.setData({
       LastScore: t
     }), wx.setStorageSync("LastScore", t);
   },
-  ChangeSide: function () {
+  ChangeSide: function() {
     var t = !this.data.Side;
     this.setData({
       Side: t
     }), wx.setStorageSync("Side", t);
   },
-  TimeOut: function (t) {
+  TimeOut: function(t) {
     var e = this,
       a = this.data.CurrentScore,
       r = this.data.TotalScore,
@@ -826,12 +837,12 @@ Page({
           ShowTimeOut: !1
         }), o(this, S, n, i, s, t.currentTarget.dataset.team);
         var c = 30,
-          u = setInterval(function () {
+          u = setInterval(function() {
             e.setData({
               time: c--
             });
           }, 1e3);
-        setTimeout(function () {
+        setTimeout(function() {
           e.setData({
             ShowTimeOut: !0,
             time: 30
@@ -848,7 +859,7 @@ Page({
       showCancel: !1
     });
   },
-  BindClose: function () {
+  BindClose: function() {
     this.setData({
       ShowTeamAPlayer: !0,
       ShowTeamBPlayer: !0,
@@ -858,7 +869,7 @@ Page({
       ShowEditBScore: !0
     });
   },
-  ConfirmSub: function (t) {
+  ConfirmSub: function(t) {
     var e = this.data.CurrentScore,
       a = this.data.TotalScore,
       r = e[0],
@@ -871,7 +882,7 @@ Page({
         ShowTeamBBenchPlayer: !0
       });
   },
-  LoadPosition: function (e) {
+  LoadPosition: function(e) {
     var that = this
     var type = e.currentTarget.dataset.type
     if (type == 3) {
@@ -892,7 +903,7 @@ Page({
         content: "双方站位已自动填充，如需进行修改，请点击返回按钮",
         cancelText: "返回修改",
         confirmText: "开始比赛",
-        success: function (res) {
+        success: function(res) {
           if (res.confirm) {
             AllTeamACourtPlayer.push(lastset_A)
             AllTeamBCourtPlayer.push(lastset_B)
@@ -933,7 +944,7 @@ Page({
         content: "此操作将不可逆，确认要提前结束比赛吗？",
         cancelText: "继续比赛",
         confirmText: "结束比赛",
-        success: function (res) {
+        success: function(res) {
           if (res.confirm) {
             var TotalScore = t.data.TotalScore
             wx.setStorageSync("TotalScore", TotalScore)
@@ -953,27 +964,28 @@ Page({
       EndSetFlag: true
     })
   },
-  onLoad: function (t) {
-    var e = this,
-      a = wx.getStorageSync("TeamAPlayer"),
+  onLoad: function(t) {
+    var e = this
+    var that = this,
+    a = wx.getStorageSync("TeamAPlayer"),
       r = wx.getStorageSync("TeamBPlayer");
     if (1 != wx.getStorageSync("Status") && 2 != wx.getStorageSync("Status") || e.setData({
-      TeamACourtPlayer: wx.getStorageSync("TeamACourtPlayer"),
-      TeamBCourtPlayer: wx.getStorageSync("TeamBCourtPlayer"),
-      LastScore: wx.getStorageSync("LastScore"),
-      Side: wx.getStorageSync("Side"),
-      CurrentScore: wx.getStorageSync("CurrentScore"),
-      TotalScore: wx.getStorageSync("TotalScore"),
-      SubInfo: wx.getStorageSync("SubInfo"),
-      MatchDuration: wx.getStorageSync("MatchDuration"),
-      TimeOut: wx.getStorageSync("TimeOut"),
-      TeamACurrentSetTimeOut: wx.getStorageSync("TeamACurrentSetTimeOut"),
-      TeamBCurrentSetTimeOut: wx.getStorageSync("TeamBCurrentSetTimeOut"),
-      TeamACurrentSetSub: wx.getStorageSync("TeamACurrentSetSub"),
-      TeamBCurrentSetSub: wx.getStorageSync("TeamBCurrentSetSub"),
-      Status: wx.getStorageSync("Status"),
-      EndSetFlag: wx.getStorageSync("EndSetFlag"),
-    }), 0 == wx.getStorageSync("Status")) {
+        TeamACourtPlayer: wx.getStorageSync("TeamACourtPlayer"),
+        TeamBCourtPlayer: wx.getStorageSync("TeamBCourtPlayer"),
+        LastScore: wx.getStorageSync("LastScore"),
+        Side: wx.getStorageSync("Side"),
+        CurrentScore: wx.getStorageSync("CurrentScore"),
+        TotalScore: wx.getStorageSync("TotalScore"),
+        SubInfo: wx.getStorageSync("SubInfo"),
+        MatchDuration: wx.getStorageSync("MatchDuration"),
+        TimeOut: wx.getStorageSync("TimeOut"),
+        TeamACurrentSetTimeOut: wx.getStorageSync("TeamACurrentSetTimeOut"),
+        TeamBCurrentSetTimeOut: wx.getStorageSync("TeamBCurrentSetTimeOut"),
+        TeamACurrentSetSub: wx.getStorageSync("TeamACurrentSetSub"),
+        TeamBCurrentSetSub: wx.getStorageSync("TeamBCurrentSetSub"),
+        Status: wx.getStorageSync("Status"),
+        EndSetFlag: wx.getStorageSync("EndSetFlag"),
+      }), 0 == wx.getStorageSync("Status")) {
       for (var o = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], S = [0, 0], n = wx.getStorageSync("FirstSide"), i = wx.getStorageSync("FirstServe"), c = [], u = [], l = 0; l < a.length; l++) c[a[l][0]] = [{
         ServePoint: 0,
         BlockPoint: 0,
@@ -1013,12 +1025,12 @@ Page({
         wx.setStorageSync("TeamACourtPlayer", h), wx.setStorageSync("TeamBCourtPlayer", h),
         wx.setStorageSync("AllTeamACourtPlayer", []), wx.setStorageSync("EndSetFlag", true), wx.setStorageSync("AllTeamBCourtPlayer", []);
     }
-    5 == wx.getStorageSync("Status") && GoToEndMatch(), e.setData({
+    5 == wx.getStorageSync("Status") && GoToEndMatch(that), e.setData({
       TeamAPlayer: a,
       TeamBPlayer: r,
       MatchInfo: wx.getStorageSync("Matchinfo")
     });
   },
-  onReady: function () { },
-  onShow: function () { }
+  onReady: function() {},
+  onShow: function() {}
 });

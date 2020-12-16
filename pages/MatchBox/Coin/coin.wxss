@@ -66,6 +66,7 @@ page,.page {
 .smallcard{
   width: 680rpx;
   height: 160rpx;
+  line-height: 160rpx;
   background-color: #fff;
   display: flex;
   flex-direction: column;
