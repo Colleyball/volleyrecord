@@ -251,7 +251,7 @@ page,.page {
 	display: flex;
 	-webkit-flex-direction: column;
 	flex-direction: column;
-	background: url("http://images.volleywang.cn/liansaiquan/images/wechat/rr/indoor_court.png") no-repeat;
+	background: url("http://images.game-win.cn/liansaiquan/images/wechat/rr/indoor_court.png") no-repeat;
 	background-size: contain;
 	background-position: center;
 }

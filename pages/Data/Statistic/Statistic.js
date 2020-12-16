@@ -27,7 +27,7 @@ Page({
         a.setData({
             matchid: t.matchid
         }), wx.request({
-          url: "https://api.volleywang.cn/VolleyRecord/GetOneMatchInfo",
+          url: "https://api.game-win.cn/VolleyRecord/GetOneMatchInfo",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
@@ -41,7 +41,7 @@ Page({
                 });
             }
         }), wx.request({
-          url: "https://api.volleywang.cn/VolleyRecord/GetPlayerStatistic",
+          url: "https://api.game-win.cn/VolleyRecord/GetPlayerStatistic",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
@@ -55,7 +55,7 @@ Page({
                 });
             }
         }), wx.request({
-          url: "https://api.volleywang.cn/VolleyRecord/GetOneMatchStatistic",
+          url: "https://api.game-win.cn/VolleyRecord/GetOneMatchStatistic",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },

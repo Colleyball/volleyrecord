@@ -1,6 +1,6 @@
 page,.page {
   font-family: 'PingFang SC', 'Helvetica Neue' ,Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
-    background: url('http://images.volleywang.cn/VolleyRecord/data/background.jpg') no-repeat;
+    background: url('http://images.game-win.cn/VolleyRecord/data/background.jpg') no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: bottom;

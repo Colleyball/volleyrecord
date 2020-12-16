@@ -41,7 +41,7 @@ Page({
       S.push(c[i][0].SpikePoint), S.push(c[i][0].ServeFault), S.push(c[i][0].SpikeFault),
       S.push(c[i][0].OtherFault));
     wx.request({
-      url: "https://api.volleywang.cn/VolleyRecord/SetMatchRecord",
+      url: "https://api.game-win.cn/VolleyRecord/SetMatchRecord",
       header: {
         "content-type": "application/x-www-form-urlencoded"
       },

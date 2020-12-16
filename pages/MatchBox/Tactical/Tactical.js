@@ -2,21 +2,21 @@ Page({
     data: {
         pen: 3,
         color: "#cc0033",
-      courtimage: "http://images.volleywang.cn/VolleyRecord/macthbox/volleyballcourt.jpg"
+      courtimage: "http://images.game-win.cn/VolleyRecord/macthbox/volleyballcourt.jpg"
     },
     volleycourt: function() {
         this.setData({
-            courtimage: "http://images.volleywang.cn/VolleyRecord/macthbox/volleyballcourt.jpg"
+            courtimage: "http://images.game-win.cn/VolleyRecord/macthbox/volleyballcourt.jpg"
         });
     },
     basketballcourt: function() {
         this.setData({
-            courtimage: "http://images.volleywang.cn/VolleyRecord/macthbox/basketballcourt.jpg"
+            courtimage: "http://images.game-win.cn/VolleyRecord/macthbox/basketballcourt.jpg"
         });
     },
     footballcourt: function() {
         this.setData({
-            courtimage: "http://images.volleywang.cn/VolleyRecord/macthbox/footballcourt.jpg"
+            courtimage: "http://images.game-win.cn/VolleyRecord/macthbox/footballcourt.jpg"
         });
     },
     blank: function() {

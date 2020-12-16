@@ -1,5 +1,0 @@
-<view class="statusBar" style='height: {{statusBarHeight * 2}}rpx'></view>
-<image class="top-bar" bindtap="back" style='padding-top: {{statusBarHeight * 2}}rpx' src="http://images.volleywang.cn/VolleyRecord/dd/index/4.png"></image>
-<image class="content-1" src="http://images.volleywang.cn/VolleyRecord/dd/index/2.png" bindtap="leave"></image>
-<image class="content-2" style='padding-top: {{statusBarHeight * 2}}rpx' src="http://images.volleywang.cn/VolleyRecord/dd/index/3.png"></image>
-<image class="btn-bar" src="http://images.volleywang.cn/VolleyRecord/dd/index/1.png"></image>

@@ -10,7 +10,7 @@ Page({
     onLoad: function(t) {
         var n = this;
         wx.request({
-          url: "https://api.volleywang.cn/VolleyRecord/WinRank",
+          url: "https://api.game-win.cn/VolleyRecord/WinRank",
             header: {
                 "content-type": "application/json;charset=utf8"
             },

@@ -4,12 +4,23 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.2",
@@ -198,6 +209,20 @@
 					"id": -1,
 					"name": "pages/DD/dd_start/dd_start",
 					"pathName": "pages/DD/dd_start/dd_start",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "创建比赛",
+					"pathName": "pages/MatchRecord/MatchRecord",
+					"query": "win=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "结束比赛",
+					"pathName": "pages/EndMatch/EndMatch",
 					"scene": null
 				}
 			]

@@ -1,4 +1,5 @@
 var a = require("../../utils/util.js");
+var live = require("../../utils/live.js");
 
 Page({
   data: {
@@ -261,10 +262,15 @@ Page({
           m.push(t.data.MatchName), m.push(t.data.TeamAName), m.push(t.data.TeamBName), m.push(t.data.Ref1),
             m.push(t.data.Ref2), m.push(t.data.Ref3), m.push(t.data.Ref4), m.push(a.formatTime(new Date())),
             wx.setStorageSync("TeamAPlayer", s), wx.setStorageSync("TeamBPlayer", i), wx.setStorageSync("Status", 0),
-            wx.setStorageSync("Matchinfo", m), wx.setStorageSync("FirstServe", n), wx.setStorageSync("FirstSide", r),
-            wx.redirectTo({
-              url: "MatchProcess/MatchProcess"
-            })
+            wx.setStorageSync("Matchinfo", m), wx.setStorageSync("FirstServe", n), wx.setStorageSync("FirstSide", r)
+            /*if (live.set_match_info(t, s, i, n, r, m, wx.getStorageSync("Uid")) == 1) {
+              wx.redirectTo({
+                url: "MatchProcess/MatchProcess"
+              })
+            }*/
+          wx.redirectTo({
+            url: "MatchProcess/MatchProcess"
+          })
         }
       }
     });

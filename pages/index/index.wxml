@@ -56,10 +56,6 @@
       </swiper-item>
       <swiper-item>
         <view class="list">
-          <view bindtap="BindDD" class="box-thin">
-            <image class="box-thin-icon" mode="aspectFill" src="../../images/home/live.png"></image>
-            <text class="box-thin-TxtZh">离校二维码</text>
-          </view>
           <view bindtap="bindContinue" class="box-thin" wx:if="{{StatusFlag==1}}">
             <image class="box-thin-icon" mode="aspectFill" src="../../images/home/live.png"></image>
             <text class="box-thin-TxtZh">继续之前的记录</text>
@@ -86,15 +82,7 @@
               </view>
             </view>
           </view>
-
-          <!--view class="wrap" bindtap="BindFVolley" style="background: url('http://www.aibotiyu.com/ImgFiles/ABSports/matchwin/4volley/5.jpg') no-repeat top;background-size: cover;height: 320rpx">
-            <view class="wrap-title wrap-title-shadow">
-              <view class="wrap-main-title">四人制排球赛</view>
-              <view class="wrap-sub-title">即刻报名参赛 查看积分排名</view>
-            </view>
-          </view-->
-
-
+          
           <view class="wrap wrap-bg-1">
             <view class="wrap-title">
               <view class="wrap-main-title">比赛数据记录</view>

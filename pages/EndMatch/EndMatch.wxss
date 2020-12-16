@@ -108,6 +108,35 @@ page,.page {
 	text-align: center;
 }
 
+.back {
+  position: fixed;
+  bottom: 35rpx;
+  left: 35rpx;
+  width: 680rpx;
+  background: linear-gradient(45deg,rgba(31, 174, 221,0.05),rgba(255,83,77,0.05));
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #1A1A1A
+}
+
+.back:hover {
+  background: linear-gradient(45deg,rgba(25, 152, 194, 0.1),rgba(238, 50, 44, 0.1));
+}
+
+
+.btnImg {
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.back::after {
+  border-radius: 98rpx;
+}
+
 .upload-tool {
   position: fixed;
   bottom: 20rpx;

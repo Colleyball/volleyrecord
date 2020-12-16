@@ -56,7 +56,7 @@ Page({
         }), this.setData({
             status: t.status
         }), wx.request({
-          url: "https://api.volleywang.cn/VolleyRecord/Search/OneTeamMatchRecordWithOtherTeam",
+          url: "https://api.game-win.cn/VolleyRecord/Search/OneTeamMatchRecordWithOtherTeam",
             header: {
                 "content-type": "application/json;charset=utf8"
             },
@@ -73,7 +73,7 @@ Page({
                 }), wx.hideLoading();
             }
         }), wx.request({
-          url: "https://api.volleywang.cn/VolleyRecord/Search/OneTeamWinAndLostMatchNumberWithOtherTeam",
+          url: "https://api.game-win.cn/VolleyRecord/Search/OneTeamWinAndLostMatchNumberWithOtherTeam",
             header: {
                 "content-type": "application/json;charset=utf8"
             },
@@ -95,7 +95,7 @@ Page({
         }), this.setData({
             status: t.status
         }), wx.request({
-          url: "https://api.volleywang.cn/VolleyRecord/Search/OneTeamMatchRecordWithAllOther",
+          url: "https://api.game-win.cn/VolleyRecord/Search/OneTeamMatchRecordWithAllOther",
             header: {
                 "content-type": "application/json;charset=utf8"
             },
@@ -110,7 +110,7 @@ Page({
                 }), wx.hideLoading();
             }
         }), wx.request({
-          url: "https://api.volleywang.cn/VolleyRecord/Search/OneTeamWinAndLostMatchNumberWithAllOther",
+          url: "https://api.game-win.cn/VolleyRecord/Search/OneTeamWinAndLostMatchNumberWithAllOther",
             header: {
                 "content-type": "application/json;charset=utf8"
             },

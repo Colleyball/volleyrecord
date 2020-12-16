@@ -318,7 +318,7 @@ Page({
       })
     }
     wx.request({
-      url: "https://api.volleywang.cn/VolleyRecord/GetVideoPartStatus",
+      url: "https://api.game-win.cn/VolleyRecord/GetVideoPartStatus",
       header: {
         "content-type": "application/x-www-form-urlencoded"
       },
@@ -330,7 +330,7 @@ Page({
         });
       }
     }), wx.request({
-      url: "https://api.volleywang.cn/VolleyRecord/GetRecommandVideo",
+      url: "https://api.game-win.cn/VolleyRecord/GetRecommandVideo",
       header: {
         "content-type": "application/x-www-form-urlencoded"
       },
@@ -343,7 +343,7 @@ Page({
       }
     }),
       wx.request({
-        url: "https://api.volleywang.cn/VolleyRecord/GetAllVideoList",
+        url: "https://api.game-win.cn/VolleyRecord/GetAllVideoList",
         header: {
           "content-type": "application/x-www-form-urlencoded"
         },
@@ -357,7 +357,7 @@ Page({
         }
       })
     wx.request({
-      url: "https://api.volleywang.cn/VolleyRecord/GetAllMatchInfo",
+      url: "https://api.game-win.cn/VolleyRecord/GetAllMatchInfo",
       header: {
         "content-type": "application/x-www-form-urlencoded"
       },
@@ -445,7 +445,7 @@ Page({
 
 function get_life_info(that) {
   wx.request({
-    url: 'https://study-api.volleywang.cn/LifeInfo',
+    url: 'https://api.game-win.cn/LifeInfo',
     header: {
       "content-type": "application/json;charset=utf8"
     },

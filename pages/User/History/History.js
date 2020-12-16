@@ -10,7 +10,7 @@ Page({
     onLoad: function(t) {
         var a = this;
         wx.request({
-          url: "https://api.volleywang.cn/VolleyRecord/GetUserRecordInfo",
+          url: "https://api.game-win.cn/VolleyRecord/GetUserRecordInfo",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },

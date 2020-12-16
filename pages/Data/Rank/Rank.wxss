@@ -7,7 +7,7 @@
   border-bottom-left-radius: 0rpx;
   border-bottom-right-radius: 0rpx;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0);
-  background: url('http://images.volleywang.cn/VolleyRecord/data/background.jpg') top no-repeat;
+  background: url('http://images.game-win.cn/VolleyRecord/data/background.jpg') top no-repeat;
   background-size: cover;
   text-align: left;
   padding-left: 50rpx;

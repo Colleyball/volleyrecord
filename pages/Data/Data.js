@@ -21,7 +21,7 @@ Page({
                 matchinfo: n
             });
         } else wx.request({
-          url: "https://api.volleywang.cn/VolleyRecord/GetAllMatchInfo",
+          url: "https://api.game-win.cn/VolleyRecord/GetAllMatchInfo",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },

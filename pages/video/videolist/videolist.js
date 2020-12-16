@@ -23,7 +23,7 @@ Page({
             title: decodeURIComponent(t.title),
           videotype: t.videotype
         }), wx.request({
-          url: "https://api.volleywang.cn/VolleyRecord/GetOneVideoListItem",
+          url: "https://api.game-win.cn/VolleyRecord/GetOneVideoListItem",
             header: {
                 "content-type": "application/x-www-form-urlencoded"
             },
