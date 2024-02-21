@@ -1,0 +1,22 @@
+<view class="list">
+  <view class="text-title m-left">设置个人信息</view>
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </button>
+  <view class="inputView">
+    <input bindinput="GetName" maxlength="25" type="nickname" placeholder="请输入昵称" placeholderStyle="color:gray" style="height:80rpx;line-height:80rpx;width:100%"></input>
+  </view>
+  <view class="gender-choose">
+      <view class="gender-choose-item {{gender_choose == 1 ? 'gender-on' : ''}}" bindtap="bindGender" data-gender="1">男</view>
+      <view class="gender-choose-item {{gender_choose == 2 ? 'gender-on' : ''}}" bindtap="bindGender" data-gender="2">女</view>
+      </view>
+  <view class="submit" bindtap="BindConfirm">确认</view>
+  <view class="tip" style="color: rgb(103, 221, 182);font-size: 30rpx;">
+  <text>
+    个人信息收集说明
+    头像：在排行榜突出展示排名前三的用户头像
+    昵称：在排行榜中显示用户昵称
+    性别：将用户加入对应的排榜版中
+  </text>
+  </view>
+</view>

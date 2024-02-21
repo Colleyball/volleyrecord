@@ -1,0 +1,74 @@
+<view class="list">
+  <form bindsubmit="formSubmit">
+    <view class="text-title m-left">选择打卡日期</view>
+    <view class="date-choose">
+      <block wx:for="{{all_date}}" wx:key="index">
+        <view class="date-item {{date_choose == index ? 'date-on' : ''}}" bindtap="bindDate" data-date="{{index}}">
+          <view class="date-num {{date_choose == index ? 'date-num-on' : ''}}">{{item[1]}}</view>
+          <view class="date-week {{date_choose == index ? 'date-week-on' : ''}}">{{item[2]}}</view>
+        </view>
+      </block>
+      <!--view class="date-choose-item {{date_choose == 1 ? 'date-on' : ''}}" bindtap="bindDate" data-date="1">{{yesterday}} （昨天）</view>
+      <view class="date-choose-item {{date_choose == 2 ? 'date-on' : ''}}" bindtap="bindDate" data-date="2">{{today}} （今天）</view-->
+    </view>
+    <view class="buqian-tip">
+      <view class="buqian-text">补签2天前的数据将消耗一张补签卡</view>
+      <view class="buqianka-num">补签卡：{{buqianka}}</view>
+    </view>
+    <view class="help" style="line-height:60rpx">
+      <text>每天仅限上传一条骑行记录<br />
+        重复上传将覆盖之前上传的数据
+      </text>
+    </view>
+
+    <view class="text-title m-left">输入骑行数据链接</view>
+    <view class="inputView">
+      <input bindinput="GetUrl" maxlength="200" name="MatchName" placeholder="Strava或行者骑行记录链接" placeholderStyle="color:gray" style="height:80rpx;line-height:80rpx;width:100%"></input>
+    </view>
+    <view class="help" bind:tap="bindHelp">点击查看数据链接获取方式</view>
+    <view class="submit" bindtap="BindConfirm">立即打卡</view>
+  </form>
+  <view class="tip" style="color: rgb(103, 221, 182);font-size: 30rpx;">
+    <text>
+      参与须知
+      本次活动为线上活动，无线下组织，参加活动人员须全程自助完成。户外运动存在风险，报名前请评估自身情况，充分了解各种可能存在的风险因素。
+      参与人员应身体健康，经常性参加自行车骑行或训练。
+      参与人员需遵守交通规则，不在危险道路骑行，对自身安全负责。
+      参与人员可根据自己的身体状况和能力，选择是否参加本次活动。
+      以下疾病患者不宜参加
+      （1）先天性心脏病和风湿性心脏病患者
+      （2）高血压和脑血管疾病患者
+      （3）心肌炎和其它心脏病患者
+      （4）冠状动脉病患者和严重心律不齐者
+      （5）血糖过高或过低的糖尿病患者
+      （6）其他不适合运动的疾病患者
+      请各位参与人员在参与活动过程中特别注意以下事项:
+      （1）骑行前做好充分的热身准备，以避免剧烈运动对身
+      体造成意外伤害。
+      （2）骑行过程中，如发现身体有肌肉痛、关节痛以及极强的疲劳感等不适，请参与人员量力而行，必要时放弃骑行，以保证人身安全。
+      （3）骑行过程中，如遇炎热、寒冷、大风、降水、雾霾沙尘等极端天气，请参与者自行调整骑行计划，以保证人身及财产安全。
+      （4）让家人或朋友知晓您骑行当日的路线和时间。
+      尼克之星拥有对本活动的最终解释权
+      此【参与须知】生效时间2023年9月10日
+
+    </text>
+  </view>
+</view>
+
+<view class="upload-cover-loading" wx:if="{{show_result_1}}">
+  <view class="upload-tip" style="margin: 200rpx 0 0 0;">正在上传骑行数据</view>
+  <image src="/images/loading.gif"></image>
+</view>
+
+<view class="upload-cover-success" wx:if="{{show_result_2}}">
+  <view class="upload-tip" style="margin: 200rpx 0 0 0;">骑行数据上传成功</view>
+  <view class="upload-tip" style="font-size: 35rpx;">骑行里程：{{kilometer}}km</view>
+  <view class="upload-tip" style="font-size: 35rpx;">获得积分：{{point}}</view>
+  <view class="upload-back" bind:tap="BindBack">返回主页</view>
+</view>
+
+<view class="upload-cover-success" wx:if="{{show_result_3}}">
+  <view class="upload-tip" style="margin: 200rpx 0 0 0;">骑行数据上传成功</view>
+  <view class="upload-tip" style="font-size: 35rpx;">请等待管理员审核</view>
+  <view class="upload-back" bind:tap="BindBack">返回主页</view>
+</view>

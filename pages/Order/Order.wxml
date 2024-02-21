@@ -1,0 +1,16 @@
+<view class="list">
+  <block wx:for="{{UserGoods}}" wx:key="index">
+    <view class="goods-card">
+      <image class="goods-image" mode="aspectFill" src="http://www.aibotiyu.com/ImgFiles/ABSports/niko/goods/{{item.pic}}" />
+      <view class="goods-detail">
+        <view class="goods-title">
+          <view class="goods-title-main">{{item.title}}</view>
+          <view class="goods-title-sub">兑换时间:{{item.date}}</view>
+          <view class="goods-title-sub">消耗积分:{{item.point}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="to_coupon" wx:if="{{item.coupon_id}}" bind:tap="bindCoupon" data-goods_id="{{item.goods_id}}" data-coupon_id="{{item.coupon_id}}">查看券码</view>
+  </block>
+
+</view>

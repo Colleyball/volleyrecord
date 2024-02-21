@@ -1,0 +1,22 @@
+<view class="home-title" style='padding-top: {{statusBarHeight * 2}}rpx;' bind:tap="bindBack">
+  <image class="home-title-back" src="/images/back.png"></image>
+  <view class="home-title-text">查看券码</view>
+</view>
+
+<view class="goods-info" style="margin-top: {{100 + statusBarHeight * 2}}rpx;">
+  <image class="goods-image" src="http://www.aibotiyu.com/ImgFiles/ABSports/niko/goods/{{GoodsInfo.pic}}" mode="aspectFill"></image>
+  <view class="goods-detail">
+    <view class="goods-title-main">{{GoodsInfo.title}}</view>
+    <view class="goods-title-sub">{{GoodsInfo.sub_title}}</view>
+  </view>
+</view>
+<view class="goods-money">到店核销后使用</view>
+<image class="goods-image-bg" src="http://www.aibotiyu.com/ImgFiles/ABSports/niko/goods/{{GoodsInfo.pic}}" mode="aspectFill" style="height: {{390 + statusBarHeight * 2}}rpx; margin-top: {{- 390 - statusBarHeight * 2}}rpx;"></image>
+
+<view class="list">
+  <view class="data">
+    <view class="title">券码</view>
+    <image src="{{QRcode}}" class="qrcode"></image>
+    <view class="title">使用条件</view>
+  </view>
+</view>

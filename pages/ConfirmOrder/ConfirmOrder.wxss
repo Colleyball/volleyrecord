@@ -1,0 +1,231 @@
+page,
+.page {
+    font-family: 'PingFang SC',
+        'Helvetica Neue',
+        Helvetica,
+        'Droid Sans Fallback',
+        'Microsoft Yahei',
+        sans-serif;
+    background: rgb(255, 255, 255);
+    background-size: cover;
+}
+
+.home-title {
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  background: rgba(240, 240, 240,0.6);
+  align-items: center
+}
+
+.home-title-text {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 40rpx;
+  color: rgba(88, 79, 96, 1);
+  margin: 0 0 0 15rpx
+}
+
+.home-title-back {
+  height: 35rpx;
+  width: 35rpx;
+  margin: 0 0 0 35rpx
+}
+
+.goods-info {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: rgba(240, 240, 240,0.6);
+  height: 150rpx;
+  padding: 30rpx 0;
+  justify-content: center;
+  box-shadow: 0 0 110rpx rgba(0,0,0,0);
+  z-index: 2;
+}
+
+.goods-image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 20rpx;
+  z-index: 2;
+}
+
+.goods-detail {
+  width: 450rpx;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 20rpx;
+  z-index: 2;
+}
+
+.goods-title-main {
+  font-size: 35rpx;
+  color: black;
+  margin: 0 0 20rpx 0rpx;
+}
+
+.goods-title-sub {
+  font-size: 30rpx;
+  color: #333;
+  word-break:break-all
+}
+
+.goods-money {
+  position: relative;
+  width: 100%;
+  line-height: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  font-size: 35rpx;
+  background: rgba(230, 230, 230, 0.8);
+  z-index: 2;
+}
+
+.goods-image-bg {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  filter: blur(35rpx);
+}
+
+
+.list {
+  position: relative;
+	width: 680rpx;
+  margin: 0rpx 0 0 0rpx;
+  padding: 30rpx 35rpx 50rpx 35rpx;
+  background: white;
+  z-index: 2;
+}
+
+.text-title {
+  margin: 0rpx 0 20rpx 0;
+  width: 680rpx;
+}
+
+.inputView {
+	font-size: 30rpx;
+	display: flex;
+	width: 680rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	flex-direction: row;
+	margin: 0 0 30rpx 0;
+	text-align: center;
+}
+
+.inputView-name-tel {
+	font-size: 30rpx;
+	display: flex;
+	width: 680rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	flex-direction: row;
+	margin: 0 0 30rpx 0;
+  text-align: center;
+  justify-content: space-between;
+}
+
+input {
+  background-color: whitesmoke;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+  border-radius: 20rpx;
+}
+
+.address {
+  font-size: 30rpx;
+	display: flex;
+	width: 680rpx;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+	margin: 0 0 30rpx 0;
+  background-color: whitesmoke;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+  border-radius: 20rpx;
+  padding: 30rpx 0;
+}
+
+.address-qrcode {
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 15rpx;
+}
+
+.pay-info {
+  display: flex;
+  flex-direction: row;
+  width: 680rpx;
+  line-height: 30rpx;
+  height: 30rpx;
+  margin: 15rpx 0;
+  justify-content: flex-end;
+  font-size: 30rpx;
+}
+
+.pay-info-title {
+  color: #333;
+}
+
+.pay-info-content {
+  color: rgb(255, 102, 0);
+  width: 150rpx;
+  text-align: right;
+}
+
+.submit {
+  background: rgb(255, 102, 0);
+  height: 100rpx;
+  width: 220rpx;
+  line-height: 100rpx;
+  border-radius: 50rpx;
+  text-align: center;
+  color: white;
+  margin: 80rpx 0 0 225rpx;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+}
+
+.no-point {
+  background: rgb(206, 204, 202);
+  color: white;
+}
+
+
+.upload-cover-success {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: white;
+  top: 0;
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-tip {
+  font-size: 50rpx;
+  margin: 30rpx 0 0 0;
+}
+
+.upload-back {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: white;
+  bottom: 100rpx;
+  background: rgb(255, 102, 0);
+  height: 100rpx;
+  width: 220rpx;
+  line-height: 100rpx;
+  border-radius: 50rpx;
+  text-align: center;
+  color: white;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+}

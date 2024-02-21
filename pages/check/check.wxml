@@ -1,0 +1,24 @@
+<view class="list">
+  <view class="text-title">{{title}}</view>
+  <block wx:for="{{act_list}}" wx:key="index">
+    <view class="data" wx:if="{{item.status == class}}">
+      <view class="username">{{item.NickName}}于{{item.date}}的骑行活动</view>
+      <view class="url-format" bind:tap="bindCopy" data-url="{{item.url}}">转换后URL：{{item.url}}</view>
+      <view class="url-original" bind:tap="bindCopy" data-url="{{item.url_original}}">原始URL：{{item.url_original}}</view>
+      <view class="inputView" wx:if="{{item.length != 0}}">
+        <input bindinput="GetLength" maxlength="200" placeholder="输入里程" placeholderStyle="color:gray" style="height:80rpx;line-height:80rpx;width:100%" type="digit" value="{{item.length}}"></input>
+      </view>
+      <view class="inputView" wx:else>
+        <input bindinput="GetLength" maxlength="200" placeholder="输入里程" placeholderStyle="color:gray" style="height:80rpx;line-height:80rpx;width:100%" type="digit"></input>
+      </view>
+      <view class="inputView">
+        <input bindinput="GetDate" maxlength="200" name="MatchName" placeholder="{{item.date}}" placeholderStyle="color:gray" style="height:80rpx;line-height:80rpx;width:100%" value="{{item.date}}"></input>
+      </view>
+      <view class="submit" bindtap="BindConfirm" data-id="{{item.act_id}}">确定</view>
+      <view wx:if="{{item.url_original[0] != 1 && class == 0}}" class="auto-check" bindtap="BindAutoConfirm" data-id="{{item.act_id}}">自动识别数据</view>
+    </view>
+  </block>
+
+</view>
+
+<view class="Refresh" bind:tap="BindSwitch">切换</view>

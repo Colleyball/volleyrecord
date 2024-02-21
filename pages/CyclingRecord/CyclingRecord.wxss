@@ -1,0 +1,178 @@
+page,
+.page {
+    font-family: 'PingFang SC',
+        'Helvetica Neue',
+        Helvetica,
+        'Droid Sans Fallback',
+        'Microsoft Yahei',
+        sans-serif;
+    background: rgb(255, 255, 255);
+    background-size: cover;
+}
+
+.list {
+	width: 680rpx;
+	margin: 30rpx 0 0 35rpx;
+}
+
+.date-choose {
+  display: flex;
+  flex-direction: row;
+	width: 680rpx;
+  margin: 0 0 30rpx 0;
+  font-size: 35rpx;
+  justify-content: space-between;
+}
+
+.date-item {
+  width: 90rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  background: rgba(246,246,246,1);
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 25rpx;
+  box-shadow: 0rpx 0rpx 0rpx rgba(0, 0, 0, 0.1);
+}
+
+.date-num {
+  width: 65rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  border-radius: 50%;
+  background: rgba(240,240,240,1);
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.date-num-on {
+  background: rgb(24, 118, 255);
+  color: white;
+}
+
+.date-week {
+  width: 90rpx;
+  line-height: 30rpx;
+  text-align: center;
+  font-size: 25rpx;
+  color: rgba(156,156,156,1);
+}
+
+.date-week-on {
+  color: white;
+}
+
+.date-on {
+  background: rgba(44, 151, 255, 1);
+	color: white
+}
+
+.inputView {
+	font-size: 30rpx;
+	display: flex;
+	width: 680rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	flex-direction: row;
+	margin: 0 0 30rpx 0;
+	text-align: center;
+}
+
+input {
+  background-color: whitesmoke;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+  border-radius: 20rpx;
+}
+
+.buqian-tip {
+  font-size: 30rpx;
+	width: 680rpx;
+	line-height: 40rpx;
+  color: rgba(156,156,156,1);
+	border-radius: 0rpx;
+	margin: -10rpx 0 30rpx 0;
+	text-align: left;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buqian-text{
+
+}
+
+.buqian-num {
+
+}
+
+.help {
+	font-size: 40rpx;
+	width: 680rpx;
+	line-height: 80rpx;
+  color: #25C6FC;
+	border-radius: 0rpx;
+	margin: 0 0 30rpx 0;
+	text-align: center;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0);
+  font-size: 32rpx;
+}
+
+.submit {
+  background: rgb(255, 102, 0);
+  height: 100rpx;
+  width: 220rpx;
+  line-height: 100rpx;
+  border-radius: 50rpx;
+  text-align: center;
+  color: white;
+  margin: 80rpx 0 0 225rpx;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+}
+
+.upload-cover-loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: white;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-cover-success {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: white;
+  top: 0;
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-tip {
+  font-size: 50rpx;
+  margin: 30rpx 0 0 0;
+}
+
+.upload-back {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: white;
+  bottom: 100rpx;
+  background: rgb(255, 102, 0);
+  height: 100rpx;
+  width: 220rpx;
+  line-height: 100rpx;
+  border-radius: 50rpx;
+  text-align: center;
+  color: white;
+  box-shadow: 0rpx 0rpx 15rpx rgba(0, 0, 0, 0.1);
+}

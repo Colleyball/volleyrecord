@@ -1,0 +1,38 @@
+<view class="list">
+  <view class="gender-choose" bind:tap="bindChangGender">
+    <view class="gender-choose-item gender-choose-item-on">{{current_month}}月排行榜</view>
+  </view>
+  <view class="act-list">
+    <view class="act-list-item">
+      <view class="act-list-item-content" style="width: 15%;">排名</view>
+      <view class="act-list-item-content" style="width: 35%;">昵称</view>
+      <view class="act-list-item-content" style="width: 30%;">里程</view>
+      <view class="act-list-item-content" style="width: 15%;">积分</view>
+    </view>
+
+    <view class="act-list-item" wx:for="{{Rank}}" wx:key="index" wx:for-index="index" wx:if="{{item.month == current_month}}">
+
+      <block wx:if="{{item.Rank == 1}}">
+        <image src="/images/1.png" class="act-list-item-content-image" mode="aspectFit"></image>
+      </block>
+      <block wx:if="{{item.Rank == 2}}">
+        <image src="/images/2.png" class="act-list-item-content-image" mode="aspectFit"></image>
+      </block>
+      <block wx:if="{{item.Rank == 3}}">
+        <image src="/images/3.png" class="act-list-item-content-image" mode="aspectFit"></image>
+      </block>
+      <block wx:if="{{item.Rank >= 4}}">
+        <view class="act-list-item-content" style="width: 15%;">{{item.Rank}}</view>
+      </block>
+
+      <view class="act-list-item-content" style="width: 35%;">{{item.NickName}}</view>
+      <block wx:if="{{item.length}}">
+        <view class="act-list-item-content" style="width: 30%;">{{item.length}}km</view>
+      </block>
+      <block wx:else>
+        <view class="act-list-item-content" style="width: 30%;">0km</view>
+      </block>
+      <view class="act-list-item-content" style="width: 15%;">{{item.point}}</view>
+    </view>
+  </view>
+</view>

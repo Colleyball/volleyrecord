@@ -1,0 +1,133 @@
+page,
+.page {
+    font-family: 'PingFang SC',
+        'Helvetica Neue',
+        Helvetica,
+        'Droid Sans Fallback',
+        'Microsoft Yahei',
+        sans-serif;
+    background: rgb(255, 255, 255);
+    background-size: cover;
+}
+
+.home-title {
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  background: rgba(240, 240, 240,0.6);
+  align-items: center
+}
+
+.home-title-text {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 40rpx;
+  color: rgba(88, 79, 96, 1);
+  margin: 0 0 0 15rpx
+}
+
+.home-title-back {
+  height: 35rpx;
+  width: 35rpx;
+  margin: 0 0 0 35rpx
+}
+
+.goods-info {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: rgba(240, 240, 240,0.6);
+  height: 150rpx;
+  padding: 30rpx 0;
+  justify-content: center;
+  box-shadow: 0 0 110rpx rgba(0,0,0,0);
+  z-index: 2;
+}
+
+.goods-image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 20rpx;
+  z-index: 2;
+}
+
+.goods-detail {
+  width: 450rpx;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 20rpx;
+  z-index: 2;
+}
+
+.goods-title-main {
+  font-size: 35rpx;
+  color: black;
+  margin: 0 0 20rpx 0rpx;
+}
+
+.goods-title-sub {
+  font-size: 30rpx;
+  color: #333;
+  word-break:break-all
+}
+
+.goods-money {
+  position: relative;
+  width: 100%;
+  line-height: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  font-size: 35rpx;
+  background: rgba(230, 230, 230, 0.8);
+  z-index: 2;
+}
+
+.goods-image-bg {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  filter: blur(35rpx);
+}
+
+
+
+.list {
+  position: relative;
+	width: 680rpx;
+  margin: 0rpx 0 0 0rpx;
+  padding: 50rpx 35rpx 50rpx 35rpx;
+  background: white;
+  z-index: 2;
+}
+
+.data{
+  width: 620rpx;
+  padding: 20rpx 20rpx;
+  background: white;
+  border-radius: 40rpx;
+  margin: 0 0 50rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 60rpx rgba(0, 0, 0, 0.2);
+  border: 10rpx solid rgb(235, 229, 222);
+}
+
+.title {
+  width: 100%;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  border-bottom: 4rpx dashed rgb(224, 220, 220);
+}
+
+.qrcode {
+  width: 400rpx;
+  height: 400rpx;
+  margin: 40rpx 0 20rpx 0;
+}

@@ -1,0 +1,71 @@
+<view class="home-title" style='padding-top: {{statusBarHeight * 2}}rpx;' bind:tap="bindBack">
+  <image class="home-title-back" src="/images/back.png"></image>
+  <view class="home-title-text">积分兑换</view>
+</view>
+
+<view class="goods-info" style="margin-top: {{100 + statusBarHeight * 2}}rpx;">
+  <image class="goods-image" src="http://www.aibotiyu.com/ImgFiles/ABSports/niko/goods/{{GoodsInfo.pic}}" mode="aspectFill"></image>
+  <view class="goods-detail">
+    <view class="goods-title-main">{{GoodsInfo.title}}</view>
+    <view class="goods-title-sub">{{GoodsInfo.sub_title}}</view>
+  </view>
+</view>
+<view class="goods-money">{{GoodsInfo.price}} 积分</view>
+<image class="goods-image-bg" src="http://www.aibotiyu.com/ImgFiles/ABSports/niko/goods/{{GoodsInfo.pic}}" mode="aspectFill" style="height: {{390 + statusBarHeight * 2}}rpx; margin-top: {{- 390 - statusBarHeight * 2}}rpx;"></image>
+
+<view class="list">
+  <block wx:if="{{Market}}"></block>
+  <view wx:if="{{GoodsInfo.type == 1}}" class="text-title m-left">收货地址&备注</view>
+  <view wx:if="{{GoodsInfo.type == 2}}" class="text-title m-left">使用说明 </view>
+  <view class="address" wx:if="{{!show_address_table}}">
+    <image src="/images/qrcode.jpg" class="address-qrcode"></image>
+    <view wx:if="{{GoodsInfo.type == 1}}" style="height:80rpx;line-height:80rpx;width:100%">在兑换成功后，请联系客服完善收货信息</view>
+    <view wx:if="{{GoodsInfo.type == 2}}" style="height:80rpx;line-height:80rpx;width:100%">虚拟商品兑换成功后，可咨询客服使用方法</view>
+  </view>
+  <block wx:else>
+    <view class="inputView-name-tel">
+      <input bindinput="GetName" maxlength="5" placeholder="姓名" placeholderStyle="color:gray" style="height:80rpx;line-height:80rpx;width:30%"></input>
+      <input bindinput="GetTel" maxlength="15" placeholder="联系方式" placeholderStyle="color:gray" style="height:80rpx;line-height:80rpx;width:65%" type="number"></input>
+    </view>
+    <view class="inputView">
+      <input bindinput="GetAddress" maxlength="100" name="MatchName" placeholder="地址（省-市-区-详细地址）" placeholderStyle="color:gray" style="height:80rpx;line-height:80rpx;width:100%"></input>
+    </view>
+    <view class="text-title m-left">备注</view>
+    <view class="inputView">
+      <input bindinput="GetNote" maxlength="50" name="MatchName" placeholder="可不填（必要时请注明颜色尺码等信息）" placeholderStyle="color:gray" style="height:80rpx;line-height:80rpx;width:100%"></input>
+    </view>
+  </block>
+
+  <view class="text-title m-left">结算信息</view>
+  <view class="pay-info">
+    <view class="pay-info-title">可用积分</view>
+    <view class="pay-info-content">{{user_point}}</view>
+  </view>
+  <view class="pay-info">
+    <view class="pay-info-title">本次消耗积分</view>
+    <view class="pay-info-content">-{{GoodsInfo.price}}</view>
+  </view>
+  <view class="pay-info">
+    <view class="pay-info-title">兑换后剩余积分</view>
+    <view class="pay-info-content">{{user_point - GoodsInfo.price}}</view>
+  </view>
+  <block wx:if="{{user_point - GoodsInfo.price >= 0}}">
+    <view class="submit" bindtap="BindConfirm">确认兑换</view>
+  </block>
+  <block wx:else>
+    <view class="submit no-point">不可兑换</view>
+  </block>
+</view>
+
+<view class="upload-cover-success" wx:if="{{show_result_2}}">
+  <view class="upload-tip" style="margin: 200rpx 0 0 0;">商品兑换失败</view>
+  <view class="upload-tip" style="font-size: 35rpx;">积分或商品库存不足</view>
+  <view class="upload-back" bind:tap="BindBack">返回主页</view>
+</view>
+
+<view class="upload-cover-success" wx:if="{{show_result_1}}">
+  <view class="upload-tip" style="margin: 200rpx 0 0 0;">商品兑换成功</view>
+  <view class="upload-tip" style="font-size: 35rpx;">剩余积分：{{user_point - GoodsInfo.price}}</view>
+  <view wx:if="{{GoodsInfo.type == 2}}" class="upload-tip" style="font-size: 35rpx;color: rgb(255, 102, 0);" bind:tap="bindCoupon">点击查看优惠券</view>
+  <view class="upload-back" bind:tap="BindBack">返回主页</view>
+</view>

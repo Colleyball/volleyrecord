@@ -12,7 +12,7 @@ module.exports = {
     },
     setpublicinfo: function(t, e) {
         wx.request({
-          url: "https://api.game-win.cn/VolleyRecord/SetPublicInfo",
+          url: "https://niko.game-win.cn/api/SetPublicInfo",
             header: {
                 "content-type": "application/json;charset=utf8"
             },

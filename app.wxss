@@ -1,4 +1,13 @@
-@import "/template/model.wxss";
+page,
+.page {
+  font-family: 'PingFang SC',
+    'Helvetica Neue',
+    Helvetica,
+    'Droid Sans Fallback',
+    'Microsoft Yahei',
+    sans-serif;
+    font-weight: 400;
+}
 
 .container {
   height: 100%;
@@ -14,7 +23,11 @@
 .text-title {
   height: 60rpx;
   line-height: 60rpx;
-  font-size: 55rpx;
+  font-size: 35rpx;
   margin: 75rpx 0 20rpx 0;
   color: black;
+}
+
+.m-center {
+  text-align: center;
 }

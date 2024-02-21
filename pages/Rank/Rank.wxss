@@ -1,0 +1,78 @@
+page,
+.page {
+  font-family: 'PingFang SC',
+    'Helvetica Neue',
+    Helvetica,
+    'Droid Sans Fallback',
+    'Microsoft Yahei',
+    sans-serif;
+  background: url('http://www.aibotiyu.com/ImgFiles/ABSports/niko/background.jpg') no-repeat top fixed;
+  background-size: cover;
+}
+
+.list {
+  width: 680rpx;
+  margin: 80rpx 0 0 35rpx;
+  padding: 0 0 40rpx 0;
+}
+
+
+.act-list {
+  width: 680rpx;
+  background: rgba(255,255,255,0.9);
+  border-radius: 6rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx 0;
+  margin: 30rpx 0 0 0;
+}
+
+.act-list-title {
+  width: 640rpx;
+  text-align: left;
+  font-size: 35rpx;
+}
+
+.act-list-item {
+  display: flex;
+  flex-direction: row;
+  width: 640rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid rgb(128, 120, 120, 0.3);
+  justify-content: space-between;
+}
+
+.act-list-item-content {
+  width: 24%;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.act-list-item-content-image {
+  width: 15%;
+  height: 70rpx;
+}
+
+.gender-choose {
+  width: 680rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.gender-choose-item {
+  font-size: 35rpx;
+  color: rgb(214, 214, 214);
+  padding: 0 20rpx 0 0;
+  line-height: 80rpx;
+}
+
+.gender-choose-item-on {
+  font-size: 40rpx;
+  color: white;
+}
+
+

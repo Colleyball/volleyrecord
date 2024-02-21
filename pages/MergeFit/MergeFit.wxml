@@ -1,0 +1,35 @@
+<view class="home-title" style='padding-top: {{statusBarHeight * 2}}rpx;' bind:tap="bindBack">
+  <image class="home-title-back" src="/images/back.png"></image>
+  <view class="home-title-text">返回</view>
+</view>
+
+<view class="title">Fit文件合并</view>
+<view class="list">
+  <view class="choose-file-box">
+    <view class="file-box">
+      <view class="file-box-title">骑行数据-1</view>
+      <view class="file-box-bg">
+        <view class="file-box-info">
+          <view class="file-info">文件名：{{filename1}}</view>
+          <view class="file-info">文件大小：{{filesize1}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="choose-btn" bind:tap="bindChooseFile">+</view>
+  </view>
+
+  <view class="choose-file-box">
+    <view class="file-box">
+      <view class="file-box-title">骑行数据-2</view>
+      <view class="file-box-bg">
+        <view class="file-box-info">
+          <view class="file-info">文件名：{{filename2}}</view>
+          <view class="file-info">文件大小：{{filesize2}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="choose-btn" bind:tap="bindChooseFile">+</view>
+  </view>
+
+  <view class="submit" bindtap="BindConfirm">合并数据</view>
+</view>

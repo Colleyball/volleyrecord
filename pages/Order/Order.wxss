@@ -1,0 +1,86 @@
+page,
+.page {
+    font-family: 'PingFang SC',
+        'Helvetica Neue',
+        Helvetica,
+        'Droid Sans Fallback',
+        'Microsoft Yahei',
+        sans-serif;
+    background: rgb(255, 255, 255);
+    background-size: cover;
+}
+
+.list {
+	width: 680rpx;
+  margin: 30rpx 0 0 35rpx;
+  padding: 30rpx 0;
+}
+
+.goods-card{
+  position: relative;
+  width: 660rpx;
+  height: 180rpx;
+  padding: 10rpx;
+  background: white;
+  border-radius: 40rpx;
+  margin: 0 0 50rpx 0;
+  box-shadow: 0 0 60rpx rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border: 0rpx solid rgb(213, 228, 235);
+  z-index: 2;
+}
+
+.goods-image {
+  width: 220rpx;
+  height: 180rpx;
+  border-radius: 30rpx;
+}
+
+.goods-detail {
+  display: flex;
+  flex-direction: row;
+  height: 160rpx;
+  width: 420rpx;
+  margin: 0 0 0 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.goods-title {
+  width: 420rpx;
+  height: 160rpx;
+  padding: 0 0 0 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+.goods-title-main {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color: black;
+}
+
+.goods-title-sub {
+  height:50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color: #333
+}
+
+.to_coupon {
+  position: relative;
+  margin: -90rpx 0 50rpx 0;
+  width: 680rpx;
+  height: 100rpx;
+  line-height: 140rpx;
+  font-size: 25rpx;
+  background: rgb(216, 220, 230);
+  text-align: center;
+  z-index: 1;
+  border-radius: 0 0 40rpx 40rpx;
+}
